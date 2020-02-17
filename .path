@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PATH="~/.pyenv/bin:$PATH"
+

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Show dotfiles and Add colors
+if [ $(uname) = Darwin ]; then
+  alias ls="ls -aG"; # Use'LSCOLORS' for Mac
+elif [ $(uname) = Linux ]; then
+  alias ls="ls -a --color=auto"; # Use'LS_COLORS' for Linux
+fi
+
+# Show details
+alias ll="ls -l"
+
+# When 'cd' run, 'ls' run too
+alias cd="cdls"
+
+# When 'mkdir' run, 'cd $_' run too
+alias mkdir="mkdircd"
+
+# Interactive: Confirm if removing the file is okay
+alias rm="rm -i"
+
+# Opts: Interactive, Recursive, Verbose, Preserve-attributes
+alias cp="cp -iRvp"
+
+alias dc="docker"
+alias g="git"
+alias vg="vagrant"
+
+# Reload the current shell
+alias reload="exec ${SHELL} -l"
+
+# Start-up an Application
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
