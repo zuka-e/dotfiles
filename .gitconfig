@@ -1,0 +1,36 @@
+# This is Git's per-user configuration file. --global
+[alias]
+	a = add
+	aa = add -A
+	b = branch
+	c = commit
+	cf = config
+	cfle = config --local user.email
+	cfln = config --local user.name
+	co = checkout
+	d = diff
+	l = log
+	m = merge
+	po = push origin
+	plo = pull origin
+	s = status
+
+[user]
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = red bold
+	local = green 
+	remote = yellow 
+
+[color "diff"]
+	meta = cyan bold
+	frag = magenta bold
+	old = red
+	new = green
+
+[core]
+	# You can make global .gitignore
+	excludesfile = ~/.gitignore
