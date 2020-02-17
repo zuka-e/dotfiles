@@ -1,0 +1,44 @@
+{
+  "workbench.iconTheme": "vs-minimal",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "emmet.triggerExpansionOnTab": true,
+  "workbench.editor.enablePreview": true,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.hover.enabled": true,
+  "files.insertFinalNewline": true,
+  "editor.renderControlCharacters": true,
+  "editor.wordWrap": "on",
+  "workbench.editor.closeEmptyGroups": false,
+  "html.format.extraLiners": "",
+  "editor.cursorStyle": "block",
+  "window.restoreWindows": "all",
+  "workbench.colorTheme": "Monokai",
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#00ff6a",
+    "editor.background": "#000000"
+  },
+  "editor.tokenColorCustomizations": {
+    "comments": "#fcb4ff"
+  },
+  "diffEditor.renderSideBySide": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true
+  },
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": -1,
+  "vsicons.dontShowNewVersionMessage": true,
+  "python.pythonPath": "~/.pyenv/versions/anaconda3-2019.03/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.jediEnabled": false,
+  "python.autoComplete.addBrackets": true
+}
