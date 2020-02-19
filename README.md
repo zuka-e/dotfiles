@@ -1,6 +1,6 @@
 # 設定用ファイル同期スクリプト
 - .bash_profileや.vimrc等の、"."で始まる設定ファイルを簡単に同期、実行します。
-- macOSの他、LinuxやAndroid(git,sshが利用できるもの)でも実行可能です。
+- macOSの他、LinuxやAndroid(git,sshが利用できるもの)でも一部を除き実行可能です。
   - 検証環境(bash)
     - macOS Catalina
     - ubuntu bionic64 (virtualbox)
@@ -21,7 +21,7 @@
 -> .bash_profile  
 -> { path, functions, aliases, env-vars, git-prompt.sh, git-completion.bash }`
 
-#### 実行結果
+#### 実行結果(ubuntuの例)
 
 ```Shell
 $ source dotfiles/setup.sh
@@ -95,7 +95,7 @@ done
     https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
   
   
- ## その他
+ ## その他(拡張子がshのファイルはsourceで実行)
  
  ### macos ディレクトリ
  - setup.sh
