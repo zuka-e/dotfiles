@@ -13,6 +13,9 @@
 	m = merge
 	po = push origin
 	plo = pull origin
+  r = reset
+  rs = reset --soft
+  rh = reset --hard
 	s = status
 
 [user]
