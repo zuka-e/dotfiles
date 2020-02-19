@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Unbind
+"\C-j": 
+
+# Run 'stty lnext undef'
+"\C-v": insert-last-argument
+
+# Use Ctrl+j such as prefix
+"\C-ju": undo
+"\C-jf": forward-word
+"\C-jb": backward-word
+

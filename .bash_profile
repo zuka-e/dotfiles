@@ -10,11 +10,17 @@ for file in ${execute_files[@]}; do
 done
 
 #[ Login_action ]
-echo -e "\033[1;33mHello!! [$(whoami)]
+echo -e "\033[1;36mHello!! [$(whoami)]
 $(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')\033[0m"
+
+#[ Key_Bind cf.'~/.inputrc']
+stty stop undef # Use Ctrl+s for forward-search-history
+stty lnext undef # Use Ctrl+v for insert-last-argument
 
 #[ Shell_Setting ]
 set -o noclobber # Restrict overwriting
+set -o ignoreeof # Ignore 'logout', only IGNOREEOF-times
+IGNOREEOF=1
 
 #[ Shell_Option ]
 shopt -s cdspell # 'cd':AutoCorrect simple mistakes
@@ -50,3 +56,4 @@ shopt -u histappend # Not write HISTFILE when session is closed
 # \!: Number of history
 # \#: Number of excuted commands in the current session
 PS1='\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
+
