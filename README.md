@@ -9,16 +9,19 @@
 ## 利用法
 
 ```Shell
- git clone https://  
+ git clone https://github.com/zuka-e/dotfiles.git  
  source dotfiles/setup.sh
 ```
 
 ### 上記コマンド(source dotfiles/setup.sh)の実行の流れ
+1. setup.sh が .bash_profile を実行  
+1. .bash_profile が各種スクリプトを実行  
+
 `setup.sh  
 -> .bash_profile  
 -> { path, functions, aliases, env-vars, git-prompt.sh, git-completion.bash }`
 
-- 実行結果
+#### 実行結果
 
 ```Shell
 $ source dotfiles/setup.sh
@@ -88,7 +91,7 @@ done
   - プロンプトにGitブランチ等を表示させるスクリプト (以下URLから取得したもの)  
     https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 - .git-completion.bash: 
-  - Gitコマンドの補完用スクリプト (以下URLから取得したもの) 
+  - Gitコマンドの補完用スクリプト (以下URLから取得したもの)  
     https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
   
   
