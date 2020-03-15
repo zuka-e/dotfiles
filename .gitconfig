@@ -9,6 +9,7 @@
 	cfln = config --local user.name
 	co = checkout
 	d = diff
+  f = fetch
 	l = log
 	m = merge
 	po = push origin
@@ -16,6 +17,7 @@
   r = reset
   rs = reset --soft
   rh = reset --hard
+  rb = rebase
 	s = status
 
 [user]
