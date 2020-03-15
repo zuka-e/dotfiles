@@ -37,8 +37,7 @@ PROMPT_COMMAND='sync_history'
 shopt -u histappend # Not write HISTFILE when session is closed
 
 #[ Virtual_Env ]
-# eval "$(pyenv init -)"
-# eval "$(rbenv init -)"
+[ $(which pyenv) ] && eval "$(pyenv init -)"
 
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"

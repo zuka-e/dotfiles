@@ -36,7 +36,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "window.zoomLevel": -1,
   "vsicons.dontShowNewVersionMessage": true,
-  "python.pythonPath": "~/.pyenv/versions/anaconda3-2019.03/bin/python",
+  "python.pythonPath": "~/.pyenv/shims/python",
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.jediEnabled": false,
