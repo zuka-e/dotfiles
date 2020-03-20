@@ -23,6 +23,10 @@ set ignorecase
 set smartcase
 
 "[ Tab ]
+" Inherit indent level of the previous row
+set autoindent
+" Auto indent for {}
+set smartindent
 " Insert space instead of tab
 set expandtab
 " Set a number of space in case 'tab' pushed
@@ -36,3 +40,29 @@ set wildmenu
 " Display a status-bar (2: always)
 set laststatus=2
 
+"[ Key bind ]
+" Move to the other window"
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Auto completion
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
+inoremap < <><LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+inoremap ` ``<LEFT>
+" Emacs when in insert mode
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-a> <HOME>
+imap <C-e> <End>
+imap <C-d> <Del>
+imap <C-h> <BS>
+" Escape key"
+imap jj <ESC>

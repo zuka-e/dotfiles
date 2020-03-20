@@ -23,6 +23,8 @@ alias rm="rm -i"
 alias cp="cp -iRvp"
 
 alias d="docker"
+alias di="docker image"
+alias dk="docker container"
 alias dc="docker-compose"
 alias dce="docker-compose exec"
 alias g="git"
