@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Unbind
 "\C-j": 
 
-# Run 'stty lnext undef'
+# Required: run'stty lnext undef'
 "\C-v": insert-last-argument
 
 # Use Ctrl+j such as prefix
