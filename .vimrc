@@ -3,6 +3,9 @@
 "Display a row-number
 set number 
 
+" Can operate with a mouse
+set mouse=a
+
 " [ Syntax ]
 " Highlighting syntax
 syntax on
