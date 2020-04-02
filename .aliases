@@ -21,6 +21,7 @@ alias rm="rm -i"
 
 # Opts: Interactive, Recursive, Verbose, Preserve-attributes
 alias cp="cp -iRvp"
+alias mv="mv -iv"
 
 alias d="docker"
 alias di="docker image"
