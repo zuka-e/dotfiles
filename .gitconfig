@@ -38,4 +38,4 @@
 
 [core]
 	# You can make global .gitignore
-	excludesfile = ~/.gitignore
+	excludesfile = ~/dotfiles/.gitignore

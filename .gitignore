@@ -1,0 +1,26 @@
+# Config file
+.DS_Store
+
+# Environment variable
+.env
+.env.dev
+.env.prod
+
+# Python venv files
+env/
+
+# Pyenv file
+.python-version
+
+# Pipenv file
+.venv
+
+# Python compiled byte code
+*.pyc
+
+# SQLite3 database
+*.sqlite3
+
+# VSCode remote container
+.devcontainer/
+.vscode/
