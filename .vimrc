@@ -3,6 +3,11 @@
 "Display a row-number
 set number 
 
+" Can operate with a mouse
+set mouse=a
+set clipboard&
+set clipboard^=unnamedplus
+
 " [ Syntax ]
 " Highlighting syntax
 syntax on

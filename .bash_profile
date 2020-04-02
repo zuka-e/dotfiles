@@ -1,5 +1,5 @@
 #[ Source other dotfiles ]
-execute_files=(~/.{path,functions,aliases,env-vars,git-prompt.sh,git-completion.bash})
+execute_files=(~/dotfiles/.{path,functions,aliases,env-vars,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do
   [ -r "$file" ] && source "$file"; # True if file exists and is readable.
   if [ $? = 0 ]; then

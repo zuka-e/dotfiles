@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Make symlinks except_for(.git .DS_Store)
+# Make symlinks
 (cd ~/dotfiles/; # Inside '()', a Sub-shell works
-for file in .??*; do
-  [ ${file} = ".git" ] && continue
-  [ ${file} = ".DS_Store" ] && continue
+linked_files=(.{bash_profile,gitconfig,inputrc,vimrc})
+for file in ${linked_files[@]}; do
   # Opts(ln): s:symlink f:forced v:verbose
   # If you confirm before it has executed, replace '-f' with '-i'
   ln -sfv ~/dotfiles/"${file}" ~/"${file}";
 done;)
 source ~/.bash_profile
-
