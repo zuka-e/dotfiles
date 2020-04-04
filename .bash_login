@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# [ Individual setting ]
+# PS1='\[\033[1;32m\]\H:\[\033[1;34m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
