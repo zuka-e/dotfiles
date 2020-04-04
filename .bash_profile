@@ -3,11 +3,11 @@ if [[ -t 0 ]]; then
 $(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')\033[0m"
 fi
 
-if [[ -r .bashrc ]]; then
-  source .bashrc;
+if [[ -r ~/.bashrc ]]; then
+  source ~/.bashrc;
 fi
 
-if [[ -r .bash_login ]]; then
-  source .bash_login;
+if [[ -r ~/.bash_login ]]; then
+  source ~/.bash_login;
 fi
 
