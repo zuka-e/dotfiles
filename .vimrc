@@ -1,6 +1,9 @@
 " ':help $option' displays how to use
 
-"Display a row-number
+" Don't create a swap file
+set noswapfile
+
+" Display a row-number
 set number 
 
 " Can operate with a mouse
