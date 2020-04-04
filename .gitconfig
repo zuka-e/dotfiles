@@ -1,41 +1,41 @@
 # This is Git's per-user configuration file. --global
 [alias]
-	a = add
-	aa = add -A
-	b = branch
-	c = commit
-	cf = config
-	cfle = config --local user.email
-	cfln = config --local user.name
-	co = checkout
-	d = diff
+  a = add
+  aa = add -A
+  b = branch
+  c = commit
+  cf = config
+  cfle = config --local user.email
+  cfln = config --local user.name
+  co = checkout
+  d = diff
   f = fetch
-	l = log
-	m = merge
-	po = push origin
-	plo = pull origin
+  l = log
+  m = merge
+  po = push origin
+  plo = pull origin
   r = reset
   rs = reset --soft
   rh = reset --hard
-  rb = rebase
-	s = status
+  rb = rebase -i
+  s = status
 
 [user]
 
 [color]
-	ui = true
+  ui = true
 
 [color "branch"]
-	current = red bold
-	local = green 
-	remote = yellow 
+  current = red bold
+  local = green
+  remote = yellow
 
 [color "diff"]
-	meta = cyan bold
-	frag = magenta bold
-	old = red
-	new = green
+  meta = cyan
+  frag = magenta
+  old = red
+  new = green
 
 [core]
-	# You can make global .gitignore
-	excludesfile = ~/dotfiles/.gitignore
+  # You can make global .gitignore
+  excludesfile = ~/dotfiles/.gitignore
