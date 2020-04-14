@@ -33,6 +33,7 @@ shopt -u histappend # Not write HISTFILE when session is closed
 
 #[ Virtual_Env ]
 [ $(which pyenv) ] && eval "$(pyenv init -)"
+[ $(which rbenv) ] && eval "$(rbenv init -)"
 
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
