@@ -21,4 +21,3 @@
 
 "\C-j\C-b": backward-word
 "\C-j\C-h": backward-kill-word
-

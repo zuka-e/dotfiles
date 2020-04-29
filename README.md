@@ -1,10 +1,12 @@
-# 設定用ファイル同期スクリプト
-- .bash_profileや.vimrc等の、"."で始まる設定ファイルを簡単に同期、実行します。
-- macOSの他、LinuxやAndroid(git,sshが利用できるもの)でも一部を除き実行可能です。
-  - 検証環境(bash)
-    - macOS Catalina
-    - ubuntu bionic64 (virtualbox)
-    - Android 8 (Termux)
+# Dotfiles ( 設定ファイル )
+- .bash_profileや.vimrc等の、"."で始まる設定ファイル(dotfiles)を簡単に同期します。
+- macOSの他、LinuxやAndroidでも`bash`,`git`が利用できれば実行可能と思われます。
+
+## 検証環境 (bash)
+- macOS Catalina
+- ubuntu bionic64 (virtualbox)
+- Raspberry Pi 4B (raspbian)
+- Android 8 (Termux)
 
 ## 利用法
 
@@ -13,101 +15,73 @@
  source dotfiles/setup.sh
 ```
 
-### 上記コマンド(source dotfiles/setup.sh)の実行の流れ
-1. setup.sh が .bash_profile を実行  
-1. .bash_profile が各種スクリプトを実行  
+### 上記コマンド (source dotfiles/setup.sh) の実行の流れ
+1. `setup.sh`が`.bash_profile`を実行  
+1. `.bash_profile`が`.bashrc`を実行  
+1. `.bashrc`が各種スクリプトを実行  
+1. `.path`,`.functions`,`.aliases`,`.env-vars`,`.git-prompt.sh`,`.git-completion.bash`が適用される  
 
-`setup.sh  
--> .bash_profile  
--> { path, functions, aliases, env-vars, git-prompt.sh, git-completion.bash }`
-
-#### 実行結果(ubuntuの例)
-
-```Shell
-$ source dotfiles/setup.sh
-'/home/vagrant/.aliases' -> '/home/vagrant/dotfiles/.aliases'
-'/home/vagrant/.bash_history' -> '/home/vagrant/dotfiles/.bash_history'
-'/home/vagrant/.bash_profile' -> '/home/vagrant/dotfiles/.bash_profile'
-'/home/vagrant/.colorrc' -> '/home/vagrant/dotfiles/.colorrc'
-'/home/vagrant/.env-vars' -> '/home/vagrant/dotfiles/.env-vars'
-'/home/vagrant/.functions' -> '/home/vagrant/dotfiles/.functions'
-'/home/vagrant/.git-completion.bash' -> '/home/vagrant/dotfiles/.git-completion.bash'
-'/home/vagrant/.git-prompt.sh' -> '/home/vagrant/dotfiles/.git-prompt.sh'
-'/home/vagrant/.gitconfig' -> '/home/vagrant/dotfiles/.gitconfig'
-'/home/vagrant/.path' -> '/home/vagrant/dotfiles/.path'
-'/home/vagrant/.vimrc' -> '/home/vagrant/dotfiles/.vimrc'
-'/home/vagrant/.path' has executed!
-'/home/vagrant/.functions' has executed!
-'/home/vagrant/.aliases' has executed!
-'/home/vagrant/.env-vars' has executed!
-'/home/vagrant/.git-prompt.sh' has executed!
-'/home/vagrant/.git-completion.bash' has executed!
-Hello!! [$(whoami)]
-Login Time : 0000/00/00 (Mon) | 00:00 (00)
-```
 
 ### setup.sh
-- dotfileディレクトリ内の、"."から始まるファイルのシンボリックリンクを、ホームディレクトリに作成し、  
-  その後、bash_profileを実行します。
+下記のシンボリックリンクを、ホームディレクトリに作成し、`.bash_profile`を実行します。  
+`.bash_profile`,`.bashrc`,`.gitconfig`,`.inputrc`,`.vimrc`  
+**注意! 既存のファイルを上書きしてしまいます。**
 
 ```Shell:setup.sh
 # dotfiles/setup.sh
 (cd ~/dotfiles/; # サブシェルで実行(実行後ディレクトリ移動しない)
-for file in .??*; do # '.'から始まるファイルを取得
-  [ ${file} = ".git" ] && continue # リンクを貼るファイルから除く
-  [ ${file} = ".DS_Store" ] && continue
+linked_files=(.{bash_profile,bashrc,gitconfig,inputrc,vimrc})
+for file in ${linked_files[@]}; do # 配列からファイルを取得
+  # Opts(ln): s:symlink f:forced v:verbose
+  # If you confirm before it has executed, replace '-f' with '-i'
   ln -sfv ~/dotfiles/"${file}" ~/"${file}"; # シンボリックリンクを作成(-f:同名ファイルを上書き)
 done;)
 source ~/.bash_profile
 ```
 
 ### .bash_profile
-- execute_files(変数)にファイル名を代入し、それらを実行します。  
+`.bashrc`を読み込みます。
+```Shell:.bash_profile
+if [[ -r .bashrc ]]; then
+  source .bashrc;
+fi
+```
 
-```Shell
-# dotfiles/.bash_profile
-execute_files=(~/.{path,functions,aliases,env-vars,git-prompt.sh,git-completion.bash})
+### .bashrc
+変数`execute_files`にファイル名を代入し、それらを実行します。  
+
+```Shell:.bashrc
+# dotfiles/.bashrc
+execute_files=(~/dotfiles/.{path,functions,aliases,env-vars,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do # 読込ファイルを配列で取得
   [ -r "$file" ] && source "$file"; # ファイルが読込可能なら実行
-  if [ $? = 0 ]; then
-    echo "'$file'" 'has executed!';
-  else
-    echo "'$file'" 'has NOT executed.';
-  fi;
 done
 ```
 
-### .bash_profileで読み込まれるファイル
-これらのファイルは分けなくても実行可能ですが、読みやすくするためそれぞれのファイルを作成しています。
-- .path: 
-  - パス設定用 (例: export PATH="~/.pyenv/bin:$PATH")  
-- .functions:  
-  - 関数定義用 (例: function mkdircd() { \mkdir $@ && cd $_; })  
-- .aliases:  
-  - エイリアス設定用 (例: alias ls="ls -aG")  
-- .env-vars: 
-  - 環境変数設定用 (例: export LANG=en_US.UTF-8)  
-- .git-prompt.sh: 
-  - プロンプトにGitブランチ等を表示させるスクリプト (以下URLから取得したもの)  
-    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-- .git-completion.bash: 
-  - Gitコマンドの補完用スクリプト (以下URLから取得したもの)  
-    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+### .bashrcで読み込まれるファイル
+- `.path`: パスを設定する (例: export PATH="~/.pyenv/bin:$PATH")  
+- `.functions`: 関数を定義する (例: function mkdircd() { \mkdir $@ && cd $_; })  
+- `.aliases`: エイリアスを設定する (例: alias ls="ls -aG")  
+- `.env-vars`: 環境変数を設定する (例: export LANG=en_US.UTF-8)  
+- `.git-prompt.sh`: プロンプトにGitブランチ等を表示させる (以下URLから取得)  
+https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+- `.git-completion.bash`: Gitコマンドを補完する (以下URLから取得)  
+https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
   
   
- ## その他(拡張子がshのファイルはsourceで実行)
+ ## その他 (拡張子がshのファイルはsourceで実行)
  
  ### macos ディレクトリ
- - setup.sh
+ - `setup.sh`
    - mac本体の設定 (例: Finderで隠しファイルを表示する)
- - brew.sh
+ - `brew.sh`
    - brew install のリスト
- - brew_cask.sh
+ - `brew_cask.sh`
    - brew cask install のリスト
  
  ### vscode ディレクトリ
- - setup.sh
+ - `setup.sh`
    - VSCode のsettings.json にシンボリックリンク作成
- - settings.json
+ - `settings.json`
    - VSCode の設定用ファイル
  
