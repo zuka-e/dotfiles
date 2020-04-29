@@ -56,13 +56,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Auto completion
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
-inoremap < <><LEFT>
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
-inoremap ` ``<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap [ []<LEFT>
+"inoremap { {}<LEFT>
+"inoremap < <><LEFT>
+"inoremap ' ''<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ` ``<LEFT>
+
 " Emacs when in insert mode
 imap <C-p> <Up>
 imap <C-n> <Down>
@@ -74,3 +75,4 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 " Escape key"
 imap jj <ESC>
+

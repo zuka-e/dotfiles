@@ -1,5 +1,5 @@
 {
-  "workbench.iconTheme": "vs-minimal",
+  "workbench.iconTheme": "material-icon-theme",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "emmet.triggerExpansionOnTab": true,
@@ -26,7 +26,7 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.extension-editing",
   },
   "[markdown]": {
     "editor.wordWrap": "on",
@@ -40,5 +40,10 @@
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
   "python.jediEnabled": false,
-  "python.autoComplete.addBrackets": true
+  "python.autoComplete.addBrackets": true,
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "css.lint.duplicateProperties": "warning",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }

@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
 
+# Default
+"\C-g": abort
+"\C-m": accept-line
+"\e\C-h": backward-kill-word
+"\eu": upcase-word
+"\C-x\C-u": undo
+"\C-_": undo
+
 # Unbind
 "\C-j": 
 
-# Required: run'stty lnext undef'
+# Run 'stty lnext undef' in .bashrc
 "\C-v": insert-last-argument
 
-# Use Ctrl+j such as prefix
-"\C-ju": undo
-"\C-jf": forward-word
-"\C-jb": backward-word
+"\C-j\C-u": undo
 
+"\C-j\C-f": forward-word
+"\C-j\C-d": kill-word
+
+"\C-j\C-b": backward-word
+"\C-j\C-h": backward-kill-word
