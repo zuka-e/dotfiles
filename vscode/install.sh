@@ -5,5 +5,5 @@ ln -sfv ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User
 
 # Install extensions
 cat ~/dotfiles/vscode/extensions | while read line; do
-  code --install-extension $line;
+  code --install-extension "$line";
 done
