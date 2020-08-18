@@ -7,13 +7,12 @@ elif [ $(uname) = Linux ]; then
   alias ls="ls -a --color=auto"; # Use'LS_COLORS' for Linux
 fi
 
-# Show details
-alias ll="ls -l"
-
 # When 'cd' run, 'ls' run too
+function cdls() { \cd $@ && ls; }
 alias cd="cdls"
 
 # When 'mkdir' run, 'cd $_' run too
+function mkdircd() { \mkdir -p $@ && cd $_; }
 alias mkdir="mkdircd"
 
 # Interactive: Confirm if removing the file is okay
