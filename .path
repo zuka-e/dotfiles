@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"

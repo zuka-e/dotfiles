@@ -23,10 +23,10 @@ shopt -s interactive_comments # Not evaluate command after'#' (default)
 
 #[ Sync_History ]
 function sync_history {
-    history -a # Add a history of the current bash session to HISTFILE
-    history -c # Clear a history out of the current bash session 
-    history -r # Read from HISTFILE and set as the current history
- }
+  history -a # Add a history of the current bash session to HISTFILE
+  history -c # Clear a history out of the current bash session
+  history -r # Read from HISTFILE and set as the current history
+}
 # PROMPT_COMMAND: It'll be run, every time command run
 PROMPT_COMMAND='sync_history'
 shopt -u histappend # Not write HISTFILE when session is closed
@@ -52,4 +52,3 @@ PS1='\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
 # \w: Location of Current-Directory
 # \!: Number of history
 # \#: Number of excuted commands in the current session
-
