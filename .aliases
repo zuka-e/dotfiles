@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 if [[ "$(uname)" == "Linux" ]]; then
-  alias ls="ls --sort=version" # (-v) Natural sort of (version) numbers within text
-  alias ls="ls --almost-all" # (-A) Show 'dotfiles' without . and ..
-  alias ls="ls --classify" # (-F) Append file-type indicator
-  alias ls="ls --color=always"
+  v="--sort=version" # (-v) Natural sort of (version) numbers within text
+  A="--almost-all" # (-A) Show 'dotfiles' without . and ..
+  F="--classify" # (-F) Append file-type indicator
+  alias ls="ls $v $A $F --color=always"
   alias ll="ls -l --all --human-readable" # (-lah) Print sizes with unit
   alias llf="ll --inode --size" # (-is) Show index number, allocated size
-  alias llt="ll --time-style='+%Y-%m-%d %H:%M:%S'" # Format time
+  alias llt='ll --time-style="+%Y-%m-%d %H:%M:%S"' # Format time
   alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
   alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
   alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
