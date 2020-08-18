@@ -29,8 +29,8 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p $@ && cd $_; }
 alias mkdir="mkdircd"
 
-# Interactive: Confirm if removing the file is okay
-alias rm="rm -i"
+# Use extended regular expression
+alias esed="sed -E"
 
 # Opts: Interactive, Recursive, Verbose, Preserve-attributes
 alias rm="rm -i"
@@ -52,4 +52,3 @@ alias reload="exec ${SHELL} -l"
 
 # Start-up an Application
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-
