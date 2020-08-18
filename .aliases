@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Show dotfiles and Add colors
 if [ $(uname) = Linux ]; then
   alias ls="ls --sort=version" # (-v) Natural sort of (version) numbers within text
   alias ls="ls --almost-all" # (-A) Show 'dotfiles' without . and ..
@@ -15,10 +14,10 @@ if [ $(uname) = Linux ]; then
 elif [ $(uname) = Darwin ]; then
   alias ls="ls -AFG" # Use'LSCOLORS' for Mac
   alias ll="ls -lahT" # -T  Display complete time
-  alias llf="ll -is"
-  alias llat="ll -tu"
-  alias llmt="ll -t"
-  alias llct="ll -tc"
+  alias llf="ll -is" # Show index number, allocated size
+  alias llat="ll -tu" # sort by, and show, access time
+  alias llmt="ll -t" # sort by, and show,  modification time
+  alias llct="ll -tc" # sort by, and show, status change time
 fi
 
 # When 'cd' run, 'ls' run too
@@ -28,6 +27,11 @@ alias cd="cdls"
 # When 'mkdir' run, 'cd $_' run too
 function mkdircd() { \mkdir -p $@ && cd $_; }
 alias mkdir="mkdircd"
+
+# Mark up the matching text
+alias grep="grep --color=always"
+alias fgrep="fgrep --color=always"
+alias egrep="egrep --color=always"
 
 # Use extended regular expression
 alias esed="sed -E"
