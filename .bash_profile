@@ -10,4 +10,3 @@ fi
 if [[ -r ~/.bash_login ]]; then
   source ~/.bash_login;
 fi
-

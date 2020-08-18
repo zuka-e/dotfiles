@@ -9,7 +9,7 @@
 "\C-_": undo
 
 # Unbind
-"\C-j": 
+"\C-j":
 
 # Run 'stty lnext undef' in .bashrc
 "\C-v": insert-last-argument
@@ -21,4 +21,3 @@
 
 "\C-j\C-b": backward-word
 "\C-j\C-h": backward-kill-word
-

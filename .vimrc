@@ -4,7 +4,7 @@
 set noswapfile
 
 " Display a row-number
-set number 
+set number
 
 " Can operate with a mouse
 set mouse=a
@@ -75,4 +75,3 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 " Escape key"
 imap jj <ESC>
-
