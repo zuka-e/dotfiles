@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(uname)" = Linux ]; then
+if [[ "$(uname)" == "Linux" ]]; then
   alias ls="ls --sort=version" # (-v) Natural sort of (version) numbers within text
   alias ls="ls --almost-all" # (-A) Show 'dotfiles' without . and ..
   alias ls="ls --classify" # (-F) Append file-type indicator
@@ -11,7 +11,7 @@ if [ "$(uname)" = Linux ]; then
   alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
   alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
   alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
-elif [ "$(uname)" = Darwin ]; then
+elif [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -AFG" # Use'LSCOLORS' for Mac
   alias ll="ls -lahT" # -T  Display complete time
   alias llf="ll -is" # Show index number, allocated size
