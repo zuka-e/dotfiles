@@ -1,10 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Show dotfiles and Add colors
-if [ $(uname) = Darwin ]; then
-  alias ls="ls -aG"; # Use'LSCOLORS' for Mac
-elif [ $(uname) = Linux ]; then
-  alias ls="ls -a --color=auto"; # Use'LS_COLORS' for Linux
+if [ $(uname) = Linux ]; then
+  alias ls="ls --sort=version" # (-v) Natural sort of (version) numbers within text
+  alias ls="ls --almost-all" # (-A) Show 'dotfiles' without . and ..
+  alias ls="ls --classify" # (-F) Append file-type indicator
+  alias ls="ls --color=always"
+  alias ll="ls -l --all --human-readable" # (-lah) Print sizes with unit
+  alias llf="ll --inode --size" # (-is) Show index number, allocated size
+  alias llt="ll --time-style='+%Y-%m-%d %H:%M:%S'" # Format time
+  alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
+  alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
+  alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
+elif [ $(uname) = Darwin ]; then
+  alias ls="ls -AFG" # Use'LSCOLORS' for Mac
+  alias ll="ls -lahT" # -T  Display complete time
+  alias llf="ll -is"
+  alias llat="ll -tu"
+  alias llmt="ll -t"
+  alias llct="ll -tc"
 fi
 
 # When 'cd' run, 'ls' run too
@@ -19,10 +33,12 @@ alias mkdir="mkdircd"
 alias rm="rm -i"
 
 # Opts: Interactive, Recursive, Verbose, Preserve-attributes
+alias rm="rm -i"
 alias cp="cp -iRvp"
 alias scp="scp -p"
 alias mv="mv -iv"
 
+# Short names
 alias d="docker"
 alias di="docker image"
 alias dk="docker container"
