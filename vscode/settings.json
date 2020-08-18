@@ -26,13 +26,14 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.extension-editing",
+    "editor.defaultFormatter": "vscode.extension-editing"
   },
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": true
   },
-  "markdown.extension.preview.autoShowPreviewToSide": true,
   "workbench.startupEditor": "newUntitledFile",
   "window.zoomLevel": -1,
   "vsicons.dontShowNewVersionMessage": true,
@@ -45,5 +46,17 @@
     "ms-azuretools.vscode-docker": "workspace"
   },
   "css.lint.duplicateProperties": "warning",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "better-comments.tags": [
+    {
+      "tag": "//",
+      "color": "#ffaf10",
+      "strikethrough": false
+    }
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
+  "java.semanticHighlighting.enabled": true
 }
