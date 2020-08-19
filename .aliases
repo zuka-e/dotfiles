@@ -36,11 +36,11 @@ alias egrep="egrep --color=always"
 # Use extended regular expression
 alias esed="sed -E"
 
-# Opts: Interactive, Recursive, Verbose, Preserve-attributes
-alias rm="rm -i"
-alias cp="cp -iRvp"
-alias scp="scp -p"
+# Opts: Interactive, Preserve-attributes, Recursive, Verbose
+alias cp="cp -iprv"
+alias scp="scp -rpv"
 alias mv="mv -iv"
+alias rm="rm -irv"
 
 # Short names
 alias d="docker"
