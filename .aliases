@@ -4,7 +4,7 @@ if [[ "$(uname)" == "Linux" ]]; then
   v="--sort=version" # (-v) Natural sort of (version) numbers within text
   A="--almost-all" # (-A) Show 'dotfiles' without . and ..
   F="--classify" # (-F) Append file-type indicator
-  alias ls="ls $v $A $F --color=always"
+  alias ls="ls $v $A $F --color=auto"
   alias ll="ls -l --all --human-readable" # (-lah) Print sizes with unit
   alias llf="ll --inode --size" # (-is) Show index number, allocated size
   alias llt='ll --time-style="+%Y-%m-%d %H:%M:%S"' # Format time
@@ -29,9 +29,9 @@ function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
 # Mark up the matching text
-alias grep="grep --color=always"
-alias fgrep="fgrep --color=always"
-alias egrep="egrep --color=always"
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
 # Use extended regular expression
 alias esed="sed -E"
