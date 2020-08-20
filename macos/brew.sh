@@ -9,8 +9,10 @@ brew install pstree
 brew install wget
 brew install git
 brew install tmux
-brew install bat # Alternative cat
-brew install exa # Alternative ls
+brew install bat # Alt cat
+brew install exa # Alt ls
+brew install fd # Alt find
+brew install ripgrep # Alt grep, command: rg
 
 brew install yarn
 brew install nodenv
