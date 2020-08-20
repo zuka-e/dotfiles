@@ -10,3 +10,8 @@ fi
 if [[ -r ~/.bash_login ]]; then
   source ~/.bash_login;
 fi
+
+exports_files=(~/dotfiles/.{env-vars,path})
+for file in ${exports_files[@]}; do
+  [[ -r "$file" ]] && source "$file"; # True if file exists and is readable.
+done

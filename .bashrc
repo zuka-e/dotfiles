@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #[ Source other dotfiles ]
-execute_files=(~/dotfiles/.{path,aliases,env-vars,git-prompt.sh,git-completion.bash})
+execute_files=(~/dotfiles/.{aliases,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do
   [[ -r "$file" ]] && source "$file"; # True if file exists and is readable.
 done
@@ -30,11 +30,6 @@ function sync_history {
 # PROMPT_COMMAND: It'll be run, every time command run
 PROMPT_COMMAND='sync_history'
 shopt -u histappend # Not write HISTFILE when session is closed
-
-#[ Virtual_Env ]
-[[ "$(which nodenv)" ]] && eval "$(nodenv init -)"
-[[ "$(which pyenv)" ]] && eval "$(pyenv init -)"
-[[ "$(which rbenv)" ]] && eval "$(rbenv init -)"
 
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
