@@ -9,7 +9,8 @@ brew install pstree
 brew install wget
 brew install git
 brew install tmux
-brew install bat # Another cat
+brew install bat # Alternative cat
+brew install exa # Alternative ls
 
 brew install yarn
 brew install nodenv

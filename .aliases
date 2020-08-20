@@ -6,9 +6,9 @@ if [[ "$(uname)" == "Linux" ]]; then
   F="--classify" # (-F) Append file-type indicator
   alias ls="ls $v $A --color=auto"
   alias lf="ls $F"
-  alias ll="ls -l --all --human-readable" # (-lah) Print sizes with unit
+  strftime='--time-style="+%Y-%m-%d %H:%M:%S"' # Format time
+  alias ll="ls -l --all --human-readable $strftime" # (-lah) Print sizes with unit
   alias llf="ll --inode --size" # (-is) Show index number, allocated size
-  alias llt='ll --time-style="+%Y-%m-%d %H:%M:%S"' # Format time
   alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
   alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
   alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
@@ -20,6 +20,16 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   alias llat="ll -tu" # sort by, and show, access time
   alias llmt="ll -t" # sort by, and show,  modification time
   alias llct="ll -tc" # sort by, and show, status change time
+fi
+
+# exa, alternative ls
+if [[ "$(which exa)" ]]; then
+  ll="exa -alh --links --group --time-style=long-iso --git"
+  alias ll="$ll"
+  alias llf="$ll --inode --blocks"
+  alias llat="$ll --time=accessed --sort=accessed"
+  alias llmt="$ll --time=modified --sort=modified"
+  alias llct="$ll --time=changed --sort=changed"
 fi
 
 # When 'cd' run, 'ls' run too
