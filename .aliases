@@ -70,5 +70,8 @@ alias xargs="xargs "
 # Reload the current shell
 alias reload="exec "${SHELL}" -l"
 
+# Show $PATH by line
+alias path='echo $PATH | tr ":" "\n"'
+
 # Start-up an Application
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
