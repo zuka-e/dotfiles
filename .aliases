@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# derivative of 'ls'
 if [[ "$(uname)" == "Linux" ]]; then
   v="--sort=version" # (-v) Natural sort of (version) numbers within text
   A="--almost-all" # (-A) Show 'dotfiles' without . and ..
@@ -22,8 +23,8 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   alias llct="ll -tc" # sort by, and show, status change time
 fi
 
-# exa, alternative ls
-if [[ "$(which exa)" ]]; then
+# Judge if 'exa' exists
+if type exa > /dev/null 2>&1; then
   ll="exa -alh --links --group --time-style=long-iso --git"
   alias ll="$ll"
   alias llf="$ll --inode --blocks"
@@ -40,10 +41,10 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
-# Mark up the matching text
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
+# Output line number & Mark up the matching text
+alias grep="grep -n --color=auto"
+alias egrep="egrep -n --color=auto"
+alias fgrep="fgrep -n --color=auto"
 
 # Use extended regular expression
 alias esed="sed -E"
