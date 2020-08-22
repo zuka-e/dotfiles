@@ -41,10 +41,16 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
+# equivalent 'ls -1A', but output is path, not names
+alias pathls="fd --hidden --max-depth 1 '.'"
+
 # Output line number & Mark up the matching text
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
 alias fgrep="fgrep -n --color=auto"
+
+# Display the file path even when only one file is searched
+alias rg="rg --with-filename" # rg: alternative to grep
 
 # Use extended regular expression
 alias esed="sed -E"
@@ -67,6 +73,11 @@ alias vg="vagrant"
 # Enable alias
 alias sudo="sudo "
 alias xargs="xargs "
+
+# Read stdin line by line instead of spaces
+# this is useful when searching space separated files
+# ex. ls | readline | xargs grep "foo"
+alias readline='while read line; do echo \""$line"\"; done'
 
 # Reload the current shell
 alias reload="exec "${SHELL}" -l"
