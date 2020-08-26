@@ -21,7 +21,6 @@
 1. `.bashrc`が各種スクリプトを実行  
 1. `.path`,`.aliases`,`.env-vars`,`.git-prompt.sh`,`.git-completion.bash`が適用される  
 
-
 ### setup.sh
 下記のシンボリックリンクを、ホームディレクトリに作成し、`.bash_profile`を実行します。  
 `.bash_profile`,`.bashrc`,`.gitconfig`,`.inputrc`,`.vimrc`  
