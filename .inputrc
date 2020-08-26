@@ -9,7 +9,7 @@
 "\C-_": undo
 
 # Unbind
-"\C-j": 
+"\C-j":
 
 # Run 'stty lnext undef' in .bashrc
 "\C-v": insert-last-argument

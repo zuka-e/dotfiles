@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #[ Source other dotfiles ]
-execute_files=(~/dotfiles/.{path,functions,aliases,env-vars,git-prompt.sh,git-completion.bash})
+execute_files=(~/dotfiles/.{aliases,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do
   [[ -r "$file" ]] && source "$file"; # True if file exists and is readable.
 done
@@ -23,17 +23,13 @@ shopt -s interactive_comments # Not evaluate command after'#' (default)
 
 #[ Sync_History ]
 function sync_history {
-    history -a # Add a history of the current bash session to HISTFILE
-    history -c # Clear a history out of the current bash session 
-    history -r # Read from HISTFILE and set as the current history
- }
+  history -a # Add a history of the current bash session to HISTFILE
+  history -c # Clear a history out of the current bash session
+  history -r # Read from HISTFILE and set as the current history
+}
 # PROMPT_COMMAND: It'll be run, every time command run
 PROMPT_COMMAND='sync_history'
 shopt -u histappend # Not write HISTFILE when session is closed
-
-#[ Virtual_Env ]
-[ $(which pyenv) ] && eval "$(pyenv init -)"
-[ $(which rbenv) ] && eval "$(rbenv init -)"
 
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
@@ -51,4 +47,3 @@ PS1='\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
 # \w: Location of Current-Directory
 # \!: Number of history
 # \#: Number of excuted commands in the current session
-

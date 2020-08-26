@@ -1,6 +1,6 @@
 if [[ -t 0 ]]; then
-  echo -e "\033[1;31mHello!! [$(whoami)]
-$(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')\033[0m"
+  echo -e "\033[1;31mHello!! ["$(whoami)"]
+"$(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')"\033[0m"
 fi
 
 if [[ -r ~/.bashrc ]]; then
@@ -11,3 +11,7 @@ if [[ -r ~/.bash_login ]]; then
   source ~/.bash_login;
 fi
 
+exports_files=(~/dotfiles/.{env-vars,path})
+for file in ${exports_files[@]}; do
+  [[ -r "$file" ]] && source "$file"; # True if file exists and is readable.
+done

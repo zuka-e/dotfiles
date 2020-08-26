@@ -12,6 +12,7 @@
   f = fetch
   l = log
   m = merge
+  p = push
   po = push origin
   plo = pull origin
   r = reset

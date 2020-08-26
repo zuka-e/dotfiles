@@ -1,29 +1,67 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Show dotfiles and Add colors
-if [ $(uname) = Darwin ]; then
-  alias ls="ls -aG"; # Use'LSCOLORS' for Mac
-elif [ $(uname) = Linux ]; then
-  alias ls="ls -a --color=auto"; # Use'LS_COLORS' for Linux
+# derivative of 'ls'
+if [[ "$(uname)" == "Linux" ]]; then
+  v="--sort=version" # (-v) Natural sort of (version) numbers within text
+  A="--almost-all" # (-A) Show 'dotfiles' without . and ..
+  F="--classify" # (-F) Append file-type indicator
+  alias ls="ls $v $A --color=auto"
+  alias lf="ls $F"
+  strftime='--time-style="+%Y-%m-%d %H:%M:%S"' # Format time
+  alias ll="ls -l --all --human-readable $strftime" # (-lah) Print sizes with unit
+  alias llf="ll --inode --size" # (-is) Show index number, allocated size
+  alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
+  alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
+  alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
+elif [[ "$(uname)" == "Darwin" ]]; then
+  alias ls="ls -AG" # Use'LSCOLORS' for Mac
+  alias lf="ls -F"
+  alias ll="ls -lahT" # -T  Display complete time
+  alias llf="ll -is" # Show index number, allocated size
+  alias llat="ll -tu" # sort by, and show, access time
+  alias llmt="ll -t" # sort by, and show,  modification time
+  alias llct="ll -tc" # sort by, and show, status change time
 fi
 
-# Show details
-alias ll="ls -l"
+# Judge if 'exa' exists
+if type exa > /dev/null 2>&1; then
+  ll="exa -alh --links --group --time-style=long-iso --git"
+  alias ll="$ll"
+  alias llf="$ll --inode --blocks"
+  alias llat="$ll --time=accessed --sort=accessed"
+  alias llmt="$ll --time=modified --sort=modified"
+  alias llct="$ll --time=changed --sort=changed"
+fi
 
 # When 'cd' run, 'ls' run too
+function cdls() { \cd "$@" && ls; }
 alias cd="cdls"
 
 # When 'mkdir' run, 'cd $_' run too
+function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
-# Interactive: Confirm if removing the file is okay
-alias rm="rm -i"
+# equivalent 'ls -1A', but output is path, not names
+alias pathls="fd --hidden --max-depth 1 '.'"
 
-# Opts: Interactive, Recursive, Verbose, Preserve-attributes
-alias cp="cp -iRvp"
-alias scp="scp -p"
+# Output line number & Mark up the matching text
+alias grep="grep -n --color=auto"
+alias egrep="egrep -n --color=auto"
+alias fgrep="fgrep -n --color=auto"
+
+# Display the file path even when only one file is searched
+alias rg="rg --with-filename" # rg: alternative to grep
+
+# Use extended regular expression
+alias esed="sed -E"
+
+# Opts: Interactive, Preserve-attributes, Recursive, Verbose
+alias cp="cp -iprv"
+alias scp="scp -rpv"
 alias mv="mv -iv"
+alias rm="rm -irv"
 
+# Short names
 alias d="docker"
 alias di="docker image"
 alias dk="docker container"
@@ -32,9 +70,20 @@ alias dce="docker-compose exec"
 alias g="git"
 alias vg="vagrant"
 
+# Enable alias
+alias sudo="sudo "
+alias xargs="xargs "
+
+# Read stdin line by line instead of spaces
+# this is useful when searching space separated files
+# ex. ls | readline | xargs grep "foo"
+alias readline='while read line; do echo \""$line"\"; done'
+
 # Reload the current shell
-alias reload="exec ${SHELL} -l"
+alias reload="exec "${SHELL}" -l"
+
+# Show $PATH by line
+alias path='echo $PATH | tr ":" "\n"'
 
 # Start-up an Application
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-
