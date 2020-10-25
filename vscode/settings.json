@@ -1,62 +1,55 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "emmet.triggerExpansionOnTab": true,
-  "workbench.editor.enablePreview": true,
-  "editor.tabSize": 2,
-  "editor.minimap.enabled": false,
-  "editor.hover.enabled": true,
-  "files.insertFinalNewline": true,
-  "editor.renderControlCharacters": true,
-  "editor.wordWrap": "on",
-  "workbench.editor.closeEmptyGroups": false,
-  "html.format.extraLiners": "",
-  "editor.cursorStyle": "block",
+  "window.title": "${dirty}${activeEditorMedium}",
+  "window.zoomLevel": -1,
   "window.restoreWindows": "all",
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Dracula",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "tab.activeBorder": "#00ff6a",
     "editor.background": "#000000"
   },
+  "editor.cursorStyle": "block",
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.hover.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": { "editor.defaultFormatter": "ms-python.python" },
+  "editor.quickSuggestions": true,
+  "editor.suggestSelection": "first",
+  "[markdown]": { "editor.quickSuggestions": true },
+  "editor.renderControlCharacters": true,
+  "editor.wordWrap": "on",
   "editor.tokenColorCustomizations": {
     "comments": "#fcb4ff"
   },
-  "diffEditor.renderSideBySide": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.extension-editing"
+  // "diffEditor.renderSideBySide": false,
+  "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "**/node_modules/**": true
   },
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": true
-  },
-  "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": -1,
-  "vsicons.dontShowNewVersionMessage": true,
+  "html.format.extraLiners": "",
+  "css.lint.duplicateProperties": "warning",
+  "emmet.triggerExpansionOnTab": true,
+  // "prettier.jsxSingleQuote": true,
+  // "prettier.singleQuote": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "python.pythonPath": "~/.pyenv/shims/python",
-  "python.linting.pylintEnabled": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.completeFunctionParens": true,
   "python.linting.enabled": true,
-  "python.jediEnabled": false,
-  "python.autoComplete.addBrackets": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": ["--indent-size=2"],
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
-  "css.lint.duplicateProperties": "warning",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "better-comments.tags": [
     {
       "tag": "//",
       "color": "#ffaf10",
       "strikethrough": false
     }
-  ],
-  "diffEditor.ignoreTrimWhitespace": false,
-  "files.watcherExclude": {
-    "**/node_modules/**": true
-  },
-  "java.semanticHighlighting.enabled": true
+  ]
 }
