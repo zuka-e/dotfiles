@@ -1,57 +1,60 @@
-alefragnani.Bookmarks
-bigonesystems.django
-chrmarti.regex
-CoenraadS.bracket-pair-colorizer
-DavidAnson.vscode-markdownlint
-dbaeumer.vscode-eslint
-donjayamanne.githistory
-donjayamanne.python-extension-pack
-dsznajder.es7-react-js-snippets
-eamodio.gitlens
-ecmel.vscode-html-css
-esbenp.prettier-vscode
-formulahendry.auto-close-tag
-GitHub.vscode-pull-request-github
-IBM.output-colorizer
-ICS.japanese-proofreading
-ionutvmi.path-autocomplete
-jcbuisson.vue
-jebbs.plantuml
-KevinRose.vsc-python-indent
-leizongmin.node-module-intellisense
-magicstack.MagicPython
-mechatroner.rainbow-csv
-mgmcdermott.vscode-language-babel
-mrmlnc.vscode-duplicate
-ms-azuretools.vscode-docker
-MS-CEINTL.vscode-language-pack-ja
-ms-python.python
-ms-vscode-remote.remote-containers
-naumovs.color-highlight
-octref.vetur
-oderwat.indent-rainbow
-onecentlin.laravel-blade
-onecentlin.laravel5-snippets
-PKief.material-icon-theme
-quicktype.quicktype
-rebornix.ruby
-redhat.java
-ritwickdey.LiveServer
-rogalmic.bash-debug
-ryu1kn.partial-diff
-saikou9901.evilinspector
-shardulm94.trailing-spaces
-shd101wyy.markdown-preview-enhanced
-vscode.theme-monokai
-tushortz.python-extended-snippets
+# VSCode Extensions
+
+dracula-theme.theme-dracula # Color theme
+PKief.material-icon-theme # Icons of file and directory
 VisualStudioExptTeam.vscodeintellicode
-vscjava.vscode-java-debug
-vscjava.vscode-java-dependency
-vscjava.vscode-java-pack
-vscjava.vscode-java-test
-vscjava.vscode-maven
-vscode-icons-team.vscode-icons
-wayou.vscode-todo-highlight
-wholroyd.jinja
-wingrunr21.vscode-ruby
-yzhang.markdown-all-in-one
+
+# Highlighting
+shardulm94.trailing-spaces # Spaces
+oderwat.indent-rainbow # Each tab step
+naumovs.color-highlight # Web colors
+CoenraadS.bracket-pair-colorizer # Bracket pair
+IBM.output-colorizer # Logfile
+mechatroner.rainbow-csv # CSV
+jeff-hykin.better-shellscript-syntax # Shellscript
+jeff-hykin.better-dockerfile-syntax # Dockerfile
+mgmcdermott.vscode-language-babel # ES201x, React JSX, Flow and GraphQL.
+
+# Editor
+aaron-bond.better-comments # create many kinds of colorized comments
+wmaurer.change-case # ()>change case xxx)
+quicktype.quicktype # paste JSON as code
+rogalmic.bash-debug # Debugger
+christian-kohler.path-intellisense # Path completion
+esbenp.prettier-vscode # Formatter for HTML, JS, etc
+
+# Previewer
+chrmarti.regex # Regular expressions
+shd101wyy.markdown-preview-enhanced # Markdown
+
+# Git
+donjayamanne.githistory
+eamodio.gitlens # View all info from sidebar
+
+# Markdown
+DavidAnson.vscode-markdownlint
+
+# Comprehensive language supports
+jebbs.plantuml # PlantUML
+yzhang.markdown-all-in-one # Markdown
+mads-hartmann.bash-ide-vscode # Bash
+ms-azuretools.vscode-docker #Docker
+ms-vscode-remote.remote-containers # Docker containers
+toba.vsfire # Firebase
+ms-vscode.vscode-typescript-next # TS
+ms-dotnettools.csharp # C#
+ms-python.python # Python
+ms-python.vscode-pylance # Python language server
+
+# HTML CSS
+bradgashler.htmltagwrap # select word and (option + W)
+ecmel.vscode-html-css # Class, Id attribute completion.
+Compulim.compulim-vscode-closetag # close last opened tag (option + .)
+
+# Javascript
+dbaeumer.vscode-eslint
+leizongmin.node-module-intellisense
+dsznajder.es7-react-js-snippets
+
+# Python
+KevinRose.vsc-python-indent # Smarter indent
