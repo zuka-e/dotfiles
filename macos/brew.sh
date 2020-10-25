@@ -2,10 +2,17 @@
 
 brew update && brew upgrade
 
+brew install launchctl-completion
 brew install bash-completion
+brew install vagrant-completion
+brew install docker-completion
+brew install docker-compose-completion
+brew install yarn-completion
+brew install pip-completion
 brew install openssl
 brew install tree
 brew install pstree
+brew install htop
 brew install wget
 brew install git
 brew install tmux
