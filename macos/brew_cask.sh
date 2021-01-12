@@ -2,13 +2,18 @@
 
 brew update && brew upgrade
 
-brew cask install karabiner-elements
-brew cask install google-chrome
-brew cask install visual-studio-code
-brew cask install docker
-brew cask install virtualbox
-brew cask install vagrant
+brew install --cask karabiner-elements
+brew install --cask google-chrome
+brew install --cask libreoffice
+brew install --cask visual-studio-code
+brew install --cask docker
+brew install --cask virtualbox
+brew install --cask vagrant
 
-brew cask install kindle
-brew cask install send-anywhere
-brew cask install iina
+brew install --cask android-file-transfer
+brew install --cask skype
+brew install --cask slack
+brew install --cask clipy
+brew install --cask kindle
+brew install --cask send-anywhere
+brew install --cask iina

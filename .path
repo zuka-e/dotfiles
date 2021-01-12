@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH="/usr/local/sbin:$PATH"
+
 # [ Virtual_Env ]
 # Judge if the command exists, discard stdout and stderr
 if type nodenv > /dev/null 2>&1; then
