@@ -28,7 +28,7 @@ function sync_history {
   history -r # Read from HISTFILE and set as the current history
 }
 # PROMPT_COMMAND: It'll be run, every time command run
-PROMPT_COMMAND='sync_history'
+PROMPT_COMMAND='sync_history; echo -e "\n\033[1;35m"$(date "+%Y/%m/%d(%a) %H:%M:%S")"\033[0m"' 
 shopt -u histappend # Not write HISTFILE when session is closed
 
 #[ Command_Extension ]
