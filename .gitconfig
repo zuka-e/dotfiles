@@ -22,6 +22,8 @@
   s = status
 
 [user]
+	name = zuka-e
+	email = 52391918+zuka-e@users.noreply.github.com
 
 [color]
   ui = true
