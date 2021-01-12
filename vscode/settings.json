@@ -2,7 +2,7 @@
   "window.title": "${dirty}${activeEditorMedium}",
   "window.zoomLevel": -1,
   "window.restoreWindows": "all",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "tab.activeBorder": "#00ff6a",
@@ -22,7 +22,11 @@
   "editor.renderControlCharacters": true,
   "editor.wordWrap": "on",
   "editor.tokenColorCustomizations": {
-    "comments": "#fcb4ff"
+    "comments": {
+      "fontStyle": "italic bold",
+      "foreground": "#fcb4ff"
+    },
+    "strings": "#ffff00"
   },
   // "diffEditor.renderSideBySide": false,
   "files.insertFinalNewline": true,
@@ -36,12 +40,14 @@
   // "prettier.singleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "python.pythonPath": "~/.pyenv/shims/python",
+  "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
+  "python.autoComplete.addBrackets": true,
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
@@ -51,5 +57,7 @@
       "color": "#ffaf10",
       "strikethrough": false
     }
-  ]
+  ],
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false
 }
