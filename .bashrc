@@ -27,9 +27,15 @@ function sync_history {
   history -c # Clear a history out of the current bash session
   history -r # Read from HISTFILE and set as the current history
 }
+
+#[ Display_Current_Time ]
+function display_current_time {
+  echo -e "\n\033[1;35m"$(date "+%Y/%m/%d(%a) %H:%M:%S")"\033[0m"
+}
+
 # PROMPT_COMMAND: It'll be run, every time command run
-PROMPT_COMMAND='sync_history; echo -e "\n\033[1;35m"$(date "+%Y/%m/%d(%a) %H:%M:%S")"\033[0m"' 
-shopt -u histappend # Not write HISTFILE when session is closed
+PROMPT_COMMAND='sync_history; display_current_time'
+shopt -s histappend # Not write HISTFILE when session is closed
 
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
