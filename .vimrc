@@ -10,6 +10,7 @@ set number
 set mouse=a
 set clipboard&
 set clipboard^=unnamedplus
+set ttymouse=xterm2
 
 " [ Syntax ]
 " Highlighting syntax

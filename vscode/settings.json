@@ -8,6 +8,7 @@
     "tab.activeBorder": "#00ff6a",
     "editor.background": "#000000"
   },
+  "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
@@ -16,9 +17,16 @@
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
+  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "intelephense.diagnostics.undefinedTypes": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
+  "files.associations": { "*.module": "php" },
   "editor.quickSuggestions": true,
   "editor.suggestSelection": "first",
-  "[markdown]": { "editor.quickSuggestions": true },
+  "[markdown]": {
+    "editor.quickSuggestions": true,
+    "editor.formatOnSave": false
+  },
   "editor.renderControlCharacters": true,
   "editor.wordWrap": "on",
   "editor.tokenColorCustomizations": {
@@ -36,8 +44,8 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
-  // "prettier.jsxSingleQuote": true,
-  // "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "python.pythonPath": "~/.pyenv/shims/python",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
@@ -59,5 +67,6 @@
     }
   ],
   "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false
+  "telemetry.enableCrashReporter": false,
+  "diffEditor.ignoreTrimWhitespace": false
 }
