@@ -5,8 +5,14 @@
   "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
+    "editor.background": "#000000",
     "tab.activeBorder": "#00ff6a",
-    "editor.background": "#000000"
+    "editor.selectionBackground": "#ffff0056",
+    "editor.selectionHighlightBackground": "#ffff0065",
+    "editor.selectionHighlightBorder": "#00aeff",
+    "editor.findMatchBackground": "#ff00ff62",
+    "editor.findMatchHighlightBackground": "#25fff48a",
+    "editor.findMatchBorder": "#ff0000"
   },
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
