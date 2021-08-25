@@ -7,12 +7,13 @@
   "workbench.colorCustomizations": {
     "editor.background": "#000000",
     "tab.activeBorder": "#00ff6a",
-    "editor.selectionBackground": "#ffff0056",
+    "editor.selectionBackground": "#ffff0087",
     "editor.selectionHighlightBackground": "#ffff0065",
     "editor.selectionHighlightBorder": "#00aeff",
     "editor.findMatchBackground": "#ff00ff62",
     "editor.findMatchHighlightBackground": "#25fff48a",
-    "editor.findMatchBorder": "#ff0000"
+    "editor.findMatchBorder": "#ff0000",
+    "selection.background": "#0091ff"
   },
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
