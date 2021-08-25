@@ -79,5 +79,6 @@
   ],
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
