@@ -17,7 +17,6 @@
 
 `install.sh`はホームディレクトリに各シンボリックリンク (`.bash_profile`など) を作成します。**ただし既にファイルが存在する場合は上書きされます。**
 
-
 ```bash :install.sh
 # Make symlinks
 (cd ~/dotfiles/; # Inside '()', a Sub-shell works
