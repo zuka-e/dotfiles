@@ -7,12 +7,13 @@
   "workbench.colorCustomizations": {
     "editor.background": "#000000",
     "tab.activeBorder": "#00ff6a",
-    "editor.selectionBackground": "#ffff0056",
+    "editor.selectionBackground": "#ffff0087",
     "editor.selectionHighlightBackground": "#ffff0065",
     "editor.selectionHighlightBorder": "#00aeff",
     "editor.findMatchBackground": "#ff00ff62",
     "editor.findMatchHighlightBackground": "#25fff48a",
-    "editor.findMatchBorder": "#ff0000"
+    "editor.findMatchBorder": "#ff0000",
+    "selection.background": "#0091ff"
   },
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
@@ -26,6 +27,7 @@
   "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.diagnostics.undefinedFunctions": false,
+  "intelephense.diagnostics.typeErrors": false,
   "files.associations": { "*.module": "php" },
   "editor.quickSuggestions": true,
   "editor.suggestSelection": "first",
@@ -33,6 +35,10 @@
     "editor.quickSuggestions": true,
     "editor.formatOnSave": false
   },
+  "markdown.extension.toc.updateOnSave": false,
+  "markdown.preview.breaks": true,
+  "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+  "markdown-preview-enhanced.breakOnSingleNewLine": false,
   "editor.renderControlCharacters": true,
   "editor.wordWrap": "on",
   "editor.tokenColorCustomizations": {
@@ -74,5 +80,6 @@
   ],
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
