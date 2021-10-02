@@ -25,3 +25,6 @@ brew install yarn
 brew install nodenv
 brew install pyenv
 brew install rbenv
+
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
