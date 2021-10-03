@@ -40,6 +40,9 @@ shopt -s histappend # Not write HISTFILE when session is closed
 #[ Command_Extension ]
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+#[ Terraform Completion ]
+complete -C /usr/local/bin/terraform terraform
+
 #[ Bash_Prompt ]
 PS1='\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
 # \d: Display date formatted-like "Sun Feb 14"

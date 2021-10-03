@@ -25,6 +25,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.typeErrors": false,
@@ -68,6 +69,9 @@
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
   "python.autoComplete.addBrackets": true,
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
