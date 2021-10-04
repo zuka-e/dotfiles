@@ -12,7 +12,7 @@ fi
 if type pyenv > /dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PATH:$PYENV_ROOT/bin"
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 if type rbenv > /dev/null 2>&1; then
