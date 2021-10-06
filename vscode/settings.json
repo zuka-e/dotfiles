@@ -15,6 +15,7 @@
     "editor.findMatchBorder": "#ff0000",
     "selection.background": "#0091ff"
   },
+  "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
   "editor.tabSize": 2,
