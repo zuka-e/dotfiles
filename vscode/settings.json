@@ -38,6 +38,9 @@
     "editor.formatOnSave": false
   },
   "markdown.extension.toc.updateOnSave": false,
+  "markdownlint.config": {
+    "MD033": false
+  },
   "markdown.preview.breaks": true,
   "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
