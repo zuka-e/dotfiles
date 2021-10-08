@@ -3,6 +3,7 @@
 brew update && brew upgrade
 
 brew install --cask karabiner-elements
+brew install --cask google-japanese-ime
 brew install --cask google-chrome
 brew install --cask libreoffice
 brew install --cask visual-studio-code
