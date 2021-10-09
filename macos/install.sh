@@ -35,3 +35,8 @@ defaults write com.apple.dock autohide-delay -float 0.5
 # Reload
 killall Dock
 
+#------------------------------------------------
+# Install Homebrew packages
+#------------------------------------------------
+
+source ./brew.sh
