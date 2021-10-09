@@ -15,9 +15,15 @@ brew install --cask virtualbox
 brew install --cask vagrant
 brew install --cask visual-studio-code
 
+# Database
+brew install --cask sequel-ace
+brew install --cask mysqlworkbench
+brew install --cask pgadmin4
+
 # Communication
 brew install --cask slack
 brew install --cask skype
+brew install --cask microsoft-teams
 
 # Miscellaneous
 brew install --cask android-file-transfer

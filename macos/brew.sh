@@ -4,7 +4,9 @@ brew update && brew upgrade
 
 # Completion
 brew install bash-completion@2
+brew install brew-cask-completion
 brew install launchctl-completion
+brew install open-completion
 brew install vagrant-completion
 brew install docker-completion
 brew install docker-compose-completion
