@@ -77,3 +77,27 @@ brew install --cask android-file-transfer
 brew install --cask kindle
 brew install --cask send-anywhere
 brew install --cask iina
+
+#------------------------------------------------
+# Change Shell into local Bash
+#------------------------------------------------
+
+usr_bash='/usr/local/bin/bash'
+etc_shells='/etc/shells'
+
+if [[ $SHELL != $usr_bash && "$(which bash)" = $usr_bash ]]; then
+  if ! grep $usr_bash '/etc/shells' > /dev/null 2>&1; then
+    echo "Enter the password to add '${usr_bash}' to '${etc_shells}'"
+    echo $usr_bash | sudo tee -a /etc/shells > /dev/null
+
+    if [[ $? == 0 ]]; then
+      echo "Added $usr_bash to '/etc/shells'"
+    else
+      echo "Canceled the operation"
+    fi
+  fi
+
+  chsh -s $usr_bash
+fi
+
+unset usr_bash etc_shells
