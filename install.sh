@@ -12,6 +12,9 @@
   for file in ${linked_files[@]}; do
     ln -sfv ~/dotfiles/"${file}" ~/"${file}";
   done;
+
+  # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
+  ln -sfv ~/dotfiles/.config/karabiner ~/.config
 )
 
 source ~/.bash_profile
