@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-brew update && brew upgrade
+brew update && brew upgrade && brew doctor
 
 #------------------------------------------------
 # Formulae
