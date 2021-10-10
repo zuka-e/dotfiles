@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# derivative of 'ls'
+# Derivative of 'ls'
 if [[ "$(uname)" == "Linux" ]]; then
   v="--sort=version" # (-v) Natural sort of (version) numbers within text
   A="--almost-all" # (-A) Show 'dotfiles' without . and ..
@@ -10,17 +10,17 @@ if [[ "$(uname)" == "Linux" ]]; then
   strftime='--time-style="+%Y-%m-%d %H:%M:%S"' # Format time
   alias ll="ls -l --all --human-readable $strftime" # (-lah) Print sizes with unit
   alias llf="ll --inode --size" # (-is) Show index number, allocated size
-  alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
-  alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
-  alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
+  alias llat="llt --sort=time --time=atime" # (-tu) Sort by Access time
+  alias llmt="llt --sort=time" # (-t) Sort by Modification time
+  alias llct="llt --sort=time --time=ctime" # Sort by Change-status time
 elif [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -AG" # Use'LSCOLORS' for Mac
   alias lf="ls -F"
-  alias ll="ls -lahT" # -T  Display complete time
+  alias ll="ls -lahT" # -T: Display complete time
   alias llf="ll -is" # Show index number, allocated size
-  alias llat="ll -tu" # sort by, and show, access time
-  alias llmt="ll -t" # sort by, and show,  modification time
-  alias llct="ll -tc" # sort by, and show, status change time
+  alias llat="ll -tu" # Sort by Access time
+  alias llmt="ll -t" # Sort by Modification time
+  alias llct="ll -tc" # Sort by Change-status time
 fi
 
 # Judge if 'exa' exists
@@ -41,7 +41,7 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
-# equivalent 'ls -1A', but output is path, not names
+# Equivalent to 'ls -1A', but the output is filepath
 alias pathls="fd --hidden --max-depth 1 '.'"
 
 # Output line number & Mark up the matching text
@@ -49,7 +49,7 @@ alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
 alias fgrep="fgrep -n --color=auto"
 
-# Display the file path even when only one file is searched
+# Display the filepath even if only one file is searched
 alias rg="rg --with-filename" # rg: alternative to grep
 
 # Use extended regular expression
