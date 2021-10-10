@@ -13,6 +13,7 @@ if [[ "$(uname)" == "Linux" ]]; then
   alias llat="llt --sort=time --time=atime" # (-tu) Sort by Access time
   alias llmt="llt --sort=time" # (-t) Sort by Modification time
   alias llct="llt --sort=time --time=ctime" # Sort by Change-status time
+  unset v A F strftime
 elif [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -AG" # Use'LSCOLORS' for Mac
   alias lf="ls -F"
@@ -31,6 +32,7 @@ if type exa > /dev/null 2>&1; then
   alias llat="$ll --time=accessed --sort=accessed"
   alias llmt="$ll --time=modified --sort=modified"
   alias llct="$ll --time=changed --sort=changed"
+  unset ll
 fi
 
 # When 'cd' run, 'ls' run too
