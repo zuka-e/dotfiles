@@ -4,22 +4,29 @@
   aa = add -A
   b = branch
   c = commit
+  cm = commit -m
   cf = config
   cfle = config --local user.email
   cfln = config --local user.name
   co = checkout
+  cp = cherry-pick
   d = diff
   f = fetch
   l = log
+  ls = log --stat
   m = merge
   p = push
   po = push origin
+  pl = pull
   plo = pull origin
   r = reset
   rs = reset --soft
+  rsh = reset --soft HEAD^
   rh = reset --hard
+  rhh = reset --hard HEAD^
   rb = rebase -i
   s = status
+  sl = shortlog
 
 [user]
 	name = zuka-e
