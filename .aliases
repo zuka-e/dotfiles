@@ -35,6 +35,16 @@ if type exa > /dev/null 2>&1; then
   unset ll
 fi
 
+if type fd > /dev/null 2>&1; then
+  # Equivalent to 'ls -1A', but the output is filepath
+  alias pathls="fd --max-depth 1 '.'"
+fi
+
+if type rg > /dev/null 2>&1; then
+  # Display the filepath even if only one file is searched
+  alias rg="rg --with-filename"
+fi
+
 # When 'cd' run, 'ls' run too
 function cdls() { \cd "$@" && ls; }
 alias cd="cdls"
@@ -43,16 +53,10 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
-# Equivalent to 'ls -1A', but the output is filepath
-alias pathls="fd --hidden --max-depth 1 '.'"
-
 # Output line number & Mark up the matching text
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
 alias fgrep="fgrep -n --color=auto"
-
-# Display the filepath even if only one file is searched
-alias rg="rg --with-filename" # rg: alternative to grep
 
 # Use extended regular expression
 alias esed="sed -E"
