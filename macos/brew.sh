@@ -25,6 +25,7 @@ brew install pstree
 brew install htop
 brew install wget
 brew install tmux
+brew install rsync
 brew install git
 
 # Advanced Command
