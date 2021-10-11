@@ -1,5 +1,5 @@
 {
-  "window.title": "${dirty}${activeEditorMedium}",
+  "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
   "window.restoreWindows": "all",
   "workbench.colorTheme": "Monokai",
@@ -15,6 +15,7 @@
     "editor.findMatchBorder": "#ff0000",
     "selection.background": "#0091ff"
   },
+  "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorStyle": "block",
   "editor.tabSize": 2,
@@ -25,6 +26,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.typeErrors": false,
@@ -36,6 +38,9 @@
     "editor.formatOnSave": false
   },
   "markdown.extension.toc.updateOnSave": false,
+  "markdownlint.config": {
+    "MD033": false
+  },
   "markdown.preview.breaks": true,
   "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
@@ -68,6 +73,9 @@
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
   "python.autoComplete.addBrackets": true,
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },

@@ -2,6 +2,7 @@
 
 # Make a symlink (f:forced v:verbose)
 ln -sfv ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sfv ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # Install extensions
 path=~/dotfiles/vscode/extensions

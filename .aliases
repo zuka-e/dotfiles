@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# derivative of 'ls'
+# Derivative of 'ls'
 if [[ "$(uname)" == "Linux" ]]; then
   v="--sort=version" # (-v) Natural sort of (version) numbers within text
   A="--almost-all" # (-A) Show 'dotfiles' without . and ..
@@ -10,17 +10,18 @@ if [[ "$(uname)" == "Linux" ]]; then
   strftime='--time-style="+%Y-%m-%d %H:%M:%S"' # Format time
   alias ll="ls -l --all --human-readable $strftime" # (-lah) Print sizes with unit
   alias llf="ll --inode --size" # (-is) Show index number, allocated size
-  alias llat="llt --sort=time --time=atime" # (-tu) sort by, and show, access time
-  alias llmt="llt --sort=time" # (-t) sort by, and show,  modification time
-  alias llct="llt --sort=time --time=ctime" # sort by, and show, status change time
+  alias llat="llt --sort=time --time=atime" # (-tu) Sort by Access time
+  alias llmt="llt --sort=time" # (-t) Sort by Modification time
+  alias llct="llt --sort=time --time=ctime" # Sort by Change-status time
+  unset v A F strftime
 elif [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -AG" # Use'LSCOLORS' for Mac
   alias lf="ls -F"
-  alias ll="ls -lahT" # -T  Display complete time
+  alias ll="ls -lahT" # -T: Display complete time
   alias llf="ll -is" # Show index number, allocated size
-  alias llat="ll -tu" # sort by, and show, access time
-  alias llmt="ll -t" # sort by, and show,  modification time
-  alias llct="ll -tc" # sort by, and show, status change time
+  alias llat="ll -tu" # Sort by Access time
+  alias llmt="ll -t" # Sort by Modification time
+  alias llct="ll -tc" # Sort by Change-status time
 fi
 
 # Judge if 'exa' exists
@@ -31,6 +32,25 @@ if type exa > /dev/null 2>&1; then
   alias llat="$ll --time=accessed --sort=accessed"
   alias llmt="$ll --time=modified --sort=modified"
   alias llct="$ll --time=changed --sort=changed"
+  unset ll
+fi
+
+if type fd > /dev/null 2>&1; then
+  # -I: Don't respect ignore files
+  # -H: Include hidden files and directories
+  alias fd="fd --no-ignore --hidden" # (-uu)
+  # Equivalent to 'ls -1A', but the output is filepath
+  alias pathls="fd --max-depth 1 '.'"
+fi
+
+if type rg > /dev/null 2>&1; then
+  alias ripgrep="rg"
+  # --no-ignore: Don't respect ignore files
+  # -.: Include hidden files and directories
+  # -S: Case-insensitive if the pattern is all lowercase
+  # -H: Display the filepath even if only one file is searched
+  alias rg="rg -no-ignore --hidden --smart-case --with-filename"
+  alias frg="rg --fixed-strings"
 fi
 
 # When 'cd' run, 'ls' run too
@@ -41,25 +61,37 @@ alias cd="cdls"
 function mkdircd() { \mkdir -p "$@" && cd "$_"; }
 alias mkdir="mkdircd"
 
-# equivalent 'ls -1A', but output is path, not names
-alias pathls="fd --hidden --max-depth 1 '.'"
-
 # Output line number & Mark up the matching text
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
 alias fgrep="fgrep -n --color=auto"
-
-# Display the file path even when only one file is searched
-alias rg="rg --with-filename" # rg: alternative to grep
 
 # Use extended regular expression
 alias esed="sed -E"
 
 # Opts: Interactive, Preserve-attributes, Recursive, Verbose
 alias cp="cp -iprv"
-alias scp="scp -rpv"
+alias scp="echo Deprecated! Use \'rsync\' etc instead.; #"
 alias mv="mv -iv"
 alias rm="rm -irv"
+
+#------------------------------------------------
+# Rsync
+#------------------------------------------------
+# -a, --archive          archive mode; same as -rlptgoD (no -H)
+  # -r, --recursive        recurse into directories
+  # -l, --links            copy symlinks as symlinks
+  # -p, --perms            preserve permissions
+  # -t, --times            preserve times
+  # -g, --group            preserve group
+  #     --devices          preserve device files (super-user only)
+  #     --specials         preserve special files
+  # -o, --owner            preserve owner (super-user only)
+  # -D                     same as --devices --specials
+  # -H, --hard-links       preserve hard links
+# -u, --update           skip files that are newer on the receiver
+# -v, --verbose          increase verbosity
+alias rsync="rsync --archive --update --verbose"
 
 # Short names
 alias sail='bash vendor/bin/sail'

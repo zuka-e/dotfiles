@@ -1,0 +1,30 @@
+[
+  {
+    "key": "shift+cmd+w",
+    "command": "-workbench.action.closeWindow" // Disabled
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.switchWindow"
+  },
+  {
+    "key": "cmd+m",
+    "command": "-markdown.extension.editing.toggleMath",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "deleteWordPartRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "deleteAllLeft",
+    "when": "textInputFocus && !editorReadonly"
+  }
+]
