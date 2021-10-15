@@ -47,11 +47,15 @@ brew install rbenv
 # brew install libzip
 # PHP_RPATHS="$(brew --prefix bzip2)" PHP_BUILD_CONFIGURE_OPTS="--with-bz2=$(brew --prefix bzip2) --with-iconv=$(brew --prefix libiconv)" phpenv install 8.0.9
 
+# AWS
+brew install awscli
+
 # Terraform
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 
 # Miscellaneous
+brew install ffmpeg
 brew install yarn
 
 #------------------------------------------------
