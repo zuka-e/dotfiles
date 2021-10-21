@@ -55,7 +55,10 @@
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "files.insertFinalNewline": true,
-  "files.associations": { "*.module": "php" },
+  "files.associations": {
+    ".env.*": "env",
+    "*.module": "php"
+  },
   "files.watcherExclude": { "**/node_modules/**": true },
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
@@ -84,5 +87,8 @@
   "markdown.preview.breaks": true,
   "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
-  "remote.extensionKind": { "ms-azuretools.vscode-docker": "workspace" }
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "material-ui-snippets.showNotesOnStartup": false
 }
