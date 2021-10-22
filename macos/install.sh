@@ -9,7 +9,7 @@
 # Always display the scroll-bar
 defaults write -g AppleShowScrollBars -string "Always"
 # When the scrollbar is clicked, jump where clicked
-defaults write -g  AppleScrollerPagingBehavior -bool true
+defaults write -g AppleScrollerPagingBehavior -bool true
 
 #------------------------------------------------
 # Trackpad
@@ -17,8 +17,11 @@ defaults write -g  AppleScrollerPagingBehavior -bool true
 
 # Tap is equivalent to click
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-# Enable transition between applications with four fingers
+# Enable App transition by swiping horizontally with four fingers
 defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+# Enable App Expose by swiping down with four fingers
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
 # Enable dragging with three fingers
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 # Set the scroll direction to "Natural"
