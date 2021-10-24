@@ -56,6 +56,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "files.insertFinalNewline": true,
   "files.associations": {
+    "**/dotfiles/vscode/**/*.json": "jsonc",
     ".env.*": "env",
     "*.module": "php"
   },
