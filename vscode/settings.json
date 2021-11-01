@@ -1,9 +1,12 @@
 {
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "window.openFilesInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
   "window.restoreWindows": "all",
-  "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
     "editor.background": "#000000",
     "tab.activeBorder": "#00ff6a",
@@ -15,37 +18,6 @@
     "editor.findMatchBorder": "#ff0000",
     "selection.background": "#0091ff"
   },
-  "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
-  "terminal.integrated.cursorBlinking": true,
-  "editor.cursorStyle": "block",
-  "editor.tabSize": 2,
-  "editor.minimap.enabled": false,
-  "editor.hover.enabled": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[python]": { "editor.defaultFormatter": "ms-python.python" },
-  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
-  "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
-  "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.diagnostics.undefinedFunctions": false,
-  "intelephense.diagnostics.typeErrors": false,
-  "files.associations": { "*.module": "php" },
-  "editor.quickSuggestions": true,
-  "editor.suggestSelection": "first",
-  "[markdown]": {
-    "editor.quickSuggestions": true,
-    "editor.formatOnSave": false
-  },
-  "markdown.extension.toc.updateOnSave": false,
-  "markdownlint.config": {
-    "MD033": false
-  },
-  "markdown.preview.breaks": true,
-  "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
-  "markdown-preview-enhanced.breakOnSingleNewLine": false,
-  "editor.renderControlCharacters": true,
-  "editor.wordWrap": "on",
   "editor.tokenColorCustomizations": {
     "comments": {
       "fontStyle": "italic bold",
@@ -53,17 +25,52 @@
     },
     "strings": "#ffff00"
   },
-  // "diffEditor.renderSideBySide": false,
-  "files.insertFinalNewline": true,
-  "files.watcherExclude": {
-    "**/node_modules/**": true
+  "better-comments.tags": [
+    {
+      "tag": "//",
+      "color": "#ffaf10",
+      "strikethrough": false
+    }
+  ],
+  "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
+  "terminal.integrated.cursorBlinking": true,
+  "editor.renderControlCharacters": true,
+  "editor.minimap.enabled": false,
+  "editor.cursorStyle": "block",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.hover.enabled": true,
+  "editor.quickSuggestions": true,
+  "editor.suggestSelection": "first",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": { "editor.defaultFormatter": "ms-python.python" },
+  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
+  "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
+  "[markdown]": {
+    "editor.quickSuggestions": true,
+    "editor.formatOnSave": false
   },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "**/dotfiles/vscode/**/*.json": "jsonc",
+    ".env.*": "env",
+    "*.module": "php"
+  },
+  "files.watcherExclude": { "**/node_modules/**": true },
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
-  "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "intelephense.diagnostics.undefinedTypes": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
+  "intelephense.diagnostics.typeErrors": false,
   "python.pythonPath": "~/.pyenv/shims/python",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.analysis.typeCheckingMode": "strict",
@@ -76,18 +83,13 @@
   "terraform-ls.experimentalFeatures": {
     "validateOnSave": true
   },
+  "markdown.extension.toc.updateOnSave": false,
+  "markdownlint.config": { "MD033": false },
+  "markdown.preview.breaks": true,
+  "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+  "markdown-preview-enhanced.breakOnSingleNewLine": false,
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
-  "better-comments.tags": [
-    {
-      "tag": "//",
-      "color": "#ffaf10",
-      "strikethrough": false
-    }
-  ],
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "material-ui-snippets.showNotesOnStartup": false
 }

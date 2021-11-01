@@ -49,7 +49,7 @@ if type rg > /dev/null 2>&1; then
   # -.: Include hidden files and directories
   # -S: Case-insensitive if the pattern is all lowercase
   # -H: Display the filepath even if only one file is searched
-  alias rg="rg -no-ignore --hidden --smart-case --with-filename"
+  alias rg="rg --no-ignore --hidden --smart-case --with-filename"
   alias frg="rg --fixed-strings"
 fi
 

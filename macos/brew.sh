@@ -38,12 +38,24 @@ brew install ripgrep  # (rg) Alt grep
 brew install nodenv
 brew install pyenv
 brew install rbenv
+# The following processes are probably required for phpenv
+# curl -L https://raw.githubusercontent.com/phpenv/phpenv-installer/master/bin/phpenv-installer | bash
+# brew install bzip2
+# brew install libiconv
+# brew install oniguruma
+# brew install tidy-html5
+# brew install libzip
+# PHP_RPATHS="$(brew --prefix bzip2)" PHP_BUILD_CONFIGURE_OPTS="--with-bz2=$(brew --prefix bzip2) --with-iconv=$(brew --prefix libiconv)" phpenv install 8.0.9
+
+# AWS
+brew install awscli
 
 # Terraform
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 
 # Miscellaneous
+brew install ffmpeg
 brew install yarn
 
 #------------------------------------------------
