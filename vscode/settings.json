@@ -1,6 +1,5 @@
 {
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "off",
   "window.openFilesInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
