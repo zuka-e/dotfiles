@@ -57,7 +57,8 @@
   "files.associations": {
     "**/dotfiles/vscode/**/*.json": "jsonc",
     ".env.*": "env",
-    "*.module": "php"
+    "*.module": "php",
+    "*.hcl": "terraform"
   },
   "files.watcherExclude": { "**/node_modules/**": true },
   "html.format.extraLiners": "",
