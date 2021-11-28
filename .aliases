@@ -38,7 +38,9 @@ fi
 if type fd > /dev/null 2>&1; then
   # -I: Don't respect ignore files
   # -H: Include hidden files and directories
-  alias fd="fd --no-ignore --hidden" # (-uu)
+  type fdfind > /dev/null 2>&1 \
+    && alias fd="fdfind --no-ignore --hidden" \
+    || alias fd="fd --no-ignore --hidden" # (-uu)
   # Equivalent to 'ls -1A', but the output is filepath
   alias pathls="fd --max-depth 1 '.'"
 fi
