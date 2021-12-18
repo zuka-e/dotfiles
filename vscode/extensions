@@ -16,16 +16,12 @@ jeff-hykin.better-dockerfile-syntax # Dockerfile
 mgmcdermott.vscode-language-babel # ES201x, React JSX, Flow and GraphQL.
 
 # Editor
+ms-vscode-remote.remote-ssh # SSH
 aaron-bond.better-comments # create many kinds of colorized comments
-wmaurer.change-case # ()>change case xxx)
+wmaurer.change-case # (Command Palette -> Change Case xxx)
 quicktype.quicktype # paste JSON as code
-rogalmic.bash-debug # Debugger
 christian-kohler.path-intellisense # Path completion
 esbenp.prettier-vscode # Formatter for HTML, JS, etc
-
-# Previewer
-chrmarti.regex # Regular expressions
-shd101wyy.markdown-preview-enhanced # Markdown
 
 # Git
 donjayamanne.githistory
@@ -33,18 +29,23 @@ eamodio.gitlens # View all info from sidebar
 
 # Markdown
 DavidAnson.vscode-markdownlint
+shd101wyy.markdown-preview-enhanced
 
 # Comprehensive language supports
 jebbs.plantuml # PlantUML
 yzhang.markdown-all-in-one # Markdown
 mads-hartmann.bash-ide-vscode # Bash
-ms-azuretools.vscode-docker #Docker
+ms-azuretools.vscode-docker # Docker
 ms-vscode-remote.remote-containers # Docker containers
 toba.vsfire # Firebase
 ms-vscode.vscode-typescript-next # TS
-ms-dotnettools.csharp # C#
 ms-python.python # Python
 ms-python.vscode-pylance # Python language server
+hashicorp.terraform # Terraform
+threadheap.serverless-ide-vscode # Serverless
+
+# Bash
+rogalmic.bash-debug # Debugger
 
 # HTML CSS
 bradgashler.htmltagwrap # select word and (option + W)

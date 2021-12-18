@@ -77,7 +77,6 @@
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
-  "python.autoComplete.addBrackets": true,
   "terraform-ls.experimentalFeatures": {
     "validateOnSave": true
   },
