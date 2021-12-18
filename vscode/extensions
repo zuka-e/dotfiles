@@ -8,7 +8,6 @@ VisualStudioExptTeam.vscodeintellicode
 shardulm94.trailing-spaces # Spaces
 oderwat.indent-rainbow # Each tab step
 naumovs.color-highlight # Web colors
-CoenraadS.bracket-pair-colorizer # Bracket pair
 irongeek.vscode-env # .env
 IBM.output-colorizer # Logfile
 mechatroner.rainbow-csv # CSV
