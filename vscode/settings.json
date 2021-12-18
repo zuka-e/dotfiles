@@ -7,29 +7,27 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
-    "editor.background": "#000000",
+    "editor.background": "#000",
     "tab.activeBorder": "#00ff6a",
     "editor.selectionBackground": "#ffff0087",
     "editor.selectionHighlightBackground": "#ffff0065",
     "editor.selectionHighlightBorder": "#00aeff",
-    "editor.findMatchBackground": "#ff00ff62",
-    "editor.findMatchHighlightBackground": "#25fff48a",
-    "editor.findMatchBorder": "#ff0000",
+    "editor.findMatchBackground": "#da86da62",
+    "editor.findMatchHighlightBackground": "#d2f8f68a",
+    "editor.findMatchBorder": "#f00",
     "selection.background": "#0091ff"
   },
+  "editor.bracketPairColorization.enabled": true,
   "editor.tokenColorCustomizations": {
-    "comments": {
-      "fontStyle": "italic bold",
-      "foreground": "#fcb4ff"
-    },
-    "strings": "#ffff00"
+    "comments": { "foreground": "#fcb4ff", "fontStyle": "italic bold" },
+    "strings": "#ff0"
   },
   "better-comments.tags": [
-    {
-      "tag": "//",
-      "color": "#ffaf10",
-      "strikethrough": false
-    }
+    { "tag": "!", "color": "#f00", "underline": true },
+    { "tag": "?", "color": "#0ff", "underline": true },
+    { "tag": "*", "color": "#0f0", "underline": true },
+    { "tag": ":", "color": "#ff0", "underline": true },
+    { "tag": "//", "color": "#00f", "backgroundColor": "#0f0" }
   ],
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
@@ -79,7 +77,6 @@
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
-  "python.autoComplete.addBrackets": true,
   "terraform-ls.experimentalFeatures": {
     "validateOnSave": true
   },
