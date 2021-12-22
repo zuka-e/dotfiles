@@ -29,6 +29,7 @@
     { "tag": ":", "color": "#ff0", "underline": true },
     { "tag": "//", "color": "#00f", "backgroundColor": "#0f0" }
   ],
+  "better-comments.multilineComments": false,
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
   "editor.renderControlCharacters": true,
