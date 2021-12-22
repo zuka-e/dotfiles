@@ -1,6 +1,6 @@
 {
   "telemetry.telemetryLevel": "off",
-  "window.openFilesInNewWindow": "on",
+  "window.openFoldersInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
   "window.restoreWindows": "all",
