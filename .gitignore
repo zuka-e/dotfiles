@@ -21,4 +21,3 @@ env/
 
 # VSCode remote container
 .devcontainer/
-.vscode/
