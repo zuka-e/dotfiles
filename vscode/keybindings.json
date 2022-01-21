@@ -1,9 +1,5 @@
 [
   {
-    "key": "shift+cmd+w",
-    "command": "-workbench.action.closeWindow" // Disabled
-  },
-  {
     "key": "cmd+t",
     "command": "workbench.action.switchWindow"
   },
