@@ -60,6 +60,12 @@
     "*.hcl": "terraform"
   },
   "files.watcherExclude": { "**/node_modules/**": true },
+  "json.schemas": [
+    {
+      "fileMatch": ["cypress.json"],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ],
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
