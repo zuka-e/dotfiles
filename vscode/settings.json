@@ -95,5 +95,7 @@
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
-  "material-ui-snippets.showNotesOnStartup": false
+  "remote.containers.dotfiles.repository": "https://github.com/zuka-e/dotfiles.git",
+  "remote.containers.dotfiles.targetPath": "~/dotfiles",
+  "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh"
 }
