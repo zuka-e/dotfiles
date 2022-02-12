@@ -1,8 +1,17 @@
 # VSCode Extensions
 
+# Theme
 dracula-theme.theme-dracula # Color theme
 PKief.material-icon-theme # Icons of file and directory
+
+# Remote environment
+ms-vscode-remote.remote-ssh # SSH
+ms-vscode-remote.remote-containers # Docker containers
+
+# Intellisense
 VisualStudioExptTeam.vscodeintellicode
+christian-kohler.path-intellisense # Path
+bradlc.vscode-tailwindcss # Tailwind CSS
 
 # Highlighting
 shardulm94.trailing-spaces # Spaces
@@ -13,49 +22,48 @@ IBM.output-colorizer # Logfile
 mechatroner.rainbow-csv # CSV
 jeff-hykin.better-shellscript-syntax # Shellscript
 jeff-hykin.better-dockerfile-syntax # Dockerfile
-mgmcdermott.vscode-language-babel # ES201x, React JSX, Flow and GraphQL.
 
-# Editor
-ms-vscode-remote.remote-ssh # SSH
+# Utilities
 aaron-bond.better-comments # create many kinds of colorized comments
 wmaurer.change-case # (Command Palette -> Change Case xxx)
 quicktype.quicktype # paste JSON as code
-christian-kohler.path-intellisense # Path completion
-esbenp.prettier-vscode # Formatter for HTML, JS, etc
 
 # Git
 donjayamanne.githistory
 eamodio.gitlens # View all info from sidebar
 
-# Markdown
-DavidAnson.vscode-markdownlint
-shd101wyy.markdown-preview-enhanced
-
-# Comprehensive language supports
-jebbs.plantuml # PlantUML
-yzhang.markdown-all-in-one # Markdown
-mads-hartmann.bash-ide-vscode # Bash
-ms-azuretools.vscode-docker # Docker
-ms-vscode-remote.remote-containers # Docker containers
-toba.vsfire # Firebase
-ms-vscode.vscode-typescript-next # TS
-ms-python.python # Python
-ms-python.vscode-pylance # Python language server
-hashicorp.terraform # Terraform
-threadheap.serverless-ide-vscode # Serverless
+# Docker
+ms-azuretools.vscode-docker
 
 # Bash
+mads-hartmann.bash-ide-vscode
 rogalmic.bash-debug # Debugger
 
 # HTML CSS
 bradgashler.htmltagwrap # select word and (option + W)
 ecmel.vscode-html-css # Class, Id attribute completion.
-Compulim.compulim-vscode-closetag # close last opened tag (option + .)
 
-# Javascript
-dbaeumer.vscode-eslint
-leizongmin.node-module-intellisense
+# JS/TS
+ms-vscode.vscode-typescript-next # TS
+dbaeumer.vscode-eslint # Linter
+esbenp.prettier-vscode # Formatter including HTML, JSON, Markdown, etc
 dsznajder.es7-react-js-snippets
 
 # Python
+ms-python.python
+ms-python.vscode-pylance # Python language server
 KevinRose.vsc-python-indent # Smarter indent
+
+# Terraform
+hashicorp.terraform
+
+# Serverless
+threadheap.serverless-ide-vscode
+
+# Markdown
+yzhang.markdown-all-in-on
+DavidAnson.vscode-markdownlint
+shd101wyy.markdown-preview-enhanced
+
+# PlantUML
+jebbs.plantuml
