@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#[ Bash_Prompt ]
+# ref. man bash (-> PROMPTING)
+PS1='\033[1;35m\D{%Y/%m/%d(%a) %H:%M:%S}\033[0m\n\[\033[1;36m\]\u\[\033[0;37m\]@\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\n\$ '
+
 #[ Source other dotfiles ]
 execute_files=(~/dotfiles/.{aliases,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do
@@ -28,13 +32,8 @@ function sync_history {
   history -r # Read from HISTFILE and set as the current history
 }
 
-#[ Display_Current_Time ]
-function display_current_time {
-  echo -e "\n\033[1;35m"$(date "+%Y/%m/%d(%a) %H:%M:%S")"\033[0m"
-}
-
 # PROMPT_COMMAND: It'll be run, every time command run
-PROMPT_COMMAND='sync_history; display_current_time'
+PROMPT_COMMAND='sync_history;'
 shopt -s histappend # Not write HISTFILE when session is closed
 
 #[ Command_Extension ]
@@ -104,17 +103,3 @@ elif type compctl &>/dev/null; then
   }
   compctl -K _npm_completion npm
 fi
-
-#[ Bash_Prompt ]
-PS1='\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\$ '
-# \d: Display date formatted-like "Sun Feb 14"
-# \h: Hostname before'@'
-# \H: Hostname
-# \t: Time 24-hour-formatted "HH:MM:SS"
-# \T: Time 12-hour-formatted "HH:MM:SS"
-# \@: Time AM-PM-formatted "HH:MM"
-# \u: Username
-# \W: Name of Current-Directory
-# \w: Location of Current-Directory
-# \!: Number of history
-# \#: Number of excuted commands in the current session
