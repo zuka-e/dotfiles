@@ -117,5 +117,6 @@
     // JS/TS
     "dbaeumer.vscode-eslint", // ESLint
     "esbenp.prettier-vscode" // Prettier
-  ]
+  ],
+  "extensions.autoUpdate": false
 }
