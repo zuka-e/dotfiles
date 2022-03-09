@@ -73,7 +73,6 @@
   "prettier.jsxSingleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "python.pythonPath": "~/.pyenv/shims/python",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
