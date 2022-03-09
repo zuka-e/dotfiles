@@ -96,7 +96,7 @@ alias rm="rm -irv"
 alias rsync="rsync --archive --update --verbose"
 
 # Short names
-alias sail='bash vendor/bin/sail'
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # Enable alias
 alias sudo="sudo "
