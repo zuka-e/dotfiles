@@ -27,7 +27,7 @@
     { "tag": "?", "color": "#0ff", "underline": true },
     { "tag": "*", "color": "#0f0", "underline": true },
     { "tag": ":", "color": "#ff0", "underline": true },
-    { "tag": "//", "color": "#00f", "backgroundColor": "#0f0" }
+    { "tag": "//", "color": "#00f", "backgroundColor": "#fff" }
   ],
   "better-comments.multilineComments": false,
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
@@ -62,6 +62,7 @@
   "files.watcherExclude": { "**/node_modules/**": true },
   "json.schemas": [
     {
+      // see: https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment-1
       "fileMatch": ["cypress.json"],
       "url": "https://on.cypress.io/cypress.schema.json"
     }
@@ -73,10 +74,6 @@
   "prettier.jsxSingleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.diagnostics.undefinedFunctions": false,
-  "intelephense.diagnostics.typeErrors": false,
-  "python.pythonPath": "~/.pyenv/shims/python",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
@@ -97,5 +94,30 @@
   },
   "remote.containers.dotfiles.repository": "https://github.com/zuka-e/dotfiles.git",
   "remote.containers.dotfiles.targetPath": "~/dotfiles",
-  "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh"
+  "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh",
+  "remote.containers.defaultExtensions": [
+    // Intellisense
+    "VisualStudioExptTeam.vscodeintellicode",
+    "christian-kohler.path-intellisense", // Path completion
+    // Highlighting
+    "shardulm94.trailing-spaces", // Spaces
+    "oderwat.indent-rainbow", // Each tab step
+    "naumovs.color-highlight", // Web colors
+    "irongeek.vscode-env", // .env
+    "IBM.output-colorizer", // Logfile
+    "mechatroner.rainbow-csv", // CSV
+    "jeff-hykin.better-shellscript-syntax", // Shellscript
+    "jeff-hykin.better-dockerfile-syntax", // Dockerfile
+    // Utilities
+    "aaron-bond.better-comments", // create many kinds of colorized comments
+    "wmaurer.change-case", // (Command Palette -> Change Case xxx)
+    "quicktype.quicktype", // paste JSON as code
+    // Git
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    // JS/TS
+    "dbaeumer.vscode-eslint", // ESLint
+    "esbenp.prettier-vscode" // Prettier
+  ],
+  "extensions.autoUpdate": false
 }

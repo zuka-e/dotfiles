@@ -20,8 +20,9 @@ if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
-export PHPENV_ROOT="/Users/zia/.phpenv"
-if [ -d "${PHPENV_ROOT}" ]; then
-  export PATH="${PHPENV_ROOT}/bin:${PATH}"
+export PHPENV_ROOT="$HOME/.phpenv"
+export PATH="$PHPENV_ROOT/bin:$PATH"
+if type phpenv > /dev/null 2>&1; then
+  export PATH="$PATH:$HOME/.phpenv/bin"
   eval "$(phpenv init -)"
 fi
