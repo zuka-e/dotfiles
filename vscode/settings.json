@@ -44,7 +44,6 @@
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
-  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[markdown]": {
