@@ -40,7 +40,8 @@ mads-hartmann.bash-ide-vscode
 rogalmic.bash-debug # Debugger
 
 # HTML CSS
-bradgashler.htmltagwrap # select word and (option + W)
+formulahendry.auto-rename-tag
+vincaslt.highlight-matching-tag
 ecmel.vscode-html-css # Class, Id attribute completion.
 
 # JS/TS
