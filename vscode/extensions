@@ -48,6 +48,7 @@ ecmel.vscode-html-css # Class, Id attribute completion.
 ms-vscode.vscode-typescript-next # TS
 dbaeumer.vscode-eslint # Linter
 esbenp.prettier-vscode # Formatter including HTML, JSON, Markdown, etc
+wix.vscode-import-cost # Import size calculator
 dsznajder.es7-react-js-snippets
 
 # Python
