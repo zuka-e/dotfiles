@@ -23,13 +23,16 @@
     "strings": "#ff0"
   },
   "better-comments.tags": [
-    { "tag": "!", "color": "#f00", "underline": true },
-    { "tag": "?", "color": "#0ff", "underline": true },
-    { "tag": "*", "color": "#0f0", "underline": true },
-    { "tag": ":", "color": "#ff0", "underline": true },
-    { "tag": "//", "color": "#00f", "backgroundColor": "#fff" }
+    { "tag": " bug: ", "color": "#f00", "underline": true },
+    { "tag": " todo: ", "color": "#ff0", "underline": true },
+    { "tag": " info: ", "color": "#0ff" }
   ],
   "better-comments.multilineComments": false,
+  "indentRainbow.colors": [
+    "rgba(127,255,127,0.2)",
+    "rgba(255,255,64,0.2)",
+    "rgba(255,127,255,0.2)"
+  ],
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
   "editor.renderControlCharacters": true,
@@ -44,7 +47,6 @@
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
-  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[markdown]": {
@@ -70,8 +72,6 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
