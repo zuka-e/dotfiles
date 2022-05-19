@@ -6,6 +6,7 @@ PKief.material-icon-theme # Icons of file and directory
 
 # Remote environment
 ms-vscode-remote.remote-ssh # SSH
+ms-vscode-remote.remote-ssh-edit
 ms-vscode-remote.remote-containers # Docker containers
 
 # Intellisense
@@ -16,6 +17,7 @@ bradlc.vscode-tailwindcss # Tailwind CSS
 # Highlighting
 shardulm94.trailing-spaces # Spaces
 oderwat.indent-rainbow # Each tab step
+usernamehw.errorlens # Error messages inline
 naumovs.color-highlight # Web colors
 irongeek.vscode-env # .env
 IBM.output-colorizer # Logfile
@@ -24,6 +26,8 @@ jeff-hykin.better-shellscript-syntax # Shellscript
 jeff-hykin.better-dockerfile-syntax # Dockerfile
 
 # Utilities
+streetsidesoftware.code-spell-checker
+artdiniz.quitcontrol-vscode # Show confirmation before closing window
 aaron-bond.better-comments # create many kinds of colorized comments
 wmaurer.change-case # (Command Palette -> Change Case xxx)
 quicktype.quicktype # paste JSON as code
@@ -44,12 +48,18 @@ formulahendry.auto-rename-tag
 vincaslt.highlight-matching-tag
 ecmel.vscode-html-css # Class, Id attribute completion.
 
+# Tailwind CSS
+bradlc.vscode-tailwindcss # Completion
+
 # JS/TS
 ms-vscode.vscode-typescript-next # TS
 dbaeumer.vscode-eslint # Linter
 esbenp.prettier-vscode # Formatter including HTML, JSON, Markdown, etc
 wix.vscode-import-cost # Import size calculator
 dsznajder.es7-react-js-snippets
+
+# PHP Laravel
+bmewburn.vscode-intelephense-client
 
 # Python
 ms-python.python
