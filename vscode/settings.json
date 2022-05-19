@@ -69,8 +69,6 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
