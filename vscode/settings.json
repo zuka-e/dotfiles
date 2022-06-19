@@ -29,9 +29,9 @@
   ],
   "better-comments.multilineComments": false,
   "indentRainbow.colors": [
-    "rgba(127,255,127,0.2)",
+    "rgba(255,127,255,0.2)",
     "rgba(255,255,64,0.2)",
-    "rgba(255,127,255,0.2)"
+    "rgba(127,255,127,0.2)"
   ],
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
@@ -61,7 +61,6 @@
     "*.module": "php",
     "*.hcl": "terraform"
   },
-  "files.watcherExclude": { "**/node_modules/**": true },
   "json.schemas": [
     {
       // see: https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment-1
