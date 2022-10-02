@@ -68,7 +68,11 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.hover.enabled": true,
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
   "editor.suggestSelection": "first",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -77,7 +81,11 @@
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[markdown]": {
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     "editor.formatOnSave": false
   },
   "diffEditor.ignoreTrimWhitespace": false,
