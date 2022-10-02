@@ -20,12 +20,39 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.tokenColorCustomizations": {
     "comments": { "foreground": "#fcb4ff", "fontStyle": "italic bold" },
-    "strings": "#ff0"
+    "strings": "#ff0",
+    "textMateRules": [
+      {
+        "scope": "markup.quote.markdown",
+        "settings": {
+          "foreground": "#f9a1f6",
+          "fontStyle": "italic bold"
+        }
+      }
+    ]
   },
   "better-comments.tags": [
-    { "tag": " bug: ", "color": "#f00", "underline": true },
-    { "tag": " todo: ", "color": "#ff0", "underline": true },
-    { "tag": " info: ", "color": "#0ff" }
+    {
+      "tag": " bug: ",
+      "color": "#f00",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": " todo: ",
+      "color": "#ffa000",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": " info: ",
+      "color": "#0ff",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    }
   ],
   "better-comments.multilineComments": false,
   "indentRainbow.colors": [
