@@ -138,6 +138,7 @@
   "remote.containers.dotfiles.targetPath": "~/dotfiles",
   "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh",
   "remote.containers.defaultExtensions": [
+    "streetsidesoftware.code-spell-checker",
     // Intellisense
     "VisualStudioExptTeam.vscodeintellicode",
     "christian-kohler.path-intellisense", // Path completion
