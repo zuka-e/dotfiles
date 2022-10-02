@@ -98,6 +98,10 @@
   },
   "json.schemas": [
     {
+      "fileMatch": ["package.json"],
+      "url": "https://json.schemastore.org/package.json"
+    },
+    {
       // see: https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment-1
       "fileMatch": ["cypress.json"],
       "url": "https://on.cypress.io/cypress.schema.json"
