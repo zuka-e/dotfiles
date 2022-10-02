@@ -1,5 +1,6 @@
 {
   "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
   "window.openFoldersInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
@@ -107,6 +108,9 @@
       "url": "https://on.cypress.io/cypress.schema.json"
     }
   ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+  },
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
