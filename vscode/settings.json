@@ -1,5 +1,6 @@
 {
   "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
   "window.openFoldersInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -1,
@@ -20,12 +21,39 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.tokenColorCustomizations": {
     "comments": { "foreground": "#fcb4ff", "fontStyle": "italic bold" },
-    "strings": "#ff0"
+    "strings": "#ff0",
+    "textMateRules": [
+      {
+        "scope": "markup.quote.markdown",
+        "settings": {
+          "foreground": "#f9a1f6",
+          "fontStyle": "italic bold"
+        }
+      }
+    ]
   },
   "better-comments.tags": [
-    { "tag": " bug: ", "color": "#f00", "underline": true },
-    { "tag": " todo: ", "color": "#ff0", "underline": true },
-    { "tag": " info: ", "color": "#0ff" }
+    {
+      "tag": " bug: ",
+      "color": "#f00",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": " todo: ",
+      "color": "#ffa000",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    },
+    {
+      "tag": " info: ",
+      "color": "#0ff",
+      "backgroundColor": "#555",
+      "bold": true,
+      "italic": true
+    }
   ],
   "better-comments.multilineComments": false,
   "indentRainbow.colors": [
@@ -41,7 +69,11 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.hover.enabled": true,
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
   "editor.suggestSelection": "first",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -50,7 +82,11 @@
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[markdown]": {
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     "editor.formatOnSave": false
   },
   "diffEditor.ignoreTrimWhitespace": false,
@@ -63,11 +99,18 @@
   },
   "json.schemas": [
     {
+      "fileMatch": ["package.json"],
+      "url": "https://json.schemastore.org/package.json"
+    },
+    {
       // see: https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment-1
       "fileMatch": ["cypress.json"],
       "url": "https://on.cypress.io/cypress.schema.json"
     }
   ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+  },
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
@@ -95,6 +138,7 @@
   "remote.containers.dotfiles.targetPath": "~/dotfiles",
   "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh",
   "remote.containers.defaultExtensions": [
+    "streetsidesoftware.code-spell-checker",
     // Intellisense
     "VisualStudioExptTeam.vscodeintellicode",
     "christian-kohler.path-intellisense", // Path completion

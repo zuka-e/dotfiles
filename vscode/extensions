@@ -43,6 +43,9 @@ ms-azuretools.vscode-docker
 mads-hartmann.bash-ide-vscode
 rogalmic.bash-debug # Debugger
 
+# YAML
+redhat.vscode-yaml # Enable YAML schema
+
 # HTML CSS
 formulahendry.auto-rename-tag
 vincaslt.highlight-matching-tag
