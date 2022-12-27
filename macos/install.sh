@@ -78,4 +78,4 @@ echo "To reflect the Apple settings, you may need to re-login"
 # Install Homebrew packages
 #------------------------------------------------
 
-source ./brew.sh
+( source ./brew.sh )

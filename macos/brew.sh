@@ -1,95 +1,83 @@
 #!/usr/bin/env bash
 
-brew update && brew upgrade && brew doctor
+current_file="$TMPDIR/Brewfile"
+updated_file="$HOME/Brewfile"
+
+if [[ ! -f "$updated_file" ]];then
+  echo "\"$updated_file\" doesn't exist."
+  return 2
+fi
+
+echo "Loading installed packages..."
+brew bundle dump -f --file="$current_file"
+
+# Remove comments, dup, and blank lines, and sort a file.
+function format_file {
+  sed -E -e "s/#.*//" -e "/^\s*$/d" "${1}" | sort | uniq
+}
+
+function diff_brewfile {
+  # `<()`: Process Substitution
+  diff -u \
+    --ignore-blank-lines \
+    --ignore-space-change \
+    <(format_file "$current_file") \
+    <(format_file "$updated_file")
+}
+
+# Packages to be added.
+added_packages=$(
+  diff_brewfile | \egrep "^\+\w+" | sed -E "s/^\+[a-z]+ +(\".+\")$/\1/"
+)
+
+# Packages to be removed.
+removed_packages=$(
+  diff_brewfile | \egrep "^\-\w+" | sed -E "s/^\-[a-z]+ +(\".+\")$/\1/"
+)
+
+if [[ ! -z $removed_packages ]]; then
+  echo
+  echo -e "\033[31mThe following packages will be removed.\033[0m"
+  echo "==========================================="
+  echo "$removed_packages"
+  echo "==========================================="
+fi
+
+if [[ ! -z $added_packages ]]; then
+  echo
+  echo -e "\033[32mThe following packages will be installed.\033[0m"
+  echo "==========================================="
+  echo "$added_packages"
+  echo "==========================================="
+fi
+
+echo
+
+if [[ -z $added_packages && -z $removed_packages ]]; then
+  echo "Already up-to-date."
+else
+  while true; do
+    read -p "Are you sure to continue? (y/N) " input
+    case $input in
+      y|yes)
+        # Install packages based on `Brewfile`,
+        # and remove those installed with `brew` and not listed in the file.
+        brew bundle -v --cleanup --file="$updated_file"
+        break;;
+      N|no|No|"")
+        break;;
+      *)
+        echo "Please answer with y or N.";;
+    esac
+  done
+fi
 
 #------------------------------------------------
-# Formulae
+# `phpenv`
 #------------------------------------------------
-
-# Completion
-brew install bash-completion@2
-brew install brew-cask-completion
-brew install launchctl-completion
-brew install open-completion
-brew install vagrant-completion
-brew install docker-completion
-brew install docker-compose-completion
-brew install yarn-completion
-brew install pip-completion
-
-# Basic Command
-brew install bash
-brew install openssl
-brew install tree
-brew install pstree
-brew install htop
-brew install wget
-brew install tmux
-brew install rsync
-brew install git
-
-# Advanced Command
-brew install bat # Alt cat
-brew install exa # Alt ls
-brew install fd # Alt find
-brew install ripgrep  # (rg) Alt grep
-
-# X-env
-brew install nodenv
-brew install pyenv
-brew install rbenv
-# The following processes are probably required for phpenv
-# curl -L https://raw.githubusercontent.com/phpenv/phpenv-installer/master/bin/phpenv-installer | bash
-# brew install bzip2
-# brew install libiconv
-# brew install oniguruma
-# brew install tidy-html5
-# brew install libzip
+# For installation, see https://github.com/phpenv/phpenv-installer
+# The following settings are probably required for installation of PHP.
 # PHP_RPATHS="$(brew --prefix bzip2)" PHP_BUILD_CONFIGURE_OPTS="--with-bz2=$(brew --prefix bzip2) --with-iconv=$(brew --prefix libiconv)" phpenv install 8.0.9
-
-# AWS
-brew install awscli
-
-# Terraform
-brew tap hashicorp/tap
-brew install hashicorp/tap/terraform
-
-# Miscellaneous
-brew install ffmpeg
-brew install yarn
-
-#------------------------------------------------
-# Casks
-#------------------------------------------------
-
-# Basic
-brew install --cask clipy
-brew install --cask karabiner-elements
-brew install --cask google-japanese-ime
-brew install --cask google-chrome
-brew install --cask libreoffice
-
-# Developer
-brew install --cask docker
-brew install --cask virtualbox
-brew install --cask vagrant
-brew install --cask visual-studio-code
-
-# Database
-brew install --cask sequel-ace
-brew install --cask mysqlworkbench
-brew install --cask pgadmin4
-
-# Communication
-brew install --cask slack
-brew install --cask skype
-brew install --cask microsoft-teams
-
-# Miscellaneous
-brew install --cask android-file-transfer
-brew install --cask kindle
-brew install --cask send-anywhere
-brew install --cask iina
 
 #------------------------------------------------
 # Change Shell into local Bash

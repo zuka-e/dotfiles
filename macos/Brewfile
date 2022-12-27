@@ -1,56 +1,97 @@
+# This is a "Brewfile" that its packages are sorted arbitrarily
+# to clarify the installed packages.
+# A normal file that lists the installed packages can be created
+# by `brew bundle dump` (overwrited with `-f`).
+# Run `brew bundle --file macos/Brewfile` to install the listed packages
+# and remove those not being listed.
+
+#------------------------------------------------
+# Taps
+#------------------------------------------------
+# cf. https://docs.brew.sh/Taps
+
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-brew "act"
-brew "awscli"
-brew "bash"
-brew "bash-completion@2"
-brew "bat"
+
+#------------------------------------------------
+# Formulae
+#------------------------------------------------
+
 brew "brew-cask-completion"
-brew "bzip2"
+brew "launchctl-completion"
+brew "open-completion"
+brew "vagrant-completion"
 brew "docker-completion"
 brew "docker-compose-completion"
-brew "exa"
-brew "fd"
-brew "harfbuzz"
-brew "ffmpeg"
-brew "git"
-brew "htop"
-brew "launchctl-completion"
-brew "libiconv"
-brew "pango"
-brew "libzip"
-brew "nmap"
-brew "node-build"
-brew "nodenv"
-brew "oniguruma"
-brew "open-completion"
+
 brew "openssl@3"
-brew "pip-completion"
-brew "pstree"
-brew "pyenv"
-brew "rbenv"
-brew "rename"
-brew "ripgrep"
-brew "rsync"
-brew "terraform"
-brew "tidy-html5"
-brew "tmux"
-brew "tree"
-brew "vagrant-completion"
-brew "wget"
-brew "yarn"
-brew "yarn-completion"
+brew "bash" # Newer version
+brew "bash-completion@2"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
-cask "docker"
+brew "rename"
+brew "tree"
+brew "pstree"
+brew "htop"
+brew "nmap"
+brew "wget"
+brew "tmux"
+brew "rsync" # Newer version
+brew "bat" # Alternative to `cat`
+brew "exa" # Alternative to `ls`
+brew "fd" # Alternative to `find`
+brew "ripgrep" # (`rg`) Alternative to `grep`
+brew "git"
+brew "ffmpeg"
+brew "harfbuzz" # Dependency of `ffmpeg`
+
+brew "yarn"
+brew "yarn-completion"
+brew "nodenv"
+brew "node-build" # Dependency of `nodenv`
+brew "pyenv"
+brew "pip-completion"
+brew "rbenv"
+
+# Possible dependencies of `phpenv`
+brew "bzip2"
+brew "libiconv"
+brew "libzip"
+brew "oniguruma"
+brew "tidy-html5"
+
+brew "act" # Local Github Actions
+brew "awscli"
+brew "terraform"
+
+#------------------------------------------------
+# Casks
+#------------------------------------------------
+# cf. https://github.com/Homebrew/homebrew-cask
+
+cask "clipy"
 cask "karabiner-elements"
+cask "google-japanese-ime"
+cask "google-chrome"
 cask "libreoffice"
-cask "mysqlworkbench"
-cask "sequel-ace"
+
+# Communication
 cask "slack"
-cask "vagrant"
+
+# Developer
+cask "docker"
 cask "virtualbox"
+cask "vagrant"
+cask "visual-studio-code"
+cask "mysqlworkbench"
+# cask "sequel-ace"
+# cask "pgadmin4"
+
+# Miscellaneous
+cask "kindle"
+cask "send-anywhere"
+cask "iina"
