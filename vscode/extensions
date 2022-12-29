@@ -1,29 +1,29 @@
 # VSCode Extensions
 
 # Theme
-dracula-theme.theme-dracula # Color theme
 PKief.material-icon-theme # Icons of file and directory
 
 # Remote environment
 ms-vscode-remote.remote-ssh # SSH
-ms-vscode-remote.remote-ssh-edit
+ms-vscode-remote.remote-ssh-edit # (`remote-ssh` complement)
 ms-vscode-remote.remote-containers # Docker containers
+ms-vscode.remote-explorer # (`remote-` complement)
 
 # Intellisense
 VisualStudioExptTeam.vscodeintellicode
 christian-kohler.path-intellisense # Path
-bradlc.vscode-tailwindcss # Tailwind CSS
 
 # Highlighting
 shardulm94.trailing-spaces # Spaces
 oderwat.indent-rainbow # Each tab step
 usernamehw.errorlens # Error messages inline
 naumovs.color-highlight # Web colors
-irongeek.vscode-env # .env
+IronGeek.vscode-env # .env
 IBM.output-colorizer # Logfile
 mechatroner.rainbow-csv # CSV
 jeff-hykin.better-shellscript-syntax # Shellscript
 jeff-hykin.better-dockerfile-syntax # Dockerfile
+mariusschulz.yarn-lock-syntax # Yarn
 
 # Utilities
 streetsidesoftware.code-spell-checker
@@ -31,6 +31,7 @@ artdiniz.quitcontrol-vscode # Show confirmation before closing window
 aaron-bond.better-comments # create many kinds of colorized comments
 wmaurer.change-case # (Command Palette -> Change Case xxx)
 quicktype.quicktype # paste JSON as code
+VisualStudioExptTeam.intellicode-api-usage-examples # Code example
 
 # Git
 donjayamanne.githistory
@@ -44,14 +45,12 @@ mads-hartmann.bash-ide-vscode
 rogalmic.bash-debug # Debugger
 
 # YAML
-redhat.vscode-yaml # Enable YAML schema
+# redhat.vscode-yaml # Enable YAML schema
 
 # HTML CSS
 formulahendry.auto-rename-tag
 vincaslt.highlight-matching-tag
 ecmel.vscode-html-css # Class, Id attribute completion.
-
-# Tailwind CSS
 bradlc.vscode-tailwindcss # Completion
 
 # JS/TS
@@ -63,22 +62,24 @@ dsznajder.es7-react-js-snippets
 
 # PHP Laravel
 bmewburn.vscode-intelephense-client
+amiralizadeh9480.laravel-extra-intellisense
 
 # Python
 ms-python.python
 ms-python.vscode-pylance # Python language server
+ms-python.isort # Import sorting
 KevinRose.vsc-python-indent # Smarter indent
 
 # Terraform
 hashicorp.terraform
 
 # Serverless
-threadheap.serverless-ide-vscode
+ThreadHeap.serverless-ide-vscode
+
+# Github Actions
+cschleiden.vscode-github-actions # Completion etc
 
 # Markdown
-yzhang.markdown-all-in-on
+yzhang.markdown-all-in-one
 DavidAnson.vscode-markdownlint
 shd101wyy.markdown-preview-enhanced
-
-# PlantUML
-jebbs.plantuml
