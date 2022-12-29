@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 current_file="$TMPDIR/Brewfile"
-updated_file="$HOME/Brewfile"
+updated_file="$HOME/dotfiles/macos/Brewfile"
 
 if [[ ! -f "$updated_file" ]];then
   echo "\"$updated_file\" doesn't exist."
