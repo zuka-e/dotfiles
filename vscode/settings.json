@@ -123,9 +123,7 @@
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": ["--indent-size=2"],
-  "terraform-ls.experimentalFeatures": {
-    "validateOnSave": true
-  },
+  "terraform.experimentalFeatures.validateOnSave": true,
   "markdown.extension.toc.updateOnSave": false,
   "markdownlint.config": { "MD033": false },
   "markdown.preview.breaks": true,
@@ -134,10 +132,10 @@
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
-  "remote.containers.dotfiles.repository": "https://github.com/zuka-e/dotfiles.git",
-  "remote.containers.dotfiles.targetPath": "~/dotfiles",
-  "remote.containers.dotfiles.installCommand": "~/dotfiles/install.sh",
-  "remote.containers.defaultExtensions": [
+  "dotfiles.repository": "https://github.com/zuka-e/dotfiles.git",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "~/dotfiles/install.sh",
+  "dev.containers.defaultExtensions": [
     "streetsidesoftware.code-spell-checker",
     // Intellisense
     "VisualStudioExptTeam.vscodeintellicode",
