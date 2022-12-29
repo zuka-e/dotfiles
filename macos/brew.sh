@@ -51,11 +51,10 @@ if [[ ! -z $added_packages ]]; then
   echo "==========================================="
 fi
 
-echo
-
 if [[ -z $added_packages && -z $removed_packages ]]; then
   echo "Already up-to-date."
 else
+  echo
   while true; do
     read -p "Are you sure to continue? (y/N) " input
     case $input in
@@ -65,6 +64,7 @@ else
         brew bundle -v --cleanup --file="$updated_file"
         break;;
       N|no|No|"")
+        echo "Canceled."
         break;;
       *)
         echo "Please answer with y or N.";;

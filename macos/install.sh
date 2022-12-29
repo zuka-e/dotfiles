@@ -2,6 +2,8 @@
 
 # Run `defaults help` to display the help
 
+echo "Updating Apple settings..."
+
 #------------------------------------------------
 # General
 #------------------------------------------------
@@ -72,7 +74,7 @@ defaults write com.apple.dock mru-spaces -bool false
 # Reload
 killall Dock
 
-echo "To reflect the Apple settings, you may need to re-login"
+echo -e "\033[32mUpdated.\033[0m If not being reflected, try rebooting."
 
 #------------------------------------------------
 # Install Homebrew packages
