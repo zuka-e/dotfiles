@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Default: "dircolors -p", Only {DIR,LINK,SOCK,DOOR,EXEC} changed.
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
