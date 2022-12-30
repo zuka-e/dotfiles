@@ -2,8 +2,10 @@
 
 export PATH="/usr/local/sbin:$PATH"
 
-# [ Virtual_Env ]
-# Judge if the command exists, discard stdout and stderr
+#------------------------------------------------
+# Version Management
+#------------------------------------------------
+
 if type nodenv > /dev/null 2>&1; then
   export PATH="$PATH:$HOME/.nodenv/bin"
   eval "$(nodenv init -)"
@@ -20,9 +22,7 @@ if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
-export PHPENV_ROOT="$HOME/.phpenv"
-export PATH="$PHPENV_ROOT/bin:$PATH"
-if type phpenv > /dev/null 2>&1; then
+if [[ -x ~/.phpenv/bin/phpenv ]]; then
   export PATH="$PATH:$HOME/.phpenv/bin"
   eval "$(phpenv init -)"
 fi
