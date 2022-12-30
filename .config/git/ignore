@@ -1,3 +1,5 @@
+# cf. `man gitignore`
+
 # Config file
 .DS_Store
 

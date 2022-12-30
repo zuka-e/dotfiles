@@ -15,6 +15,9 @@
 
   # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
   ln -sfv ~/dotfiles/.config/karabiner ~/.config
+
+  [[ ! -e ~/.config/git ]] &&
+    ln -sv ~/dotfiles/.config/git ~/.config
 )
 
 source ~/.bash_profile
