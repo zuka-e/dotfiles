@@ -32,3 +32,10 @@ for dirname in ${config_dirnames[@]}; do
 
   ln -sfv "$src" "$config_path"
 done
+
+#------------------------------------------------
+# Install packages etc
+#------------------------------------------------
+
+[[ "$(uname)" == "Darwin" ]] && ~/dotfiles/macos/install.sh
+type code > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
