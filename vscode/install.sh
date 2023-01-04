@@ -68,6 +68,7 @@ else
           done
         break;;
       N|no|No|"")
+        echo "Canceled."
         break;;
       *)
         echo "Please answer with y or N.";;
