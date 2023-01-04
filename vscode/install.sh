@@ -1,9 +1,43 @@
 #!/usr/bin/env bash
 
-# Create or overwrite symlinks
-ln -sfv ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -sfv ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-ln -sfv ~/dotfiles/vscode/snippets ~/Library/Application\ Support/Code/User
+#------------------------------------------------
+# Create symbolic links for settings
+#------------------------------------------------
+
+tmp_dir="$HOME/dotfiles/.tmp"
+setting_filenames=({keybindings.json,settings.json})
+
+for filename in ${setting_filenames[@]}; do
+  src="$HOME/dotfiles/vscode/$filename"
+  target="$HOME/Library/Application Support/Code/User/$filename"
+
+  [[ -L "$target" ]] && continue
+
+  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+
+  ln -sfv "$src" "$target"
+done;
+
+setting_dirnames=({snippets,})
+
+for dirname in ${setting_dirnames[@]}; do
+  setting_path="$HOME/Library/Application Support/Code/User"
+  src="$HOME/dotfiles/vscode/$dirname"
+  target="$setting_path/$dirname"
+
+  [[ -L "$target" ]] && continue
+
+  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+
+  ln -sfv "$src" "$setting_path"
+done;
+
+#------------------------------------------------
+# Extension installation and removal
+#------------------------------------------------
+
+echo
+echo "Started extension installation and removal processes."
 
 current_file="$TMPDIR/vscode/extensions"
 updated_file="$HOME/dotfiles/vscode/extensions"

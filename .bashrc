@@ -5,9 +5,9 @@
 PS1='\033[1;35m\D{%Y/%m/%d(%a) %H:%M:%S}\033[0m\n\[\033[1;36m\]\u\[\033[0;37m\]@\[\033[1;33m\]\H:\[\033[1;32m\]\w/\[\033[31m\]$(__git_ps1)\[\033[0m\]:\n\$ '
 
 #[ Source other dotfiles ]
-execute_files=(~/dotfiles/.{aliases,git-prompt.sh,git-completion.bash})
+execute_files=(~/dotfiles/shell/utils/.{aliases,git-prompt.sh,git-completion.bash})
 for file in ${execute_files[@]}; do
-  [[ -r "$file" ]] && source "$file"; # True if file exists and is readable.
+  [[ -r "$file" ]] && source "$file";
 done
 
 #[ Key_Bind cf.'~/.inputrc']
