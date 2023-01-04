@@ -8,16 +8,34 @@
 (
   cd ~/dotfiles/; # Inside '()', the Sub-shell works
 
-  linked_files=(.{bash_profile,bashrc,gitconfig,inputrc,tmux.conf,vimrc})
-  for file in ${linked_files[@]}; do
-    ln -sfv ~/dotfiles/"${file}" ~/"${file}";
+  tmp_dir="$HOME/dotfiles/.tmp"
+  linked_filenames=(.{bash_profile,bashrc,gitconfig,inputrc,tmux.conf,vimrc})
+
+  for filename in ${linked_filenames[@]}; do
+    src="$HOME/dotfiles/$filename"
+    target="$HOME/$filename"
+
+    [[ -L "$target" ]] && continue
+
+    [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+
+    ln -sfv "$src" "$target"
   done;
 
   # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
-  ln -sfv ~/dotfiles/.config/karabiner ~/.config
+  config_dirnames=({karabiner,git})
 
-  [[ ! -e ~/.config/git ]] &&
-    ln -sv ~/dotfiles/.config/git ~/.config
+  for dirname in ${config_dirnames[@]}; do
+    config_path="$HOME/.config"
+    src="$HOME/dotfiles/.config/$dirname"
+    target="$config_path/$dirname"
+
+    [[ -L "$target" ]] && continue
+
+    [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+
+    ln -sfv "$src" "$config_path"
+  done;
 )
 
 source ~/.bash_profile
