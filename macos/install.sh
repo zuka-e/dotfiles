@@ -80,4 +80,4 @@ echo -e "\033[32mUpdated.\033[0m If not being reflected, try rebooting."
 # Install Homebrew packages
 #------------------------------------------------
 
-( source ~/dotfiles/macos/brew.sh )
+~/dotfiles/macos/brew.sh

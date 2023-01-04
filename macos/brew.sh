@@ -5,7 +5,7 @@ updated_file="$HOME/dotfiles/macos/Brewfile"
 
 if [[ ! -f "$updated_file" ]];then
   echo "\"$updated_file\" doesn't exist."
-  return 2
+  exit 2
 fi
 
 echo "Loading installed packages..."
@@ -27,12 +27,12 @@ function diff_brewfile {
 
 # Packages to be added.
 added_packages=$(
-  diff_brewfile | \egrep "^\+\w+" | sed -E "s/^\+[a-z]+ +(\".+\")$/\1/"
+  diff_brewfile | egrep "^\+\w+" | sed -E "s/^\+[a-z]+ +(\".+\")$/\1/"
 )
 
 # Packages to be removed.
 removed_packages=$(
-  diff_brewfile | \egrep "^\-\w+" | sed -E "s/^\-[a-z]+ +(\".+\")$/\1/"
+  diff_brewfile | egrep "^\-\w+" | sed -E "s/^\-[a-z]+ +(\".+\")$/\1/"
 )
 
 if [[ ! -z $removed_packages ]]; then

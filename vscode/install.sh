@@ -13,10 +13,10 @@ for filename in ${setting_filenames[@]}; do
 
   [[ -L "$target" ]] && continue
 
-  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
   ln -sfv "$src" "$target"
-done;
+done
 
 setting_dirnames=({snippets,})
 
@@ -27,10 +27,10 @@ for dirname in ${setting_dirnames[@]}; do
 
   [[ -L "$target" ]] && continue
 
-  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
   ln -sfv "$src" "$setting_path"
-done;
+done
 
 #------------------------------------------------
 # Extension installation and removal
@@ -44,11 +44,11 @@ updated_file="$HOME/dotfiles/vscode/extensions"
 
 if [[ ! -f "$updated_file" ]];then
   echo "\"$updated_file\" doesn't exist."
-  return 2
+  exit 2
 fi
 
 echo "Loading installed extensions..."
-[[ -e $(dirname $current_file) ]] || \mkdir $(dirname $current_file)
+[[ -e $(dirname $current_file) ]] || mkdir $(dirname $current_file)
 code --list-extensions >| "$current_file"
 
 # Remove comments, dup, and blank lines, and sort a file.
@@ -66,9 +66,9 @@ function diff_extensions {
 }
 
 # Extensions to be added.
-added_extensions=$(diff_extensions | \egrep "^\+\w+" | sed -E "s/^\+//")
+added_extensions=$(diff_extensions | egrep "^\+\w+" | sed -E "s/^\+//")
 # Extensions to be removed.
-removed_extensions=$(diff_extensions | \egrep "^\-\w+" | sed -E "s/^\-//")
+removed_extensions=$(diff_extensions | egrep "^\-\w+" | sed -E "s/^\-//")
 
 if [[ ! -z $removed_extensions ]]; then
   echo -e "\n\033[31mThe following extensions will be removed.\033[0m"
