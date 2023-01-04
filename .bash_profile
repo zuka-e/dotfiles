@@ -8,4 +8,3 @@ for file in ${exported_files[@]}; do
 done
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
-[[ -r ~/.bash_login ]] && source ~/.bash_login

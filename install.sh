@@ -13,10 +13,10 @@ for filename in ${linked_filenames[@]}; do
 
   [[ -L "$target" ]] && continue
 
-  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
   ln -sfv "$src" "$target"
-done;
+done
 
 # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
 config_dirnames=({karabiner,git})
@@ -28,9 +28,14 @@ for dirname in ${config_dirnames[@]}; do
 
   [[ -L "$target" ]] && continue
 
-  [[ -e "$target" ]] && \mv -fv "$target" "$tmp_dir"
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
   ln -sfv "$src" "$config_path"
-done;
+done
 
-source ~/.bash_profile
+#------------------------------------------------
+# Install packages etc
+#------------------------------------------------
+
+[[ "$(uname)" == "Darwin" ]] && ~/dotfiles/macos/install.sh
+type code > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
