@@ -22,6 +22,7 @@ IronGeek.vscode-env # .env
 IBM.output-colorizer # Logfile
 mechatroner.rainbow-csv # CSV
 jeff-hykin.better-shellscript-syntax # Shellscript
+XadillaX.viml # .vimrc
 jeff-hykin.better-dockerfile-syntax # Dockerfile
 mariusschulz.yarn-lock-syntax # Yarn
 
@@ -32,6 +33,7 @@ aaron-bond.better-comments # create many kinds of colorized comments
 wmaurer.change-case # (Command Palette -> Change Case xxx)
 quicktype.quicktype # paste JSON as code
 VisualStudioExptTeam.intellicode-api-usage-examples # Code example
+ms-playwright.playwright # Playwight testing tool
 
 # Git
 donjayamanne.githistory
