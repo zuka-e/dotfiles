@@ -34,6 +34,20 @@ for dirname in ${config_dirnames[@]}; do
   ln -sfv "$src" "$config_path"
 done
 
+# ZShell (Oh My Zsh )
+# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
+(
+  ZSH="$HOME/.oh-my-zsh"
+  src="$HOME/dotfiles/.oh-my-zsh/custom"
+  target="$ZSH/custom"
+
+  [[ -L "$target" ]] && exit
+
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
+
+  ln -sfv "$src" "$ZSH"
+)
+
 #------------------------------------------------
 # Install packages etc
 #------------------------------------------------
