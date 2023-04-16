@@ -63,6 +63,7 @@
   ],
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
   "editor.renderControlCharacters": true,
   "editor.minimap.enabled": false,
   "editor.cursorStyle": "block",
