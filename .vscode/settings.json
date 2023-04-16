@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "**/.config/git/ignore": "ignore",
+    "**/.config/*/config": "shellscript",
+    "**/.config/*/ignore": "ignore",
     "**/vscode/extensions": "shellscript",
     ".{inputrc,aliases,colorrc,env-vars,path}": "shellscript"
   }

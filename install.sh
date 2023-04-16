@@ -3,9 +3,10 @@
 #------------------------------------------------
 # Create symbolic links
 #------------------------------------------------
+tmp_dir="$HOME/dotfiles/.tmp" # Overwritten files will be moved here
+#------------------------------------------------
 
-tmp_dir="$HOME/dotfiles/.tmp"
-linked_filenames=(.{bash_profile,bashrc,gitconfig,inputrc,tmux.conf,vimrc})
+linked_filenames=(.{bash_profile,bashrc,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
 
 for filename in ${linked_filenames[@]}; do
   src="$HOME/dotfiles/$filename"
@@ -18,20 +19,37 @@ for filename in ${linked_filenames[@]}; do
   ln -sfv "$src" "$target"
 done
 
-# https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
-config_dirnames=({karabiner,git})
+# Configs
+# cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
+export CONFIG_PATH="$HOME/.config"
 
-for dirname in ${config_dirnames[@]}; do
-  config_path="$HOME/.config"
-  src="$HOME/dotfiles/.config/$dirname"
-  target="$config_path/$dirname"
+configs="$HOME/dotfiles/.config/*"
+
+for config in ${configs[@]}; do
+  [[ ! -e $config ]] && break
+
+  target="$CONFIG_PATH/$(basename $config)"
 
   [[ -L "$target" ]] && continue
 
   [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
-  ln -sfv "$src" "$config_path"
+  ln -sfv "$config" "$CONFIG_PATH"
 done
+
+# ZShell (Oh My Zsh )
+# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
+(
+  ZSH="$HOME/.oh-my-zsh"
+  src="$HOME/dotfiles/.oh-my-zsh/custom"
+  target="$ZSH/custom"
+
+  [[ -L "$target" ]] && exit
+
+  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
+
+  ln -sfv "$src" "$ZSH"
+)
 
 #------------------------------------------------
 # Install packages etc

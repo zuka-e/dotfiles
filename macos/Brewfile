@@ -15,6 +15,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts" # For `exa` icons
 
 #------------------------------------------------
 # Formulae
@@ -72,6 +73,8 @@ brew "terraform"
 # Casks
 #------------------------------------------------
 # cf. https://github.com/Homebrew/homebrew-cask
+
+cask "font-noto-nerd-font"
 
 cask "clipy"
 cask "karabiner-elements"
