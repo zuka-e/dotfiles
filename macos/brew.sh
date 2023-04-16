@@ -80,25 +80,31 @@ fi
 # PHP_RPATHS="$(brew --prefix bzip2)" PHP_BUILD_CONFIGURE_OPTS="--with-bz2=$(brew --prefix bzip2) --with-iconv=$(brew --prefix libiconv)" phpenv install 8.0.9
 
 #------------------------------------------------
-# Change Shell into local Bash
+# Change Shell into local Zsh
 #------------------------------------------------
 
-usr_bash='/usr/local/bin/bash'
+usr_zsh='/usr/local/bin/zsh'
 etc_shells='/etc/shells'
 
-if [[ $SHELL != $usr_bash && "$(which bash)" = $usr_bash ]]; then
-  if ! grep $usr_bash '/etc/shells' > /dev/null 2>&1; then
-    echo "Enter the password to add '${usr_bash}' to '${etc_shells}'"
-    echo $usr_bash | sudo tee -a /etc/shells > /dev/null
+if [[ $SHELL != $usr_zsh && "$(which zsh)" = $usr_zsh ]]; then
+  if ! grep $usr_zsh '/etc/shells' > /dev/null 2>&1; then
+    echo "Enter the password to add '${usr_zsh}' to '${etc_shells}'"
+    echo $usr_zsh | sudo tee -a /etc/shells > /dev/null
 
     if [[ $? == 0 ]]; then
-      echo "Added $usr_bash to '/etc/shells'"
+      echo "Added $usr_zsh to '/etc/shells'"
     else
       echo "Canceled the operation"
     fi
   fi
 
-  chsh -s $usr_bash
+  chsh -s $usr_zsh
+
+  if [[ $? == 0 ]]; then
+    echo "Changed the login shell to ${usr_zsh}'."
+    export SHELL=$usr_zsh
+    exec $SHELL -l
+  fi
 fi
 
-unset usr_bash etc_shells
+unset usr_zsh etc_shells
