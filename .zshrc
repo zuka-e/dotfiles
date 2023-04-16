@@ -83,7 +83,11 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 # cf. https://github.com/ohmyzsh/ohmyzsh#plugins
 # cf. https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
-plugins=()
+plugins=(
+  laravel
+  npm
+  terraform
+)
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -92,6 +96,10 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+find "$HOME"/dotfiles/shell/zsh -name "*.zsh" | while read line; do
+  source "$line"
+done
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
