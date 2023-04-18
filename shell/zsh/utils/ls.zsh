@@ -1,10 +1,10 @@
 if type exa > /dev/null 2>&1; then
   alias ls="exa --all --header --icons --links --group --time-style=long-iso --git"
-  alias ll="$ls --long"
-  alias lli="$ll --inode --blocks" # Show index number, allocated size
-  alias llat="$ll --time=accessed --sort=accessed"
-  alias llmt="$ll --time=modified --sort=modified"
-  alias llct="$ll --time=changed --sort=changed"
+  alias ll="ls --long"
+  alias lli="ll --inode --blocks" # Show index number, allocated size
+  alias llat="ll --time=accessed --sort=accessed"
+  alias llmt="ll --time=modified --sort=modified"
+  alias llct="ll --time=changed --sort=changed"
 
   export EXA_COLORS="di=1;34:da=32"
 else
