@@ -18,10 +18,10 @@ ZSH_THEME_GIT_PROMPT_DIRTY="" # "%{%B$fg[yellow]%} ●"
 ZSH_THEME_GIT_PROMPT_CLEAN="" # "%{%B$fg[yellow]%} ✔"
 # `git_commits_ahead()`, `git_commits_behind()`
 ZSH_THEME_GIT_PROMPT_AHEAD=""
-ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX="%{%B$fg[green]%} ↑"
+ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX="%{%B$fg[green]%}↑"
 ZSH_THEME_GIT_COMMITS_AHEAD_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_BEHIND=""
-ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX="%{%B$fg[yellow]%} ↓"
+ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX="%{%B$fg[yellow]%}↓"
 ZSH_THEME_GIT_COMMITS_BEHIND_SUFFIX="%{$reset_color%}"
 # `git_prompt_status()`
 ZSH_THEME_GIT_PROMPT_STASHED="%{%B$fg[blue]%} ⚑"

@@ -37,12 +37,17 @@ for config in ${configs[@]}; do
   ln -sfv "$config" "$CONFIG_PATH"
 done
 
-# ZShell (Oh My Zsh )
+# ZShell (Oh My Zsh)
 # cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
 (
-  ZSH="$HOME/.oh-my-zsh"
+  if [[ ! -e "$ZSH" ]]; then
+    # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ZSH="$HOME/.oh-my-zsh"
+  fi
+
   src="$HOME/dotfiles/.oh-my-zsh/custom"
-  target="$ZSH/custom"
+  target="${ZSH_CUSTOM:-"${ZSH}/custom"}"
 
   [[ -L "$target" ]] && exit
 
@@ -55,5 +60,5 @@ done
 # Install packages etc
 #------------------------------------------------
 
-[[ "$(uname)" == "Darwin" ]] && ~/dotfiles/macos/install.sh
-type code > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
+[[ "$(uname)" == "Darwin" ]] && "$HOME/dotfiles/macos/install.sh"
+type code > /dev/null 2>&1 && "$HOME/dotfiles/vscode/install.sh"
