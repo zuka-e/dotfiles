@@ -32,8 +32,6 @@ brew "openssl@3"
 brew "bash" # Newer version
 brew "bash-completion@2"
 brew "zsh"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
 brew "rename"
 brew "tree"
 brew "pstree"

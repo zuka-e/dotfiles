@@ -61,6 +61,8 @@ plugins=(
   laravel
   npm
   terraform
+  # cf. https://github.com/zsh-users/zsh-syntax-highlighting
+  zsh-syntax-highlighting
 )
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
