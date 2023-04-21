@@ -80,4 +80,11 @@ echo -e "\033[32mUpdated.\033[0m If not being reflected, try rebooting."
 # Install Homebrew packages
 #------------------------------------------------
 
-~/dotfiles/macos/brew.sh
+if ! type brew > /dev/null 2>&1; then
+  # cf. https://brew.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [[ $? == 0 ]]; then
+  "$HOME/dotfiles/macos/brew.sh"
+fi

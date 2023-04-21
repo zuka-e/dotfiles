@@ -26,7 +26,6 @@ brew "launchctl-completion"
 brew "open-completion"
 brew "vagrant-completion"
 brew "docker-completion"
-brew "docker-compose-completion"
 
 brew "openssl@3"
 brew "bash" # Newer version
