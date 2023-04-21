@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if ! brew doctor; then
+  exit 2
+fi
+
 current_file="$TMPDIR/Brewfile"
 updated_file="$HOME/dotfiles/macos/Brewfile"
 
