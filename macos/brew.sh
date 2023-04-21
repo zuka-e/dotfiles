@@ -26,14 +26,9 @@ function diff_brewfile {
 }
 
 # Packages to be added.
-added_packages=$(
-  diff_brewfile | egrep "^\+\w+" | sed -E "s/^\+[a-z]+ +(\".+\")$/\1/"
-)
-
+added_packages=$(diff_brewfile | egrep "^\+\w+")
 # Packages to be removed.
-removed_packages=$(
-  diff_brewfile | egrep "^\-\w+" | sed -E "s/^\-[a-z]+ +(\".+\")$/\1/"
-)
+removed_packages=$(diff_brewfile | egrep "^\-\w+")
 
 if [[ ! -z $removed_packages ]]; then
   echo
