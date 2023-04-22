@@ -65,6 +65,9 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "explorer.autoRevealExclude": {
+    "**/node_modules": false
+  },
   "editor.renderControlCharacters": true,
   "editor.minimap.enabled": false,
   "editor.cursorStyle": "block",
