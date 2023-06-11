@@ -48,7 +48,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -76,3 +76,9 @@ source $ZSH/oh-my-zsh.sh
 find "$HOME"/dotfiles/shell/zsh -name "*.zsh" | while read line; do
   source "$line"
 done
+
+# zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
+# zstyle ':completion:*:(ssh|rsync):*' hosts
+# zstyle ':completion:*:(ssh|rsync):*' users
+# SSH auto-completion based on the known_hosts
+# zstyle ':completion:*:*:*' hosts `awk '{print $1}' ~/.ssh/known_hosts | cut -d , -f 1`
