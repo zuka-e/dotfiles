@@ -5,6 +5,9 @@
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
   "window.zoomLevel": -2,
   "window.restoreWindows": "all",
+  "workbench.editorAssociations": {
+    "*.csv": "gc-excelviewer-csv-editor"
+  },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
@@ -64,6 +67,7 @@
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "explorer.autoRevealExclude": {
     "**/node_modules": false
@@ -74,6 +78,10 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.hover.enabled": true,
+  "errorLens.editorHoverPartsEnabled": {
+    "messageEnabled": false,
+    "buttonsEnabled": false
+  },
   "editor.quickSuggestions": {
     "comments": "on",
     "strings": "on",
@@ -95,6 +103,8 @@
     },
     "editor.formatOnSave": false
   },
+  "csv-preview.resizeColumns": "first",
+  "csv-preview.lineNumbers": "source",
   "diffEditor.ignoreTrimWhitespace": false,
   "files.insertFinalNewline": true,
   "files.associations": {
@@ -167,6 +177,7 @@
     "esbenp.prettier-vscode" // Prettier
   ],
   "extensions.autoUpdate": false,
+  "playwright.reuseBrowser": true,
   // PHP extension completion
   // ※ Even if only `imagick` is needed, the initial values are should be included
   "intelephense.stubs": [
