@@ -45,15 +45,6 @@ done
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ZSH="$HOME/.oh-my-zsh"
   fi
-
-  src="$HOME/dotfiles/.oh-my-zsh/custom"
-  target="${ZSH_CUSTOM:-"${ZSH}/custom"}"
-
-  [[ -L "$target" ]] && exit
-
-  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
-
-  ln -sfv "$src" "$ZSH"
 )
 
 #------------------------------------------------
