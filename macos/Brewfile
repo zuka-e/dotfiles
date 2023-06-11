@@ -4,6 +4,7 @@
 # by `brew bundle dump` (overwrited with `-f`).
 # Run `brew bundle --file macos/Brewfile` to install the listed packages
 # and remove those not being listed.
+# To update packages, it seems `brew upgrade` may be needed and then run `brew bundle`.
 
 #------------------------------------------------
 # Taps
@@ -54,6 +55,7 @@ brew "node-build" # Dependency of `nodenv`
 brew "pyenv"
 brew "pip-completion"
 brew "rbenv"
+brew "php"
 
 # Possible dependencies of `phpenv`
 brew "bzip2"
@@ -65,6 +67,25 @@ brew "tidy-html5"
 brew "act" # Local Github Actions
 brew "awscli"
 brew "terraform"
+
+# Stable diffusion Web UI
+# cf. https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon#automatic-installation
+brew "cmake"
+brew "protobuf"
+brew "rust"
+brew "python@3.10"
+
+# Dependencies
+brew "aom"
+brew "docutils"
+brew "little-cms2"
+brew "webp"
+brew "icu4c"
+brew "libssh2"
+brew "openssl@1.1"
+brew "python@3.9"
+brew "leptonica"
+brew "openjpeg"
 
 #------------------------------------------------
 # Casks
