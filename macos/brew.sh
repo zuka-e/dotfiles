@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
+source ~/dotfiles/shell/functions.sh
+
 if ! brew doctor; then
   exit 2
 fi
 
 current_file="$TMPDIR/Brewfile"
-updated_file="$HOME/dotfiles/macos/Brewfile"
+
+has_apple_silicon &&
+  updated_file=~/dotfiles/macos/arm64/Brewfile ||
+  updated_file=~/dotfiles/macos/x86_64/Brewfile
 
 if [[ ! -f "$updated_file" ]];then
   echo "\"$updated_file\" doesn't exist."
@@ -30,9 +35,9 @@ function diff_brewfile {
 }
 
 # Packages to be added.
-added_packages=$(diff_brewfile | egrep "^\+\w+")
+added_packages=$(diff_brewfile | egrep "^\+\s*\w+")
 # Packages to be removed.
-removed_packages=$(diff_brewfile | egrep "^\-\w+")
+removed_packages=$(diff_brewfile | egrep "^\-\s*\w+")
 
 if [[ ! -z $removed_packages ]]; then
   echo

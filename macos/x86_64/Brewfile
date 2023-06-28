@@ -2,8 +2,8 @@
 # to clarify the installed packages.
 # A normal file that lists the installed packages can be created
 # by `brew bundle dump` (overwrited with `-f`).
-# Run `brew bundle --file macos/Brewfile` to install the listed packages
-# and remove those not being listed.
+# Run `brew bundle --file macos/x86_64/Brewfile` to install the listed packages
+# and uninstall packages not being listed.
 # To update packages, it seems `brew upgrade` may be needed and then run `brew bundle`.
 
 #------------------------------------------------
@@ -11,12 +11,12 @@
 #------------------------------------------------
 # cf. https://docs.brew.sh/Taps
 
-tap "hashicorp/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/bundle"
 tap "homebrew/services"
 tap "homebrew/cask-fonts" # For `exa` icons
+tap "hashicorp/tap"
 
 #------------------------------------------------
 # Formulae
@@ -25,12 +25,12 @@ tap "homebrew/cask-fonts" # For `exa` icons
 brew "brew-cask-completion"
 brew "launchctl-completion"
 brew "open-completion"
-brew "vagrant-completion"
+# brew "vagrant-completion"
 brew "docker-completion"
 
 brew "openssl@3"
-brew "bash" # Newer version
-brew "bash-completion@2"
+# brew "bash" # Newer version
+# brew "bash-completion@2"
 brew "zsh"
 brew "rename"
 brew "tree"
@@ -45,24 +45,23 @@ brew "exa" # Alternative to `ls`
 brew "fd" # Alternative to `find`
 brew "ripgrep" # (`rg`) Alternative to `grep`
 brew "git"
-brew "ffmpeg"
-brew "harfbuzz" # Dependency of `ffmpeg`
+# brew "ffmpeg"
+# brew "harfbuzz" # Dependency of `ffmpeg`
 
 brew "yarn"
 brew "yarn-completion"
 brew "nodenv"
 brew "node-build" # Dependency of `nodenv`
-brew "pyenv"
-brew "pip-completion"
-brew "rbenv"
-brew "php"
+# brew "pyenv"
+# brew "pip-completion"
+# brew "php"
 
 # Possible dependencies of `phpenv`
-brew "bzip2"
-brew "libiconv"
-brew "libzip"
-brew "oniguruma"
-brew "tidy-html5"
+# brew "bzip2"
+# brew "libiconv"
+# brew "libzip"
+# brew "oniguruma"
+# brew "tidy-html5"
 
 brew "act" # Local Github Actions
 brew "awscli"
@@ -76,16 +75,16 @@ brew "rust"
 brew "python@3.10"
 
 # Dependencies
-brew "aom"
-brew "docutils"
-brew "little-cms2"
-brew "webp"
-brew "icu4c"
-brew "libssh2"
-brew "openssl@1.1"
-brew "python@3.9"
-brew "leptonica"
-brew "openjpeg"
+#brew "aom"
+#brew "docutils"
+#brew "little-cms2"
+#brew "webp"
+#brew "icu4c"
+#brew "libssh2"
+#brew "openssl@1.1"
+#brew "python@3.9"
+#brew "leptonica"
+#brew "openjpeg"
 
 #------------------------------------------------
 # Casks
@@ -99,22 +98,20 @@ cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
 cask "libreoffice"
-
-# Communication
 cask "slack"
 
 # Developer
 cask "docker"
-cask "virtualbox"
-cask "vagrant"
+# cask "virtualbox"
+# cask "vagrant"
 cask "visual-studio-code"
-cask "mysqlworkbench"
+# cask "mysqlworkbench"
 # cask "sequel-ace"
 # cask "pgadmin4"
 
 # Miscellaneous
-cask "kindle"
-cask "send-anywhere"
+# cask "kindle"
+# cask "send-anywhere"
 cask "iina"
 
 #------------------------------------------------
