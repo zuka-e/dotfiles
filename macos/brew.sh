@@ -66,6 +66,9 @@ else
         # Install packages based on `Brewfile`,
         # and remove those installed with `brew` and not listed in the file.
         brew bundle -v --cleanup --file="$updated_file"
+        # Remove unnecessary dependencies
+        # cf. https://docs.brew.sh/Manpage#autoremove---dry-run
+        brew autoremove
         # Remove stale lock files, outdated downloads, and caches.
         # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
         brew cleanup -vs --prune=all
