@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+source ~/dotfiles/shell/functions.sh
+
 if type exa > /dev/null 2>&1; then
   alias ls="exa --all --header --icons --links --group --time-style=long-iso --git"
   alias ll="ls --long"
@@ -5,10 +9,8 @@ if type exa > /dev/null 2>&1; then
   alias llat="ll --time=accessed --sort=accessed"
   alias llmt="ll --time=modified --sort=modified"
   alias llct="ll --time=changed --sort=changed"
-
-  export EXA_COLORS="di=1;34:da=32"
 else
-  if [[ "$(uname)" = "Linux" ]]; then
+  if is_mac; then
     time='--time-style="+%Y-%m-%d %H:%M:%S"'
 
     alias ls="ls --sort=version --almost-all --color=auto"
@@ -17,9 +19,7 @@ else
     alias llat="llt --sort=time --time=atime"
     alias llmt="llt --sort=time"
     alias llct="llt --sort=time --time=ctime"
-
-    eval "$(dircolors ../config/.colorrc)"; # `LS_COLORS`
-  elif [[ "$(uname)" = "Darwin" ]]; then
+  elif is_linux; then
     time='-D "+%Y-%m-%d %H:%M:%S"'
 
     alias ls="ls -AG"
@@ -28,8 +28,6 @@ else
     alias llat="ll -tu"
     alias llmt="ll -t"
     alias llct="ll -tc"
-
-    export LSCOLORS="GxfxcxdxBxegedabagacad";
   fi
 
   unset time

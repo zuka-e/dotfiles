@@ -73,8 +73,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-find "$HOME"/dotfiles/shell/zsh -name "*.zsh" | while read line; do
-  source "$line"
+for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*"); do
+  source "$file"
+done
+
+for file in $(find ~/dotfiles/shell/zsh -name "*.zsh" ! -name "path.*"); do
+  source "$file"
 done
 
 # zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
