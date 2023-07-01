@@ -10,7 +10,7 @@ if type exa > /dev/null 2>&1; then
   alias llmt="ll --time=modified --sort=modified"
   alias llct="ll --time=changed --sort=changed"
 else
-  if is_mac; then
+  if is_linux; then
     time='--time-style="+%Y-%m-%d %H:%M:%S"'
 
     alias ls="ls --sort=version --almost-all --color=auto"
@@ -19,7 +19,7 @@ else
     alias llat="llt --sort=time --time=atime"
     alias llmt="llt --sort=time"
     alias llct="llt --sort=time --time=ctime"
-  elif is_linux; then
+  elif is_mac; then
     time='-D "+%Y-%m-%d %H:%M:%S"'
 
     alias ls="ls -AG"
