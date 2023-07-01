@@ -45,16 +45,6 @@ for config in ${configs[@]}; do
   ln -sfv "$config" "$CONFIG_PATH"
 done
 
-# ZShell (Oh My Zsh)
-# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
-(
-  if [[ ! -e "$ZSH" ]]; then
-    # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    ZSH="$HOME/.oh-my-zsh"
-  fi
-)
-
 #------------------------------------------------
 # Install packages etc
 #------------------------------------------------

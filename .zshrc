@@ -50,6 +50,18 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
 
+# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
+if [[ ! -e "$ZSH" ]]; then
+  # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
+  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# Syntax highlighting
+if [[ ! -e "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
+  # cf. https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -61,7 +73,6 @@ plugins=(
   laravel
   npm
   terraform
-  # cf. https://github.com/zsh-users/zsh-syntax-highlighting
   zsh-syntax-highlighting
 )
 
