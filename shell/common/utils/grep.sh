@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Output the line number
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"

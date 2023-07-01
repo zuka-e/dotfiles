@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/dotfiles/shell/functions.sh
+
 #------------------------------------------------
 # Create symbolic links
 #------------------------------------------------
@@ -23,6 +25,11 @@ done
 # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
 export CONFIG_PATH="$HOME/.config"
 
+if [[ ! -e $CONFIG_PATH ]]; then
+  # With no $CONFIG_PATH, it'll accidentally be linked directly (e.g. ~/.config -> ~/.config/bat)
+  mkdir $CONFIG_PATH
+fi
+
 configs="$HOME/dotfiles/.config/*"
 
 for config in ${configs[@]}; do
@@ -34,22 +41,15 @@ for config in ${configs[@]}; do
 
   [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
+  echo $config $target
   ln -sfv "$config" "$CONFIG_PATH"
 done
-
-# ZShell (Oh My Zsh)
-# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
-(
-  if [[ ! -e "$ZSH" ]]; then
-    # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    ZSH="$HOME/.oh-my-zsh"
-  fi
-)
 
 #------------------------------------------------
 # Install packages etc
 #------------------------------------------------
 
-[[ "$(uname)" == "Darwin" ]] && "$HOME/dotfiles/macos/install.sh"
+is_mac && "$HOME/dotfiles/macos/install.sh"
 type code > /dev/null 2>&1 && "$HOME/dotfiles/vscode/install.sh"
+
+exec "${SHELL}" -l

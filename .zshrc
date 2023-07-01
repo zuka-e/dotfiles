@@ -37,7 +37,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -50,6 +50,18 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
 
+# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
+if [[ ! -e "$ZSH" ]]; then
+  # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
+  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# Syntax highlighting
+if [[ ! -e "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
+  # cf. https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -61,7 +73,6 @@ plugins=(
   laravel
   npm
   terraform
-  # cf. https://github.com/zsh-users/zsh-syntax-highlighting
   zsh-syntax-highlighting
 )
 
@@ -73,8 +84,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-find "$HOME"/dotfiles/shell/zsh -name "*.zsh" | while read line; do
-  source "$line"
+for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*"); do
+  source "$file"
+done
+
+for file in $(find ~/dotfiles/shell/zsh -name "*.zsh" ! -name "path.*"); do
+  source "$file"
 done
 
 # zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
