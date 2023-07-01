@@ -93,12 +93,12 @@ fi
 # Change Shell into local Zsh
 #------------------------------------------------
 
-usr_zsh='/usr/local/bin/zsh'
-etc_shells='/etc/shells'
+usr_zsh="$HOMEBREW_PREFIX/bin/zsh"
+shells='/etc/shells'
 
 if [[ $SHELL != $usr_zsh && "$(which zsh)" = $usr_zsh ]]; then
   if ! grep $usr_zsh '/etc/shells' > /dev/null 2>&1; then
-    echo "Enter the password to add '${usr_zsh}' to '${etc_shells}'"
+    echo "Enter the password to add '${usr_zsh}' to '${shells}'"
     echo $usr_zsh | sudo tee -a /etc/shells > /dev/null
 
     if [[ $? == 0 ]]; then
@@ -117,4 +117,4 @@ if [[ $SHELL != $usr_zsh && "$(which zsh)" = $usr_zsh ]]; then
   fi
 fi
 
-unset usr_zsh etc_shells
+unset usr_zsh shells

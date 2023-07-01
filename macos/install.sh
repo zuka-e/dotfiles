@@ -83,8 +83,14 @@ echo -e "\033[32mUpdated.\033[0m If not being reflected, try rebooting."
 if ! type brew > /dev/null 2>&1; then
   # cf. https://brew.sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  if [[ -x /usr/local/bin/brew ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  elif [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    exit 2
+  fi
 fi
 
-if [[ $? == 0 ]]; then
-  "$HOME/dotfiles/macos/brew.sh"
-fi
+"$HOME/dotfiles/macos/brew.sh"

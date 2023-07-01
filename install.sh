@@ -6,7 +6,7 @@
 tmp_dir="$HOME/dotfiles/.tmp" # Overwritten files will be moved here
 #------------------------------------------------
 
-linked_filenames=(.{bash_profile,bashrc,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
+linked_filenames=(.{bash_profile,bashrc,zprofile,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
 
 for filename in ${linked_filenames[@]}; do
   src="$HOME/dotfiles/$filename"
