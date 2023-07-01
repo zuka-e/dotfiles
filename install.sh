@@ -25,6 +25,11 @@ done
 # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
 export CONFIG_PATH="$HOME/.config"
 
+if [[ ! -e $CONFIG_PATH ]]; then
+  # With no $CONFIG_PATH, it'll accidentally be linked directly (e.g. ~/.config -> ~/.config/bat)
+  mkdir $CONFIG_PATH
+fi
+
 configs="$HOME/dotfiles/.config/*"
 
 for config in ${configs[@]}; do
@@ -36,6 +41,7 @@ for config in ${configs[@]}; do
 
   [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
 
+  echo $config $target
   ln -sfv "$config" "$CONFIG_PATH"
 done
 
