@@ -1,0 +1,207 @@
+# This is a "Brewfile" that its packages are sorted arbitrarily
+# to clarify the installed packages.
+# A normal file that lists the installed packages can be created
+# by `brew bundle dump` (overwrited with `-f`).
+# Run `brew bundle --file macos/arm64/Brewfile` to install the listed packages
+# and uninstall packages not being listed.
+# To update packages, it seems `brew upgrade` may be needed and then run `brew bundle`.
+
+#------------------------------------------------
+# Taps
+#------------------------------------------------
+# cf. https://docs.brew.sh/Taps
+
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "homebrew/cask-fonts"
+tap "hashicorp/tap"
+
+#------------------------------------------------
+# Formulae
+#------------------------------------------------
+
+brew "brew-cask-completion"
+brew "launchctl-completion"
+brew "open-completion"
+# brew "vagrant-completion"
+brew "docker-completion"
+
+brew "openssl@3"
+brew "bash" # Newer version
+brew "bash-completion@2"
+brew "zsh"
+brew "rename"
+brew "tree"
+brew "pstree"
+brew "htop"
+brew "nmap"
+brew "wget"
+brew "tmux"
+brew "rsync" # Newer version
+brew "bat" # Alternative to `cat`
+brew "exa" # Alternative to `ls`
+brew "fd" # Alternative to `find`
+brew "ripgrep" # (`rg`) Alternative to `grep`
+brew "git"
+# brew "ffmpeg"
+# brew "harfbuzz" # Dependency of `ffmpeg`
+
+brew "nodenv"
+brew "node-build" # Dependency of `nodenv`
+brew "yarn"
+brew "yarn-completion"
+# brew "pyenv"
+# brew "pip-completion"
+# brew "php"
+
+# Possible dependencies of `phpenv`
+# brew "bzip2"
+# brew "libiconv"
+# brew "libzip"
+# brew "oniguruma"
+# brew "tidy-html5"
+
+brew "act" # Local Github Actions
+brew "awscli"
+brew "terraform"
+
+# Stable diffusion Web UI
+# cf. https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon#automatic-installation
+brew "cmake"
+brew "protobuf"
+brew "rust"
+brew "python@3.10"
+
+# Dependencies
+# brew "aom"
+# brew "docutils"
+# brew "little-cms2"
+# brew "webp"
+# brew "icu4c"
+# brew "libssh2"
+# brew "openssl@1.1"
+# brew "python@3.9"
+# brew "leptonica"
+# brew "openjpeg"
+
+#------------------------------------------------
+# Casks
+#------------------------------------------------
+# cf. https://github.com/Homebrew/homebrew-cask
+
+cask "font-noto-nerd-font"
+
+cask "clipy"
+cask "karabiner-elements"
+cask "google-japanese-ime"
+cask "google-chrome"
+cask "tunnelbear"
+cask "libreoffice"
+cask "slack"
+cask "docker"
+# cask "virtualbox"
+# cask "vagrant"
+cask "visual-studio-code"
+# cask "mysqlworkbench"
+# cask "sequel-ace"
+# cask "pgadmin4"
+# cask "kindle"
+# cask "send-anywhere"
+
+#------------------------------------------------
+# VSCode
+#------------------------------------------------
+# It seems there is no mention about this in the doc.
+# cf. https://github.com/Homebrew/homebrew-bundle/blob/master/lib/bundle/dsl.rb
+
+# Theme
+vscode "PKief.material-icon-theme" # Icons of file and directory
+
+# Remote environment
+vscode "ms-vscode-remote.remote-ssh" # SSH
+vscode "ms-vscode-remote.remote-ssh-edit" # (`remote-ssh` complement)
+vscode "ms-vscode-remote.remote-containers" # Docker containers
+vscode "ms-vscode.remote-explorer" # (`remote-` complement)
+
+# Highlighting
+vscode "shardulm94.trailing-spaces" # Spaces
+vscode "oderwat.indent-rainbow" # Each tab step
+vscode "usernamehw.errorlens" # Inline error messages
+vscode "naumovs.color-highlight" # Web colors
+vscode "IronGeek.vscode-env" # Env
+vscode "IBM.output-colorizer" # Log
+vscode "mechatroner.rainbow-csv" # CSV
+vscode "jeff-hykin.better-shellscript-syntax" # Shellscript
+vscode "jeff-hykin.better-dockerfile-syntax" # Dockerfile
+vscode "XadillaX.viml" # Vimrc
+vscode "mariusschulz.yarn-lock-syntax" # Yarn
+
+# Utilities
+vscode "streetsidesoftware.code-spell-checker"
+vscode "artdiniz.quitcontrol-vscode" # Show confirmation before closing window
+vscode "aaron-bond.better-comments" # create many kinds of colorized comments
+vscode "wmaurer.change-case" # (Command Palette -> Change Case xxx)
+vscode "quicktype.quicktype" # paste JSON as selected lang
+vscode "ms-playwright.playwright" # Playwight testing tool
+
+# Git
+vscode "eamodio.gitlens"
+vscode "donjayamanne.githistory"
+
+# Intellisense
+vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "VisualStudioExptTeam.intellicode-api-usage-examples" # Code example
+
+# Docker
+vscode "ms-azuretools.vscode-docker"
+
+# Bash
+vscode "mads-hartmann.bash-ide-vscode"
+vscode "rogalmic.bash-debug"
+
+# CSV
+vscode "GrapeCity.gc-excelviewer"
+
+# YAML
+vscode "redhat.vscode-yaml"
+
+# HTML CSS
+vscode "formulahendry.auto-rename-tag"
+vscode "vincaslt.highlight-matching-tag"
+vscode "ecmel.vscode-html-css"  # `id` and `class` attribute completion
+vscode "bradlc.vscode-tailwindcss"
+
+# JS/TS
+vscode "christian-kohler.path-intellisense"
+vscode "ms-vscode.vscode-typescript-next"
+vscode "dbaeumer.vscode-eslint"
+vscode "esbenp.prettier-vscode"
+vscode "wix.vscode-import-cost" # Import size calculator
+# React
+vscode "dsznajder.es7-react-js-snippets"
+# Vue
+vscode "Vue.volar"
+
+# PHP Laravel
+vscode "bmewburn.vscode-intelephense-client"
+vscode "amiralizadeh9480.laravel-extra-intellisense"
+
+# Python
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.isort"
+vscode "KevinRose.vsc-python-indent"
+
+# Terraform
+vscode "hashicorp.terraform"
+
+# Serverless
+vscode "ThreadHeap.serverless-ide-vscode"
+
+# Github Actions
+vscode "github.vscode-github-actions"
+
+# Markdown
+vscode "yzhang.markdown-all-in-one"
+vscode "DavidAnson.vscode-markdownlint"
+vscode "shd101wyy.markdown-preview-enhanced"
