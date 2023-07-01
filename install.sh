@@ -51,3 +51,5 @@ done
 
 is_mac && "$HOME/dotfiles/macos/install.sh"
 type code > /dev/null 2>&1 && "$HOME/dotfiles/vscode/install.sh"
+
+exec "${SHELL}" -l
