@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/dotfiles/shell/functions.sh
+
 #------------------------------------------------
 # Create symbolic links
 #------------------------------------------------
@@ -51,5 +53,5 @@ done
 # Install packages etc
 #------------------------------------------------
 
-[[ "$(uname)" == "Darwin" ]] && "$HOME/dotfiles/macos/install.sh"
+is_mac && "$HOME/dotfiles/macos/install.sh"
 type code > /dev/null 2>&1 && "$HOME/dotfiles/vscode/install.sh"
