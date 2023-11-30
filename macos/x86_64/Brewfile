@@ -92,7 +92,7 @@ brew "python@3.10"
 # cf. https://github.com/Homebrew/homebrew-cask
 
 cask "font-noto-nerd-font"
-
+cask "android-file-transfer"
 cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
@@ -171,6 +171,9 @@ vscode "GrapeCity.gc-excelviewer"
 # YAML
 vscode "redhat.vscode-yaml"
 
+# Nginx
+vscode "ahmadalli.vscode-nginx-conf"
+
 # HTML CSS
 vscode "vincaslt.highlight-matching-tag"
 vscode "ecmel.vscode-html-css"  # `id` and `class` attribute completion
@@ -188,6 +191,7 @@ vscode "dsznajder.es7-react-js-snippets"
 vscode "Vue.volar"
 
 # PHP Laravel
+vscode "xdebug.php-debug"
 vscode "bmewburn.vscode-intelephense-client"
 vscode "amiralizadeh9480.laravel-extra-intellisense"
 

@@ -96,6 +96,7 @@
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
+  "[nginx]": { "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf" },
   "[markdown]": {
     "editor.quickSuggestions": {
       "comments": "on",
