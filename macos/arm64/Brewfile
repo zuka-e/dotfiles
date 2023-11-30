@@ -166,7 +166,6 @@ vscode "GrapeCity.gc-excelviewer"
 vscode "redhat.vscode-yaml"
 
 # HTML CSS
-vscode "formulahendry.auto-rename-tag"
 vscode "vincaslt.highlight-matching-tag"
 vscode "ecmel.vscode-html-css"  # `id` and `class` attribute completion
 vscode "bradlc.vscode-tailwindcss"
