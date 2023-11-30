@@ -2,8 +2,8 @@
 
 source ~/dotfiles/shell/functions.sh
 
-if type exa > /dev/null 2>&1; then
-  alias ls="exa --all --header --icons --links --group --time-style=long-iso --git"
+if type eza > /dev/null 2>&1; then
+  alias ls="eza --all --header --icons --links --group --time-style=long-iso --git"
   alias ll="ls --long"
   alias lli="ll --inode --blocks" # Show index number, allocated size
   alias llat="ll --time=accessed --sort=accessed"
@@ -32,4 +32,3 @@ else
 
   unset time
 fi
-

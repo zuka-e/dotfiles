@@ -39,7 +39,7 @@ brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
 brew "bat" # Alternative to `cat`
-brew "exa" # Alternative to `ls`
+brew "eza" # Alternative to `ls`
 brew "fd" # Alternative to `find`
 brew "ripgrep" # (`rg`) Alternative to `grep`
 brew "git"

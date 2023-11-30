@@ -15,7 +15,7 @@ tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "homebrew/cask-fonts" # For `exa` icons
+tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
 
 #------------------------------------------------
@@ -41,7 +41,7 @@ brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
 brew "bat" # Alternative to `cat`
-brew "exa" # Alternative to `ls`
+brew "eza" # Alternative to `ls`
 brew "fd" # Alternative to `find`
 brew "ripgrep" # (`rg`) Alternative to `grep`
 brew "git"
