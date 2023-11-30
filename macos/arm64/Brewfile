@@ -189,6 +189,9 @@ vscode "amiralizadeh9480.laravel-extra-intellisense"
 # Python
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.mypy-type-checker"
+vscode "ms-python.flake8"
+vscode "ms-python.black-formatter"
 vscode "ms-python.isort"
 vscode "KevinRose.vsc-python-indent"
 
