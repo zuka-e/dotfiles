@@ -1,0 +1,12 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "^20.0",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  }
+}
