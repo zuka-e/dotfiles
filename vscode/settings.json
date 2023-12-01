@@ -113,7 +113,10 @@
   "files.insertFinalNewline": true,
   "files.associations": {
     "**/dotfiles/vscode/**/*.json": "jsonc",
+    ".env": "env",
     ".env.*": "env",
+    "supervisord.conf": "ini",
+    "supervisord.*.conf": "ini",
     "*.module": "php",
     "*.hcl": "terraform"
   },
