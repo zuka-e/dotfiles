@@ -1,26 +1,15 @@
 # cf. `man git-config`
 
 [alias]
-  a = add
   aa = add -A
-  b = branch
-  c = commit
-  cf = config
   co = checkout
   cp = cherry-pick
-  d = diff
-  f = fetch
-  l = log
-  m = merge
-  p = push
-  poh = push origin HEAD
-  r = reset
+  l = log --stat
+  p = push origin HEAD
   rs = reset --soft
   rsh = reset --soft HEAD^
   rh = reset --hard
   rhh = reset --hard HEAD^
-  rb = rebase -i
-  s = status
 
 [user]
 	name = zuka-e
