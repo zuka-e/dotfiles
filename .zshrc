@@ -9,6 +9,8 @@
 # These will be located at `$ZSH` directory.
 # -------------------------------------------------------------------
 
+source ~/dotfiles/shell/functions.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -73,6 +75,7 @@ plugins=(
   laravel
   npm
   terraform
+  tmux
   zsh-syntax-highlighting
 )
 
@@ -80,11 +83,16 @@ plugins=(
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+# cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+if [[ is_interactive_shell && -z "$VSCODE_INJECTION" ]]; then
+  ZSH_TMUX_AUTOSTART=true
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*"); do
+for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*" | sort); do
   source "$file"
 done
 

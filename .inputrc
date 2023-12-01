@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# See the current settings using `bind -p`.
+
 # Default
 "\C-g": abort
 "\C-m": accept-line
@@ -21,3 +23,4 @@
 
 "\C-j\C-b": backward-word
 "\C-j\C-h": backward-kill-word
+"\C-w": backward-kill-word
