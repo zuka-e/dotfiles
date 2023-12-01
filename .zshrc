@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*"); do
+for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*" | sort); do
   source "$file"
 done
 
