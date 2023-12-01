@@ -14,3 +14,13 @@ function is_linux() {
 function has_apple_silicon() {
   is_mac && [[ "$(uname -m)" == "arm64" ]]
 }
+
+# Determine if the current shell is interactive.
+function is_interactive_shell() {
+  [[ $- == *i* ]]
+}
+
+# Determine if the current shell is login one.
+function is_login_shell() {
+  [[ "$SHLVL" == 1 ]]
+}
