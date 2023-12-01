@@ -93,6 +93,8 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "git.openRepositoryInParentFolders": "always",
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
@@ -108,7 +110,6 @@
   },
   "csv-preview.resizeColumns": "first",
   "csv-preview.lineNumbers": "source",
-  "diffEditor.ignoreTrimWhitespace": false,
   "files.insertFinalNewline": true,
   "files.associations": {
     "**/dotfiles/vscode/**/*.json": "jsonc",
