@@ -77,6 +77,7 @@
   "editor.cursorStyle": "block",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
   "editor.hover.enabled": true,
   "errorLens.editorHoverPartsEnabled": {
     "messageEnabled": false,
@@ -95,6 +96,7 @@
   "[python]": { "editor.defaultFormatter": "ms-python.python" },
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
+  "[nginx]": { "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf" },
   "[markdown]": {
     "editor.quickSuggestions": {
       "comments": "on",
@@ -135,10 +137,6 @@
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.formatting.provider": "autopep8",
-  "python.formatting.autopep8Args": ["--indent-size=2"],
   "terraform.experimentalFeatures.validateOnSave": true,
   "markdown.extension.toc.updateOnSave": false,
   "markdownlint.config": { "MD033": false },

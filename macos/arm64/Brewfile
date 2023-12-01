@@ -39,7 +39,7 @@ brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
 brew "bat" # Alternative to `cat`
-brew "exa" # Alternative to `ls`
+brew "eza" # Alternative to `ls`
 brew "fd" # Alternative to `find`
 brew "ripgrep" # (`rg`) Alternative to `grep`
 brew "git"
@@ -50,6 +50,7 @@ brew "nodenv"
 brew "node-build" # Dependency of `nodenv`
 brew "yarn"
 brew "yarn-completion"
+brew "pnpm"
 # brew "pyenv"
 # brew "pip-completion"
 # brew "php"
@@ -90,12 +91,13 @@ brew "python@3.10"
 # cf. https://github.com/Homebrew/homebrew-cask
 
 cask "font-noto-nerd-font"
-
+cask "android-file-transfer"
 cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
 cask "tunnelbear"
+cask "protonvpn"
 cask "libreoffice"
 cask "slack"
 cask "docker"
@@ -105,6 +107,7 @@ cask "visual-studio-code"
 # cask "mysqlworkbench"
 # cask "sequel-ace"
 # cask "pgadmin4"
+cask "dbeaver-community"
 # cask "kindle"
 # cask "send-anywhere"
 
@@ -165,8 +168,10 @@ vscode "GrapeCity.gc-excelviewer"
 # YAML
 vscode "redhat.vscode-yaml"
 
+# Nginx
+vscode "ahmadalli.vscode-nginx-conf"
+
 # HTML CSS
-vscode "formulahendry.auto-rename-tag"
 vscode "vincaslt.highlight-matching-tag"
 vscode "ecmel.vscode-html-css"  # `id` and `class` attribute completion
 vscode "bradlc.vscode-tailwindcss"
@@ -183,12 +188,16 @@ vscode "dsznajder.es7-react-js-snippets"
 vscode "Vue.volar"
 
 # PHP Laravel
+vscode "xdebug.php-debug"
 vscode "bmewburn.vscode-intelephense-client"
 vscode "amiralizadeh9480.laravel-extra-intellisense"
 
 # Python
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.mypy-type-checker"
+vscode "ms-python.flake8"
+vscode "ms-python.black-formatter"
 vscode "ms-python.isort"
 vscode "KevinRose.vsc-python-indent"
 

@@ -1,23 +1,27 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
-
 if ! brew doctor; then
   exit 2
 fi
 
-current_file="$TMPDIR/Brewfile"
+# A Brewfile based on desired packages.
+new_file=$(
+  find -E ~/dotfiles -type f -regex ".*$(uname -m)/Brewfile(.local|$)" |
+    sort --version-sort --reverse |
+    head -n 1
+)
 
-has_apple_silicon &&
-  updated_file=~/dotfiles/macos/arm64/Brewfile ||
-  updated_file=~/dotfiles/macos/x86_64/Brewfile
-
-if [[ ! -f "$updated_file" ]];then
-  echo "\"$updated_file\" doesn't exist."
+if [[ ! -f "$new_file" ]];then
+  echo "Brewfile doesn't exist."
   exit 2
 fi
 
+echo "\"${new_file}\" has been loaded."
 echo "Loading installed packages..."
+
+# A Brewfile based on teinstalled packages.
+current_file="$TMPDIR/Brewfile"
+
 brew bundle dump -f --file="$current_file"
 
 # Remove comments, dup, and blank lines, and sort a file.
@@ -31,7 +35,7 @@ function diff_brewfile {
     --ignore-blank-lines \
     --ignore-space-change \
     <(format_file "$current_file") \
-    <(format_file "$updated_file")
+    <(format_file "$new_file")
 }
 
 # Packages to be added.
@@ -56,31 +60,32 @@ if [[ ! -z $added_packages ]]; then
 fi
 
 if [[ -z $added_packages && -z $removed_packages ]]; then
-  echo "Already up-to-date."
+  echo -e "All packages are already installed \033[33mbut may be upgraded.\033[0m"
 else
-  echo
-  while true; do
-    read -p "Are you sure to continue? (y/N) " input
-    case $input in
-      y|yes)
-        # Install packages based on `Brewfile`,
-        # and remove those installed with `brew` and not listed in the file.
-        brew bundle -v --cleanup --file="$updated_file"
-        # Remove unnecessary dependencies
-        # cf. https://docs.brew.sh/Manpage#autoremove---dry-run
-        brew autoremove
-        # Remove stale lock files, outdated downloads, and caches.
-        # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
-        brew cleanup -vs --prune=all
-        break;;
-      N|no|No|"")
-        echo "Canceled."
-        break;;
-      *)
-        echo "Please answer with y or N.";;
-    esac
-  done
+  echo -e "\033[33mOther packages might also be upgraded.\033[0m"
 fi
+
+while true; do
+  read -p "Are you sure to continue? (y/N) " input
+  case $input in
+    y|yes)
+      # Install packages based on `Brewfile`,
+      # and remove those installed with `brew` and not listed in the file.
+      brew bundle -v --cleanup --file="$new_file"
+      # Remove unnecessary dependencies
+      # cf. https://docs.brew.sh/Manpage#autoremove---dry-run
+      brew autoremove
+      # Remove stale lock files, outdated downloads, and caches.
+      # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
+      brew cleanup -vs --prune=all
+      break;;
+    N|no|No|"")
+      echo "Canceled."
+      break;;
+    *)
+      echo "Please answer with y or N.";;
+  esac
+done
 
 #------------------------------------------------
 # `phpenv`
