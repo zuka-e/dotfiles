@@ -1,0 +1,4 @@
+# cf. https://github.com/okonet/lint-staged#configuration
+
+'*':
+  - 'prettier --write'
