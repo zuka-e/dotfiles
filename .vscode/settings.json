@@ -2,7 +2,6 @@
   "files.associations": {
     "**/.config/*/config": "shellscript",
     "**/.config/*/ignore": "ignore",
-    "**/vscode/extensions": "shellscript",
-    ".{inputrc,aliases,colorrc,env-vars,path}": "shellscript"
+    ".{inputrc,colorrc,tmux.conf}": "shellscript"
   }
 }
