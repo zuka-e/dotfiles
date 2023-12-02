@@ -1,0 +1,13 @@
+# https://prettier.io/docs/en/ignore.html
+
+package.json
+pnpm-lock.yaml
+
+Brewfile.lock.json
+
+.config
+
+.git-completion.bash
+.git-prompt.bash
+
+.vimrc
