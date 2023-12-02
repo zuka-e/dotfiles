@@ -115,6 +115,7 @@
     "**/dotfiles/vscode/**/*.json": "jsonc",
     ".env": "env",
     ".env.*": "env",
+    ".npmrc": "ini",
     "supervisord.conf": "ini",
     "supervisord.*.conf": "ini",
     "*.module": "php",
