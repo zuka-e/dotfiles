@@ -46,8 +46,7 @@ brew "git"
 # brew "ffmpeg"
 # brew "harfbuzz" # Dependency of `ffmpeg`
 
-brew "nodenv"
-brew "node-build" # Dependency of `nodenv`
+brew "nvm"
 brew "yarn"
 brew "yarn-completion"
 brew "pnpm"

@@ -74,10 +74,15 @@ fi
 plugins=(
   laravel
   npm
+  nvm
   terraform
   tmux
   zsh-syntax-highlighting
 )
+
+# cf．https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
+export NVM_DIR=~/.nvm
+# zstyle ':omz:plugins:nvm' lazy yes
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 zstyle ':completion:*:*:docker:*' option-stacking yes
