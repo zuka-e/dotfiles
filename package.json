@@ -8,9 +8,11 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prettier-fix": "prettier --write ."
+    "prettier-fix": "prettier --write .",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": "^8.0.0",
     "prettier": "3.1.0",
     "prettier-plugin-nginx": "^1.0.3",
     "prettier-plugin-sh": "^0.13.1"

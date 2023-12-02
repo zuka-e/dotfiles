@@ -1,5 +1,7 @@
 node_modules
 
+.husky/_
+
 .oh-my-zsh/custom/plugins
 .tmp/*
 
