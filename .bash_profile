@@ -4,10 +4,9 @@ fi
 
 source ~/dotfiles/shell/bash/path.bash
 
-
 exported_files=(~/dotfiles/shell/bash/exports/.{env-vars})
 for file in ${exported_files[@]}; do
-  [[ -r "$file" ]] && source "$file";
+  [[ -r "$file" ]] && source "$file"
 done
 
 [[ -r ~/.bashrc ]] && source ~/.bashrc
