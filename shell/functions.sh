@@ -54,9 +54,10 @@ function create_symbolic_link() {
 
   local basename=$(basename "$src")
   local dest="$target/$basename"
+  local current_src=$(readlink "$dest")
 
   # No action if already created
-  if [[ -L "$dest" ]]; then
+  if [[ "$current_src" == "$src" ]]; then
     echo "\"$dest\" has already been linked."
     return
   fi
@@ -70,6 +71,11 @@ function create_symbolic_link() {
     return
   fi
 
-  # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
-  ln -sv "$src" "$target"
+  if [[ -L "$dest" ]]; then
+    # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
+    ln -sfv "$src" "$target" \
+      && echo "Previous reference was \"$dest\"."
+  else
+    ln -sv "$src" "$target"
+  fi
 }
