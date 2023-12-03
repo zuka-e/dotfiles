@@ -14,6 +14,17 @@ source ~/dotfiles/shell/functions.sh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
+if [[ ! -e "$ZSH" ]]; then
+  # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
+  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
+  echo -e "\033[31m\"oh-my-zsh.sh\" doesn't exist.\033[0m"
+  return
+fi
+
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="git-info"
 
@@ -51,12 +62,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
-
-# cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
-if [[ ! -e "$ZSH" ]]; then
-  # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
-  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
 
 # Syntax highlighting
 if [[ ! -e "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
