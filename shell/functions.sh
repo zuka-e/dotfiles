@@ -52,7 +52,7 @@ function create_symbolic_link() {
     return
   fi
 
-  local basename=$(basename $src)
+  local basename=$(basename "$src")
   local dest="$target/$basename"
 
   # No action if already created
@@ -64,6 +64,10 @@ function create_symbolic_link() {
   # Move the current file to a tmp path before overwritten
   if [[ -e "$dest" ]]; then
     mv -v "$dest" "$(tmp_dir)/$basename $(date '+%s')"
+  fi
+
+  if [[ $? != 0 ]]; then
+    return
   fi
 
   # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
