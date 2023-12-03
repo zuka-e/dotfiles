@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# cf. https://commitlint.js.org/#/reference-cli
+# cf. https://github.com/conventional-changelog/commitlint#config
+pnpm commitlint --edit --strict

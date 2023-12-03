@@ -11,6 +11,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^18.4.3
     version: 18.4.3
+  '@commitlint/types':
+    specifier: ^18.4.3
+    version: 18.4.3
   husky:
     specifier: ^8.0.0
     version: 8.0.3
