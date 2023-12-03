@@ -94,7 +94,7 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-if [[ is_interactive_shell && -z "$VSCODE_INJECTION" ]]; then
+if is_interactive_shell && [[ -z "$VSCODE_INJECTION" ]]; then
   ZSH_TMUX_AUTOSTART=true
 fi
 
