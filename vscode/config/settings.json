@@ -115,6 +115,7 @@
     "**/dotfiles/vscode/**/*.json": "jsonc",
     ".env": "env",
     ".env.*": "env",
+    ".npmrc": "ini",
     "supervisord.conf": "ini",
     "supervisord.*.conf": "ini",
     "*.module": "php",
@@ -132,7 +133,8 @@
     }
   ],
   "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml",
+    "https://json.schemastore.org/commitlintrc.json": ".commitlintrc.yml"
   },
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",

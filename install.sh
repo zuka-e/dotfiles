@@ -1,55 +1,37 @@
 #!/usr/bin/env bash
 
+source ~/dotfiles/shell/common/config/paths.sh
 source ~/dotfiles/shell/functions.sh
 
 #------------------------------------------------
 # Create symbolic links
 #------------------------------------------------
-tmp_dir="$HOME/dotfiles/.tmp" # Overwritten files will be moved here
-#------------------------------------------------
 
-linked_filenames=(.{bash_profile,bashrc,zprofile,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
+basic_config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
 
-for filename in ${linked_filenames[@]}; do
-  src="$HOME/dotfiles/$filename"
-  target="$HOME/$filename"
-
-  [[ -L "$target" ]] && continue
-
-  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
-
-  ln -sfv "$src" "$target"
+for filename in ${basic_config_filenames[@]}; do
+  create_symbolic_link "$DOTFILES_PATH/$filename" "$HOME"
 done
 
-# Configs
-# cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
-export CONFIG_PATH="$HOME/.config"
+unset basic_config_filenames
 
-if [[ ! -e $CONFIG_PATH ]]; then
-  # With no $CONFIG_PATH, it'll accidentally be linked directly (e.g. ~/.config -> ~/.config/bat)
-  mkdir $CONFIG_PATH
+if [[ ! -e "$CONFIG_PATH" ]]; then
+  mkdir "$CONFIG_PATH"
 fi
 
-configs="$HOME/dotfiles/.config/*"
+extended_configs=$(find "$DOTFILES_PATH/.config" -depth 1)
 
-for config in ${configs[@]}; do
-  [[ ! -e $config ]] && break
-
-  target="$CONFIG_PATH/$(basename $config)"
-
-  [[ -L "$target" ]] && continue
-
-  [[ -e "$target" ]] && mv -fv "$target" "$tmp_dir"
-
-  echo $config $target
-  ln -sfv "$config" "$CONFIG_PATH"
+for config in ${extended_configs[@]}; do
+  create_symbolic_link "$config" "$CONFIG_PATH"
 done
+
+unset extended_configs
 
 #------------------------------------------------
 # Install packages etc
 #------------------------------------------------
 
-is_mac && "$HOME/dotfiles/macos/install.sh"
-type code > /dev/null 2>&1 && "$HOME/dotfiles/vscode/install.sh"
+is_mac && "$DOTFILES_PATH/macos/install.sh"
+type code > /dev/null 2>&1 && "$DOTFILES_PATH/vscode/install.sh"
 
 exec "${SHELL}" -l

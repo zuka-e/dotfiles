@@ -6,12 +6,12 @@ fi
 
 # A Brewfile based on desired packages.
 new_file=$(
-  find -E ~/dotfiles -type f -regex ".*$(uname -m)/Brewfile(.local|$)" |
-    sort --version-sort --reverse |
-    head -n 1
+  find -E ~/dotfiles -type f -regex ".*$(uname -m)/Brewfile(.local|$)" \
+    | sort --version-sort --reverse \
+    | head -n 1
 )
 
-if [[ ! -f "$new_file" ]];then
+if [[ ! -f "$new_file" ]]; then
   echo "Brewfile doesn't exist."
   exit 2
 fi
@@ -68,7 +68,7 @@ fi
 while true; do
   read -p "Are you sure to continue? (y/N) " input
   case $input in
-    y|yes)
+    y | yes)
       # Install packages based on `Brewfile`,
       # and remove those installed with `brew` and not listed in the file.
       brew bundle -v --cleanup --file="$new_file"
@@ -78,12 +78,15 @@ while true; do
       # Remove stale lock files, outdated downloads, and caches.
       # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
       brew cleanup -vs --prune=all
-      break;;
-    N|no|No|"")
+      break
+      ;;
+    N | no | No | "")
       echo "Canceled."
-      break;;
+      break
+      ;;
     *)
-      echo "Please answer with y or N.";;
+      echo "Please answer with y or N."
+      ;;
   esac
 done
 

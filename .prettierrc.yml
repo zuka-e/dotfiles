@@ -1,0 +1,18 @@
+# cf. https://prettier.io/docs/en/configuration.html
+# cf. https://prettier.io/docs/en/options
+
+singleQuote: true
+# cf. https://prettier.io/docs/en/plugins
+plugins:
+  # cf. https://github.com/jxddk/prettier-plugin-nginx
+  # Formatting with VSCode may conflict with other extensions
+  - 'prettier-plugin-nginx'
+  # cf. https://github.com/un-ts/prettier/tree/master/packages/sh
+  - 'prettier-plugin-sh'
+overrides:
+  - files:
+      - 'nginx.conf'
+      - 'nginx/**/*.conf'
+    options:
+      tabWidth: 2
+      parser: 'nginx'

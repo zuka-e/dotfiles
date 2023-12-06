@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# cf. https://typicode.github.io/husky/guide.html
+# cf. https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+
+# cf. https://github.com/lint-staged/lint-staged#command-line-flags
+pnpm lint-staged

@@ -1,0 +1,9 @@
+node_modules
+
+.husky/_
+
+.oh-my-zsh/custom/plugins
+.tmp/*
+
+Brewfile.local
+Brewfile.local.lock.json
