@@ -3,6 +3,7 @@
     "**/.config/git/config": "ini",
     "**/.config/git/ignore": "ignore",
     "**/.config/*/config": "shellscript",
+    "tmux.conf": "shellscript",
     ".{inputrc,colorrc,tmux.conf}": "shellscript"
   }
 }
