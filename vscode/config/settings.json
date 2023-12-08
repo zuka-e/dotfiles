@@ -153,9 +153,10 @@
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
+  // cf. https://code.visualstudio.com/docs/devcontainers/containers#_personalizing-with-dotfile-repositories
   "dotfiles.repository": "https://github.com/zuka-e/dotfiles.git",
   "dotfiles.targetPath": "~/dotfiles",
-  "dotfiles.installCommand": "~/dotfiles/install.sh",
+  "dotfiles.installCommand": "install.sh",
   "dev.containers.defaultExtensions": [
     "streetsidesoftware.code-spell-checker",
     // Intellisense

@@ -5,7 +5,7 @@
   co = checkout
   cp = cherry-pick
   l = log --stat
-  p = push origin HEAD
+  poh = push origin HEAD
   rs = reset --soft
   rsh = reset --soft HEAD^
   rh = reset --hard

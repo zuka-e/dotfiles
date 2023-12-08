@@ -1,7 +1,9 @@
 {
   "files.associations": {
+    "**/.config/git/config": "ini",
+    "**/.config/git/ignore": "ignore",
     "**/.config/*/config": "shellscript",
-    "**/.config/*/ignore": "ignore",
+    "tmux.conf": "shellscript",
     ".{inputrc,colorrc,tmux.conf}": "shellscript"
   }
 }
