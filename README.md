@@ -6,5 +6,5 @@
 
 ```bash
 git clone https://github.com/zuka-e/dotfiles.git
-cd dotfiles && ./install.sh && exec "$SHELL" -l
+cd ./dotfiles/install.sh
 ```
