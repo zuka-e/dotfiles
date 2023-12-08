@@ -15,14 +15,14 @@ done
 
 unset basic_config_filenames
 
-if [[ ! -e "$CONFIG_PATH" ]]; then
-  mkdir "$CONFIG_PATH"
+if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
+  mkdir "$XDG_CONFIG_HOME"
 fi
 
 extended_configs=$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)
 
 for config in ${extended_configs[@]}; do
-  create_symbolic_link "$config" "$CONFIG_PATH"
+  create_symbolic_link "$config" "$XDG_CONFIG_HOME"
 done
 
 unset extended_configs
