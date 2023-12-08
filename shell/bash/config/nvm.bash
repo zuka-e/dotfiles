@@ -4,9 +4,12 @@
 
 export NVM_DIR=~/.nvm
 
-brew_nvm_path=$(brew --prefix nvm)
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# This loads nvm
-[ -s "$brew_nvm_path/nvm.sh" ] && \. "$brew_nvm_path/nvm.sh"
+if type brew > /dev/null 2>&1; then
+  nvm_path=$(brew --prefix nvm)
 
-[ -s "$brew_nvm_path/etc/bash_completion.d/nvm" ] && \. "$brew_nvm_path/etc/bash_completion.d/nvm"
+  [ -s "$nvm_path/etc/bash_completion.d/nvm" ] && \. "$nvm_path/etc/bash_completion.d/nvm"
+
+  unset nvm_path
+fi
