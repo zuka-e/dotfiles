@@ -19,7 +19,7 @@ if [[ ! -e "$CONFIG_PATH" ]]; then
   mkdir "$CONFIG_PATH"
 fi
 
-extended_configs=$(find "$DOTFILES_PATH/.config" -depth 1)
+extended_configs=$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)
 
 for config in ${extended_configs[@]}; do
   create_symbolic_link "$config" "$CONFIG_PATH"
