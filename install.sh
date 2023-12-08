@@ -7,7 +7,7 @@ source ~/dotfiles/shell/functions.sh
 # Create symbolic links
 #------------------------------------------------
 
-basic_config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,gitconfig,inputrc,tmux.conf,vimrc})
+basic_config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,tmux.conf,vimrc})
 
 for filename in ${basic_config_filenames[@]}; do
   create_symbolic_link "$DOTFILES_PATH/$filename" "$HOME"
