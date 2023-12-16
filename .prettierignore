@@ -8,6 +8,8 @@ Brewfile.lock.json
 
 .config
 
+shell/**/*.conf
+
 .git-completion.bash
 .git-prompt.bash
 
