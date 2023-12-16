@@ -115,5 +115,3 @@ fi
 # zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
 # zstyle ':completion:*:(ssh|rsync):*' hosts
 # zstyle ':completion:*:(ssh|rsync):*' users
-# SSH auto-completion based on the known_hosts
-# zstyle ':completion:*:*:*' hosts `awk '{print $1}' ~/.ssh/known_hosts | cut -d , -f 1`
