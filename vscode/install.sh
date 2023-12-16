@@ -15,7 +15,7 @@ if [[ ! -d "$VSCODE_CONFIG_DIR" ]]; then
   return
 fi
 
-configs=$(find $DOTFILES_PATH/vscode/config -depth 1 ! -name "*.*sh")
+configs=$(find ~/dotfiles/vscode/config -depth 1 ! -name "*.*sh")
 
 for config in ${configs[@]}; do
   create_symbolic_link "$config" "$VSCODE_CONFIG_DIR"
