@@ -3,6 +3,7 @@
 package.json
 pnpm-lock.yaml
 
+Brewfile
 Brewfile.lock.json
 
 .config
