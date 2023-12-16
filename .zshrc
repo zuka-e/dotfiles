@@ -93,6 +93,9 @@ export NVM_DIR=~/.nvm
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+# cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+ZSH_TMUX_AUTOCONNECT=false
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -109,7 +112,7 @@ done
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 # ※ Icons won't be displayed properly if `LANG` has yet to be exported.
 if [[ -z "$TMUX" ]] && is_interactive_shell && is_login_shell && [[ -z "$VSCODE_INJECTION" ]]; then
-  tmux
+  _zsh_tmux_plugin_run
 fi
 
 # zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
