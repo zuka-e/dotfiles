@@ -94,3 +94,5 @@ if ! type brew > /dev/null 2>&1; then
 fi
 
 "$HOME/dotfiles/macos/brew.sh"
+
+"$HOME/dotfiles/macos/sshd.sh"

@@ -50,16 +50,8 @@ brew "nvm"
 brew "yarn"
 brew "yarn-completion"
 brew "pnpm"
-# brew "pyenv"
-# brew "pip-completion"
-# brew "php"
-
-# Possible dependencies of `phpenv`
-# brew "bzip2"
-# brew "libiconv"
-# brew "libzip"
-# brew "oniguruma"
-# brew "tidy-html5"
+brew "pyenv"
+brew "pip-completion"
 
 brew "act" # Local Github Actions
 brew "awscli"
@@ -71,18 +63,6 @@ brew "cmake"
 brew "protobuf"
 brew "rust"
 brew "python@3.10"
-
-# Dependencies
-# brew "aom"
-# brew "docutils"
-# brew "little-cms2"
-# brew "webp"
-# brew "icu4c"
-# brew "libssh2"
-# brew "openssl@1.1"
-# brew "python@3.9"
-# brew "leptonica"
-# brew "openjpeg"
 
 #------------------------------------------------
 # Casks
@@ -98,17 +78,13 @@ cask "google-chrome"
 cask "tunnelbear"
 cask "protonvpn"
 cask "libreoffice"
+cask "kindle"
 cask "slack"
 cask "docker"
-# cask "virtualbox"
-# cask "vagrant"
 cask "visual-studio-code"
-# cask "mysqlworkbench"
-# cask "sequel-ace"
-# cask "pgadmin4"
 cask "dbeaver-community"
-# cask "kindle"
-# cask "send-anywhere"
+cask "android-platform-tools"
+cask "send-anywhere"
 
 #------------------------------------------------
 # VSCode
