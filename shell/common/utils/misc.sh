@@ -15,7 +15,7 @@ alias mkdir="mkdir -p"
 alias esed="sed -E"
 
 # i:Interactive, p:Preserve-attributes, r:Recursive, v:Verbose
-alias cp="cp -iprv"
+alias cp="cp -aiv"
 alias scp="echo Deprecated! Use \'rsync\' etc instead.; #"
 alias mv="mv -iv"
 alias rm="rm -irv"
