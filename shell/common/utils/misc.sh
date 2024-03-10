@@ -37,7 +37,7 @@ alias rm="rm -irv"
 #   -H, --hard-links       preserve hard links
 # -u, --update           skip files that are newer on the receiver
 # -v, --verbose          increase verbosity
-alias rsync="rsync --archive --update --verbose"
+alias rsync="rsync --archive --update --human-readable --itemize-changes --stats --progress --verbose"
 
 # Reload the current shell
 alias reload="exec "${SHELL}" -l"
