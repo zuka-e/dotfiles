@@ -38,6 +38,7 @@ brew "nmap"
 brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
+brew "xxhash" # for rsync
 brew "bat" # Alternative to `cat`
 brew "eza" # Alternative to `ls`
 brew "fd" # Alternative to `find`
@@ -83,8 +84,8 @@ cask "slack"
 cask "docker"
 cask "visual-studio-code"
 cask "dbeaver-community"
-cask "android-platform-tools"
 cask "send-anywhere"
+cask "android-platform-tools"
 
 #------------------------------------------------
 # VSCode
@@ -93,7 +94,7 @@ cask "send-anywhere"
 # cf. https://github.com/Homebrew/homebrew-bundle/blob/master/lib/bundle/dsl.rb
 
 # Theme
-vscode "PKief.material-icon-theme" # Icons of file and directory
+vscode "pkief.material-icon-theme" # Icons of file and directory
 
 # Remote environment
 vscode "ms-vscode-remote.remote-ssh" # SSH
@@ -106,12 +107,12 @@ vscode "shardulm94.trailing-spaces" # Spaces
 vscode "oderwat.indent-rainbow" # Each tab step
 vscode "usernamehw.errorlens" # Inline error messages
 vscode "naumovs.color-highlight" # Web colors
-vscode "IronGeek.vscode-env" # Env
-vscode "IBM.output-colorizer" # Log
+vscode "irongeek.vscode-env" # Env
+vscode "ibm.output-colorizer" # Log
 vscode "mechatroner.rainbow-csv" # CSV
 vscode "jeff-hykin.better-shellscript-syntax" # Shellscript
 vscode "jeff-hykin.better-dockerfile-syntax" # Dockerfile
-vscode "XadillaX.viml" # Vimrc
+vscode "xadillax.viml" # Vimrc
 vscode "mariusschulz.yarn-lock-syntax" # Yarn
 
 # Utilities
@@ -127,8 +128,8 @@ vscode "eamodio.gitlens"
 vscode "donjayamanne.githistory"
 
 # Intellisense
-vscode "VisualStudioExptTeam.vscodeintellicode"
-vscode "VisualStudioExptTeam.intellicode-api-usage-examples" # Code example
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "visualstudioexptteam.intellicode-api-usage-examples" # Code example
 
 # Docker
 vscode "ms-azuretools.vscode-docker"
@@ -138,7 +139,7 @@ vscode "mads-hartmann.bash-ide-vscode"
 vscode "rogalmic.bash-debug"
 
 # CSV
-vscode "GrapeCity.gc-excelviewer"
+vscode "grapecity.gc-excelviewer"
 
 # YAML
 vscode "redhat.vscode-yaml"
@@ -160,7 +161,7 @@ vscode "wix.vscode-import-cost" # Import size calculator
 # React
 vscode "dsznajder.es7-react-js-snippets"
 # Vue
-vscode "Vue.volar"
+vscode "vue.volar"
 
 # PHP Laravel
 vscode "xdebug.php-debug"
@@ -169,23 +170,24 @@ vscode "amiralizadeh9480.laravel-extra-intellisense"
 
 # Python
 vscode "ms-python.python"
+vscode "ms-python.debugpy"
 vscode "ms-python.vscode-pylance"
 vscode "ms-python.mypy-type-checker"
 vscode "ms-python.flake8"
 vscode "ms-python.black-formatter"
 vscode "ms-python.isort"
-vscode "KevinRose.vsc-python-indent"
+vscode "kevinrose.vsc-python-indent"
 
 # Terraform
 vscode "hashicorp.terraform"
 
 # Serverless
-vscode "ThreadHeap.serverless-ide-vscode"
+vscode "threadheap.serverless-ide-vscode"
 
 # Github Actions
 vscode "github.vscode-github-actions"
 
 # Markdown
 vscode "yzhang.markdown-all-in-one"
-vscode "DavidAnson.vscode-markdownlint"
+vscode "davidanson.vscode-markdownlint"
 vscode "shd101wyy.markdown-preview-enhanced"
