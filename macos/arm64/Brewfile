@@ -19,6 +19,7 @@ tap "hashicorp/tap"
 #------------------------------------------------
 # Formulae
 #------------------------------------------------
+brew "bdw-gc"
 
 brew "brew-cask-completion"
 brew "launchctl-completion"
