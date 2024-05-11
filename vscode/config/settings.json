@@ -9,6 +9,7 @@
   "workbench.editorAssociations": {
     "*.csv": "gc-excelviewer-csv-editor"
   },
+  "workbench.layoutControl.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
@@ -40,21 +41,18 @@
     {
       "tag": " bug: ",
       "color": "#f00",
-      "backgroundColor": "#555",
       "bold": true,
       "italic": true
     },
     {
       "tag": " todo: ",
-      "color": "#ffa000",
-      "backgroundColor": "#555",
+      "color": "#0f0",
       "bold": true,
       "italic": true
     },
     {
       "tag": " info: ",
       "color": "#0ff",
-      "backgroundColor": "#555",
       "bold": true,
       "italic": true
     }
@@ -139,6 +137,7 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",

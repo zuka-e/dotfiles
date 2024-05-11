@@ -20,6 +20,7 @@ tap "hashicorp/tap"
 #------------------------------------------------
 # Formulae
 #------------------------------------------------
+brew "bdw-gc"
 
 brew "brew-cask-completion"
 brew "launchctl-completion"
@@ -39,6 +40,7 @@ brew "nmap"
 brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
+brew "xxhash" # for rsync
 brew "bat" # Alternative to `cat`
 brew "eza" # Alternative to `ls`
 brew "fd" # Alternative to `find`
