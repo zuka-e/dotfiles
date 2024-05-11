@@ -14,6 +14,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
+# https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 tap "hashicorp/tap"
 
 #------------------------------------------------
@@ -57,13 +58,14 @@ brew "pip-completion"
 
 brew "act" # Local Github Actions
 brew "awscli"
-brew "terraform"
+brew "hashicorp/tap/terraform"
 
 # Stable diffusion Web UI
 # cf. https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon#automatic-installation
 brew "cmake"
 brew "protobuf"
 brew "rust"
+brew "llvm" # for `rust``
 brew "python@3.10"
 
 #------------------------------------------------
@@ -77,16 +79,16 @@ cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
-cask "tunnelbear"
+# cask "tunnelbear"
 cask "protonvpn"
 cask "libreoffice"
-cask "kindle"
+# cask "kindle"
 cask "slack"
 cask "docker"
 cask "visual-studio-code"
 cask "dbeaver-community"
-cask "send-anywhere"
 cask "android-platform-tools"
+# cask "send-anywhere"
 
 #------------------------------------------------
 # VSCode
@@ -123,6 +125,7 @@ vscode "aaron-bond.better-comments" # create many kinds of colorized comments
 vscode "wmaurer.change-case" # (Command Palette -> Change Case xxx)
 vscode "quicktype.quicktype" # paste JSON as selected lang
 vscode "ms-playwright.playwright" # Playwight testing tool
+vscode "sourcegraph.cody-ai"  # AI-powered code completion
 
 # Git
 vscode "eamodio.gitlens"
@@ -162,7 +165,7 @@ vscode "wix.vscode-import-cost" # Import size calculator
 # React
 vscode "dsznajder.es7-react-js-snippets"
 # Vue
-vscode "vue.volar"
+# vscode "vue.volar"
 
 # PHP Laravel
 vscode "xdebug.php-debug"
@@ -170,14 +173,13 @@ vscode "bmewburn.vscode-intelephense-client"
 vscode "amiralizadeh9480.laravel-extra-intellisense"
 
 # Python
-vscode "ms-python.python"
-vscode "ms-python.debugpy"
-vscode "ms-python.vscode-pylance"
-vscode "ms-python.mypy-type-checker"
-vscode "ms-python.flake8"
-vscode "ms-python.black-formatter"
-vscode "ms-python.isort"
-vscode "kevinrose.vsc-python-indent"
+# vscode "ms-python.python"
+# vscode "ms-python.vscode-pylance"
+# vscode "ms-python.mypy-type-checker"
+# vscode "ms-python.flake8"
+# vscode "ms-python.black-formatter"
+# vscode "ms-python.isort"
+# vscode "kevinrose.vsc-python-indent"
 
 # Terraform
 vscode "hashicorp.terraform"
