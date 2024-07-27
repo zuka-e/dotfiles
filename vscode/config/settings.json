@@ -137,6 +137,7 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
