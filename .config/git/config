@@ -1,8 +1,10 @@
 # cf. `man git-config`
 
 [alias]
+  discard-changes=restore --worktree
+  unstage=restore --staged
+
   aa = add -A
-  co = checkout
   cp = cherry-pick
   l = log --stat
   poh = push origin HEAD

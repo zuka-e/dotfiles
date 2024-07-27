@@ -4,6 +4,7 @@
     "**/.config/git/ignore": "ignore",
     "**/.config/*/config": "shellscript",
     "tmux.conf": "shellscript",
-    ".{inputrc,colorrc,tmux.conf}": "shellscript"
+    ".{inputrc,colorrc,tmux.conf}": "shellscript",
+    "Brewfile.*": "ruby"
   }
 }
