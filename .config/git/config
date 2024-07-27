@@ -1,6 +1,9 @@
 # cf. `man git-config`
 
 [alias]
+  discard-changes=restore --worktree
+  unstage=restore --staged
+
   aa = add -A
   cp = cherry-pick
   l = log --stat
