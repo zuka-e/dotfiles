@@ -13,7 +13,6 @@
 
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "homebrew/cask-fonts"
 # https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 tap "hashicorp/tap"
 
@@ -65,7 +64,6 @@ brew "hashicorp/tap/terraform"
 brew "cmake"
 brew "protobuf"
 brew "rust"
-brew "llvm" # for `rust``
 brew "python@3.10"
 
 #------------------------------------------------
@@ -79,6 +77,8 @@ cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
+cask "syncthing"
+cask "lulu"
 # cask "tunnelbear"
 cask "protonvpn"
 cask "libreoffice"
@@ -173,10 +173,11 @@ vscode "bmewburn.vscode-intelephense-client"
 vscode "amiralizadeh9480.laravel-extra-intellisense"
 
 # Python
-# vscode "ms-python.python"
-# vscode "ms-python.vscode-pylance"
-# vscode "ms-python.mypy-type-checker"
-# vscode "ms-python.flake8"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.mypy-type-checker"
+vscode "ms-python.flake8"
+vscode "ms-python.debugpy"
 # vscode "ms-python.black-formatter"
 # vscode "ms-python.isort"
 # vscode "kevinrose.vsc-python-indent"
