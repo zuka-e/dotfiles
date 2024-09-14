@@ -9,6 +9,14 @@ elif [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Originally created by `pnpm setup`
+# cf. https://pnpm.io/cli/setup
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # cf. https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
 if type pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
