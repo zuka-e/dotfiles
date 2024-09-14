@@ -54,6 +54,7 @@ brew "yarn-completion"
 brew "pnpm"
 brew "pyenv"
 brew "pip-completion"
+brew "pipx"
 
 brew "act" # Local Github Actions
 brew "awscli"
