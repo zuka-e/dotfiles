@@ -83,6 +83,8 @@ plugins=(
   laravel
   npm
   nvm
+  rsync
+  ssh
   terraform
   tmux
   zsh-syntax-highlighting
@@ -117,7 +119,3 @@ done
 if [[ -z "$TMUX" ]] && is_interactive_shell && is_login_shell && [[ -z "$VSCODE_INJECTION" ]]; then
   _zsh_tmux_plugin_run
 fi
-
-# zstyle ':completion:*:(ssh|rsync):*' ignored-patterns '*\#*'
-# zstyle ':completion:*:(ssh|rsync):*' hosts
-# zstyle ':completion:*:(ssh|rsync):*' users
