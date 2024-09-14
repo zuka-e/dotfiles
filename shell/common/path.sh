@@ -21,3 +21,7 @@ esac
 if type pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# Originally created by `pipx ensurepath`
+# cf. https://pipx.pypa.io/stable/installation
+export PATH="$PATH:$HOME/.local/bin"

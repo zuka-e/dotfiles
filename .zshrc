@@ -83,6 +83,7 @@ plugins=(
   laravel
   npm
   nvm
+  poetry
   rsync
   ssh
   terraform
