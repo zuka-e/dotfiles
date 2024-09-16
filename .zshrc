@@ -84,6 +84,7 @@ plugins=(
   npm
   nvm
   poetry
+  poetry-env
   rsync
   ssh
   terraform
