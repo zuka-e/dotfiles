@@ -60,13 +60,6 @@ brew "act" # Local Github Actions
 brew "awscli"
 brew "hashicorp/tap/terraform"
 
-# Stable diffusion Web UI
-# cf. https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon#automatic-installation
-brew "cmake"
-brew "protobuf"
-brew "rust"
-brew "python@3.10"
-
 #------------------------------------------------
 # Casks
 #------------------------------------------------
@@ -78,6 +71,7 @@ cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
+cask "chatgpt"
 cask "syncthing"
 cask "lulu"
 # cask "tunnelbear"
@@ -90,6 +84,14 @@ cask "visual-studio-code"
 cask "dbeaver-community"
 cask "android-platform-tools"
 # cask "send-anywhere"
+
+#------------------------------------------------
+# Dependencies
+#------------------------------------------------
+# cf. brew uses --installed ca-certificates
+
+brew "ca-certificates"
+brew "glib"
 
 #------------------------------------------------
 # VSCode
@@ -149,6 +151,9 @@ vscode "grapecity.gc-excelviewer"
 # YAML
 vscode "redhat.vscode-yaml"
 
+# TOML
+vscode "tamasfe.even-better-toml"
+
 # Nginx
 vscode "ahmadalli.vscode-nginx-conf"
 
@@ -177,11 +182,8 @@ vscode "amiralizadeh9480.laravel-extra-intellisense"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-python.mypy-type-checker"
-vscode "ms-python.flake8"
 vscode "ms-python.debugpy"
-# vscode "ms-python.black-formatter"
-# vscode "ms-python.isort"
-# vscode "kevinrose.vsc-python-indent"
+vscode "charliermarsh.ruff"
 
 # Terraform
 vscode "hashicorp.terraform"
