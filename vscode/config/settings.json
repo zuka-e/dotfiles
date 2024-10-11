@@ -142,6 +142,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
+  "python.terminal.activateEnvironment": false,
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
   "terraform.experimentalFeatures.validateOnSave": true,
