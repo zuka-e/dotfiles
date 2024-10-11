@@ -12,7 +12,7 @@ export VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
 if [[ ! -d "$VSCODE_CONFIG_DIR" ]]; then
   echo "$VSCODE_CONFIG_DIR doesn't exist."
   echo "Make sure VSCode is installed."
-  return
+  exit 2
 fi
 
 configs=$(find ~/dotfiles/vscode/config -depth 1 ! -name "*.*sh")
