@@ -14,8 +14,10 @@
   rhh = reset --hard HEAD^
 
 [user]
-	name = zuka-e
-	email = 52391918+zuka-e@users.noreply.github.com
+  name = anonimous
+  email = 0+anonimous@users.noreply.github.com
+  ; name = zuka-e
+  ; email = 52391918+zuka-e@users.noreply.github.com
 
 [color "branch"]
   current = red bold
