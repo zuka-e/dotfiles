@@ -1,13 +1,30 @@
 [
+  //=========================================================
+  // Disable default
+  //=========================================================
+  // - System
   {
-    "key": "cmd+t",
-    "command": "workbench.action.switchWindow"
+    "key": "f1",
+    "command": "-workbench.action.showCommands"
   },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  // - Extensions
   {
     "key": "cmd+m",
     "command": "-markdown.extension.editing.toggleMath",
     "when": "editorLangId == 'markdown'"
   },
+  //=========================================================
+  // Enable custom (maybe disable default)
+  //=========================================================
   {
     "key": "ctrl+w",
     "command": "deleteWordPartLeft",
