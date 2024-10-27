@@ -25,6 +25,9 @@
   //=========================================================
   // Enable custom (maybe disable default)
   //=========================================================
+  // Note:
+  // - Maybe overwritten by keyboard customizer like Karabiner
+  // - Text manipulation commands won't work in search fields
   {
     "key": "ctrl+w",
     "command": "deleteWordPartLeft",
