@@ -25,6 +25,38 @@
   //=========================================================
   // Enable custom (maybe disable default)
   //=========================================================
+  {
+    "key": "cmd+n",
+    "command": "workbench.files.action.createFileFromExplorer"
+  },
+  {
+    "key": "cmd+shift+n",
+    "command": "workbench.files.action.createFolderFromExplorer"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "!terminalFocus && canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
+    "when": "!terminalFocus && canNavigateForward"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "findWidgetVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "findWidgetVisible"
+  },
   // Note:
   // - Maybe overwritten by keyboard customizer like Karabiner
   // - Text manipulation commands won't work in search fields
