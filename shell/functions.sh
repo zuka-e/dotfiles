@@ -15,6 +15,16 @@ function is_linux() {
   [[ "$(uname)" == "Linux" ]]
 }
 
+# Determine if it's from Fedora.
+function is_fedora() {
+  command -v dnf &> /dev/null
+}
+
+# Determine if it's from Debian.
+function is_debian() {
+  command -v apt &> /dev/null
+}
+
 # Determine if using Apple silicon processor.
 function has_apple_silicon() {
   is_mac && [[ "$(uname -m)" == "arm64" ]]

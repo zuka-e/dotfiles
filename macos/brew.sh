@@ -104,7 +104,7 @@ done
 usr_zsh="$HOMEBREW_PREFIX/bin/zsh"
 shells='/etc/shells'
 
-if [[ $SHELL != $usr_zsh && "$(which zsh)" = $usr_zsh ]]; then
+if [[ $SHELL != $usr_zsh && "$(command -v zsh)" = $usr_zsh ]]; then
   if ! grep $usr_zsh '/etc/shells' > /dev/null 2>&1; then
     echo "Enter the password to add '${usr_zsh}' to '${shells}'"
     echo $usr_zsh | sudo tee -a /etc/shells > /dev/null
