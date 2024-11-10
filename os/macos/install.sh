@@ -93,6 +93,6 @@ if ! type brew > /dev/null 2>&1; then
   fi
 fi
 
-"$HOME/dotfiles/macos/brew.sh"
+"$HOME/dotfiles/os/macos/brew.sh"
 
-"$HOME/dotfiles/macos/sshd.sh"
+"$HOME/dotfiles/os/macos/sshd.sh"

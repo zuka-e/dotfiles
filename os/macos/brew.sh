@@ -6,7 +6,7 @@ fi
 
 # A Brewfile based on desired packages.
 new_file=$(
-  find -E ~/dotfiles -type f -regex ".*$(uname -m)/Brewfile(.local|$)" \
+  find -E ~/dotfiles/os/macos -type f -regex ".*$(uname -m)/Brewfile(.local|$)" \
     | sort --version-sort --reverse \
     | head -n 1
 )
