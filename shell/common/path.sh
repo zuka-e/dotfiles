@@ -25,3 +25,7 @@ fi
 # Originally created by `pipx ensurepath`
 # cf. https://pipx.pypa.io/stable/installation
 export PATH="$PATH:$HOME/.local/bin"
+
+if [[ -f "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
