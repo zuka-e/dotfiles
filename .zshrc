@@ -94,6 +94,7 @@ plugins=(
 
 # cf．https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
 export NVM_DIR=~/.nvm
+NVM_HOMEBREW=$(brew --prefix nvm)
 # zstyle ':omz:plugins:nvm' lazy yes
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
