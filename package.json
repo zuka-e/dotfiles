@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "^20.0",
-    "pnpm": ">=8"
+    "node": "^22.0",
+    "pnpm": ">=9"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -20,5 +20,12 @@
     "prettier": "3.1.0",
     "prettier-plugin-nginx": "^1.0.3",
     "prettier-plugin-sh": "^0.13.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "braces@<3.0.3": ">=3.0.3",
+      "micromatch@<4.0.8": ">=4.0.8",
+      "cross-spawn@>=7.0.0 <7.0.5": ">=7.0.5"
+    }
   }
 }
