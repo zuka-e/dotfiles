@@ -19,7 +19,6 @@ tap "hashicorp/tap"
 #------------------------------------------------
 # Formulae
 #------------------------------------------------
-brew "bdw-gc"
 
 brew "brew-cask-completion"
 brew "launchctl-completion"
@@ -61,6 +60,14 @@ brew "awscli"
 brew "hashicorp/tap/terraform"
 
 #------------------------------------------------
+# Dependencies
+#------------------------------------------------
+# cf. brew uses --installed ca-certificates
+
+brew "ca-certificates"
+brew "glib"
+
+#------------------------------------------------
 # Casks
 #------------------------------------------------
 # cf. https://github.com/Homebrew/homebrew-cask
@@ -71,6 +78,7 @@ cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
+cask "brave-browser"
 cask "chatgpt"
 cask "syncthing"
 cask "lulu"
@@ -85,14 +93,6 @@ cask "visual-studio-code"
 cask "dbeaver-community"
 cask "android-platform-tools"
 # cask "send-anywhere"
-
-#------------------------------------------------
-# Dependencies
-#------------------------------------------------
-# cf. brew uses --installed ca-certificates
-
-brew "ca-certificates"
-brew "glib"
 
 #------------------------------------------------
 # VSCode
@@ -182,9 +182,9 @@ vscode "amiralizadeh9480.laravel-extra-intellisense"
 # Python
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
-vscode "ms-python.mypy-type-checker"
 vscode "ms-python.debugpy"
 vscode "charliermarsh.ruff"
+vscode "matangover.mypy"
 
 # Terraform
 vscode "hashicorp.terraform"
