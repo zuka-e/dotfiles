@@ -1,7 +1,26 @@
 #!/usr/bin/env bash
 
-if ! brew doctor; then
-  exit 2
+echo "Checking the installation status of Homebrew..."
+
+brew doctor
+
+if [[ $? != 0 ]]; then
+  echo
+  while true; do
+    read -p "Do you want to continue? (y/N) " input
+    case $input in
+      y | yes)
+        break
+        ;;
+      N | no | No | "")
+        echo "Canceled."
+        exit 1
+        ;;
+      *)
+        echo "Please answer with y or N."
+        ;;
+    esac
+  done
 fi
 
 # A Brewfile based on desired packages.
