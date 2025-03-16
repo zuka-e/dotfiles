@@ -38,14 +38,13 @@ brew "nmap"
 brew "wget"
 brew "tmux"
 brew "rsync" # Newer version
-brew "xxhash" # for rsync
-brew "bat" # Alternative to `cat`
-brew "eza" # Alternative to `ls`
-brew "fd" # Alternative to `find`
-brew "ripgrep" # (`rg`) Alternative to `grep`
+brew "bat" # `cat`
+brew "eza" # `ls`
+brew "fd" # `find`
+brew "ripgrep" # (`rg`) `grep`
+brew "dust" # `du`
+brew "git-delta" # (`delta`) `diff`
 brew "git"
-# brew "ffmpeg"
-# brew "harfbuzz" # Dependency of `ffmpeg`
 
 brew "nvm"
 brew "yarn"
@@ -59,6 +58,11 @@ brew "act" # Local Github Actions
 brew "awscli"
 brew "hashicorp/tap/terraform"
 
+brew "ollama"
+
+brew "ffmpeg"
+brew "qrencode"
+
 #------------------------------------------------
 # Dependencies
 #------------------------------------------------
@@ -66,6 +70,7 @@ brew "hashicorp/tap/terraform"
 
 brew "ca-certificates"
 brew "glib"
+brew "xxhash"
 
 #------------------------------------------------
 # Casks
@@ -79,7 +84,6 @@ cask "karabiner-elements"
 cask "google-japanese-ime"
 cask "google-chrome"
 cask "brave-browser"
-cask "chatgpt"
 cask "syncthing"
 cask "lulu"
 # cask "tunnelbear"
@@ -87,11 +91,13 @@ cask "protonvpn"
 cask "libreoffice"
 # cask "kindle"
 cask "slack"
-brew "kitty"
+cask "kitty"
 cask "docker"
-cask "visual-studio-code"
+# cask "visual-studio-code"
+cask "cursor"
 cask "dbeaver-community"
 cask "android-platform-tools"
+cask "vnc-viewer"
 # cask "send-anywhere"
 
 #------------------------------------------------
@@ -114,26 +120,23 @@ vscode "shardulm94.trailing-spaces" # Spaces
 vscode "oderwat.indent-rainbow" # Each tab step
 vscode "usernamehw.errorlens" # Inline error messages
 vscode "naumovs.color-highlight" # Web colors
-vscode "irongeek.vscode-env" # Env
+vscode "mikestead.dotenv" # Env
 vscode "ibm.output-colorizer" # Log
 vscode "mechatroner.rainbow-csv" # CSV
-vscode "jeff-hykin.better-shellscript-syntax" # Shellscript
-vscode "jeff-hykin.better-dockerfile-syntax" # Dockerfile
-vscode "xadillax.viml" # Vimrc
-vscode "mariusschulz.yarn-lock-syntax" # Yarn
+# vscode "jeff-hykin.better-shellscript-syntax" # Shellscript
+# vscode "jeff-hykin.better-dockerfile-syntax" # Dockerfile
+# vscode "xadillax.viml" # Vimrc
+# vscode "mariusschulz.yarn-lock-syntax" # Yarn
 
 # Utilities
 vscode "streetsidesoftware.code-spell-checker"
 vscode "artdiniz.quitcontrol-vscode" # Show confirmation before closing window
 vscode "aaron-bond.better-comments" # create many kinds of colorized comments
-vscode "wmaurer.change-case" # (Command Palette -> Change Case xxx)
-vscode "quicktype.quicktype" # paste JSON as selected lang
 vscode "ms-playwright.playwright" # Playwight testing tool
-vscode "sourcegraph.cody-ai"  # AI-powered code completion
 
 # Git
 vscode "eamodio.gitlens"
-vscode "donjayamanne.githistory"
+# vscode "donjayamanne.githistory"
 
 # Intellisense
 vscode "visualstudioexptteam.vscodeintellicode"
@@ -144,53 +147,49 @@ vscode "ms-azuretools.vscode-docker"
 
 # Bash
 vscode "mads-hartmann.bash-ide-vscode"
-vscode "rogalmic.bash-debug"
 
 # CSV
-vscode "grapecity.gc-excelviewer"
+# vscode "grapecity.gc-excelviewer"
 
 # YAML
 vscode "redhat.vscode-yaml"
 
 # TOML
-vscode "tamasfe.even-better-toml"
+# vscode "tamasfe.even-better-toml"
 
 # Nginx
-vscode "ahmadalli.vscode-nginx-conf"
+# vscode "ahmadalli.vscode-nginx-conf"
 
 # HTML CSS
 vscode "vincaslt.highlight-matching-tag"
-vscode "ecmel.vscode-html-css"  # `id` and `class` attribute completion
 vscode "bradlc.vscode-tailwindcss"
 
 # JS/TS
-vscode "christian-kohler.path-intellisense"
-vscode "ms-vscode.vscode-typescript-next"
 vscode "dbaeumer.vscode-eslint"
 vscode "esbenp.prettier-vscode"
-vscode "wix.vscode-import-cost" # Import size calculator
 # React
-vscode "dsznajder.es7-react-js-snippets"
+# vscode "dsznajder.es7-react-js-snippets"
 # Vue
 # vscode "vue.volar"
 
 # PHP Laravel
-vscode "xdebug.php-debug"
-vscode "bmewburn.vscode-intelephense-client"
-vscode "amiralizadeh9480.laravel-extra-intellisense"
+# vscode "xdebug.php-debug"
+# vscode "bmewburn.vscode-intelephense-client"
+# vscode "laravel.vscode-laravel"
+# vscode "amiralizadeh9480.laravel-extra-intellisense"
 
 # Python
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-python.debugpy"
-vscode "charliermarsh.ruff"
-vscode "matangover.mypy"
+# vscode "ms-python.python"
+# vscode "ms-python.vscode-pylance"
+# vscode "ms-python.debugpy"
+# vscode "charliermarsh.ruff"
+# vscode "matangover.mypy"
 
 # Terraform
-vscode "hashicorp.terraform"
+# vscode "hashicorp.terraform"
 
 # Serverless
-vscode "threadheap.serverless-ide-vscode"
+# vscode "threadheap.serverless-ide-vscode"
 
 # Github Actions
 vscode "github.vscode-github-actions"
