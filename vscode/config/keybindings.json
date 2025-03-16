@@ -22,6 +22,11 @@
     "command": "-markdown.extension.editing.toggleMath",
     "when": "editorLangId == 'markdown'"
   },
+  {
+    "key": "shift+cmd+l",
+    "command": "-continue.focusContinueInputWithoutClear"
+  },
+
   //=========================================================
   // Enable custom (maybe disable default)
   //=========================================================
@@ -65,6 +70,12 @@
     "command": "deleteWordPartLeft",
     "when": "textInputFocus && !editorReadonly"
   },
+  // As `ctrl+w`
+  {
+    "key": "alt+backspace",
+    "command": "deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
   {
     "key": "ctrl+shift+w",
     "command": "deleteWordPartRight",
@@ -74,5 +85,38 @@
     "key": "ctrl+u",
     "command": "deleteAllLeft",
     "when": "textInputFocus && !editorReadonly"
+  },
+  // As `ctrl+u`
+  {
+    "key": "shift+cmd+left backspace",
+    "command": "deleteAllLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-aichat.insertselectionintochat"
+  },
+  {
+    "key": "cmd+h",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-composer.openAsBar"
+  },
+  {
+    "key": "cmd+m",
+    "command": "composer.openAsPane"
   }
 ]
