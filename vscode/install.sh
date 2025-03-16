@@ -6,19 +6,19 @@ source ~/dotfiles/shell/functions.sh
 #------------------------------------------------
 # Create symbolic links for settings
 #------------------------------------------------
-
-export VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
-
-if [[ ! -d "$VSCODE_CONFIG_DIR" ]]; then
-  echo "$VSCODE_CONFIG_DIR doesn't exist."
-  echo "Make sure VSCode is installed."
-  exit 2
-fi
-
 configs=$(find ~/dotfiles/vscode/config -depth 1 ! -name "*.*sh")
 
-for config in ${configs[@]}; do
-  create_symbolic_link "$config" "$VSCODE_CONFIG_DIR"
+for editor in "Code" "Cursor"; do
+  config_dir="$HOME/Library/Application Support/$editor/User"
+
+  if [[ -d "$config_dir" ]]; then
+    echo "Linking configs to $editor..."
+    for config in ${configs[@]}; do
+      create_symbolic_link "$config" "$config_dir"
+    done
+  else
+    echo "$editor config directory not found. Skipping $editor config setup."
+  fi
 done
 
 unset configs

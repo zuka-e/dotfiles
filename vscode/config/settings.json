@@ -1,4 +1,6 @@
 {
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.cmdk.useThemedDiffBackground": true,
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
   "window.openFoldersInNewWindow": "on",
@@ -24,6 +26,7 @@
     "selection.background": "#0091ff"
   },
   "editor.bracketPairColorization.enabled": true,
+  "editor.semanticHighlighting.enabled": true,
   "editor.tokenColorCustomizations": {
     "comments": { "foreground": "#fcb4ff", "fontStyle": "italic bold" },
     "strings": "#ff0",
@@ -64,6 +67,7 @@
     "rgba(127,255,127,0.2)"
   ],
   "indentRainbow.errorColor": "rgba(255,100,200,0.6)",
+
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "'NotoMono Nerd Font'",
   "terminal.integrated.fontSize": 14,
@@ -88,6 +92,7 @@
     "other": "on"
   },
   "editor.suggestSelection": "first",
+  "editor.inlineSuggest.suppressSuggestions": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -109,16 +114,18 @@
   "csv-preview.resizeColumns": "first",
   "csv-preview.lineNumbers": "source",
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "files.associations": {
     "**/dotfiles/vscode/**/*.json": "jsonc",
-    ".env": "env",
-    ".env.*": "env",
+    ".env": "dotenv",
+    ".env.*": "dotenv",
     ".npmrc": "ini",
     "supervisord.conf": "ini",
     "supervisord.*.conf": "ini",
     "*.module": "php",
     "*.hcl": "terraform"
   },
+  "json.schemaDownload.enable": true,
   "json.schemas": [
     {
       "fileMatch": ["package.json"],
@@ -137,20 +144,27 @@
   "html.format.extraLiners": "",
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
+
+  "typescript.preferences.autoImportFileExcludePatterns": ["dist"],
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "./node_modules/typescript/lib",
+
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.terminal.activateEnvironment": false,
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.completeFunctionParens": true,
+
   "terraform.experimentalFeatures.validateOnSave": true,
+
   "markdown.extension.toc.updateOnSave": false,
   "markdownlint.config": { "MD033": false },
   "markdown.preview.breaks": true,
   "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+  "markdown-preview-enhanced.previewTheme": "monokai.css",
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
+
   "remote.extensionKind": {
     "ms-azuretools.vscode-docker": "workspace"
   },
@@ -160,29 +174,10 @@
   "dotfiles.installCommand": "install.sh",
   "dev.containers.defaultExtensions": [
     "streetsidesoftware.code-spell-checker",
-    // Intellisense
     "VisualStudioExptTeam.vscodeintellicode",
-    "christian-kohler.path-intellisense", // Path completion
-    // Highlighting
-    "shardulm94.trailing-spaces", // Spaces
-    "oderwat.indent-rainbow", // Each tab step
-    "naumovs.color-highlight", // Web colors
-    "irongeek.vscode-env", // .env
-    "IBM.output-colorizer", // Logfile
-    "mechatroner.rainbow-csv", // CSV
-    "jeff-hykin.better-shellscript-syntax", // Shellscript
-    "jeff-hykin.better-dockerfile-syntax", // Dockerfile
-    // Utilities
-    "aaron-bond.better-comments", // create many kinds of colorized comments
-    "wmaurer.change-case", // (Command Palette -> Change Case xxx)
-    "quicktype.quicktype", // paste JSON as code
-    // Git
-    "donjayamanne.githistory",
-    "eamodio.gitlens",
-    // JS/TS
-    "dbaeumer.vscode-eslint", // ESLint
-    "esbenp.prettier-vscode" // Prettier
+    "eamodio.gitlens"
   ],
+  "continue.telemetryEnabled": false,
   "extensions.autoUpdate": false,
   "playwright.reuseBrowser": true
 }

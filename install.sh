@@ -39,6 +39,6 @@ unset extended_configs
 is_linux && ~/dotfiles/os/linux/install.sh
 is_mac && ~/dotfiles/os/macos/install.sh
 
-type code > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
+type code > /dev/null 2>&1 || type cursor > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
 
 exec "${SHELL}" -l
