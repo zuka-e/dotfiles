@@ -1,6 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:earlyMondays"],
+  "extends": [
+    "config:recommended",
+    "schedule:automergeDaily",
+    ":automergeMinor"
+  ],
   "labels": ["dependencies"],
-  "timezone": "Asia/Tokyo"
+  "timezone": "Asia/Tokyo",
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "ignoreTests": true,
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm dependencies (non-major)",
+      "addLabels": ["npm"]
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["npm"]
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "npm dev-dependencies (non-major)",
+      "addLabels": ["npm", "dev"]
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "npm dev-dependencies",
+      "addLabels": ["npm", "dev"]
+    }
+  ]
 }
