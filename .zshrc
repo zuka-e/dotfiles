@@ -85,7 +85,6 @@ fi
 plugins=(
   laravel
   npm
-  nvm
   poetry
   poetry-env
   rsync
@@ -94,11 +93,6 @@ plugins=(
   tmux
   zsh-syntax-highlighting
 )
-
-# cf．https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
-export NVM_DIR=~/.nvm
-NVM_HOMEBREW=$(brew --prefix nvm)
-# zstyle ':omz:plugins:nvm' lazy yes
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
 zstyle ':completion:*:*:docker:*' option-stacking yes
