@@ -2,7 +2,7 @@
     "global": {
         "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
+        "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false,
         "unsafe_ui": false
     },
@@ -349,54 +349,6 @@
                         "description": "Bash [ctrl] (w/u)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^org\\.gnu\\.Emacs$",
-                                            "^org\\.gnu\\.AquamacsEmacs$",
-                                            "^org\\.gnu\\.Aquamacs$",
-                                            "^org\\.pqrs\\.unknownapp.conkeror$",
-                                            "^com\\.microsoft\\.rdc$",
-                                            "^com\\.microsoft\\.rdc\\.mac$",
-                                            "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
-                                            "^net\\.sf\\.cord$",
-                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
-                                            "^com\\.itap-mobile\\.qmote$",
-                                            "^com\\.nulana\\.remotixmac$",
-                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
-                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
-                                            "^com\\.teamviewer\\.TeamViewer$",
-                                            "^com\\.vmware\\.horizon$",
-                                            "^com\\.2X\\.Client\\.Mac$",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^co\\.zeit\\.hyperterm$",
-                                            "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
-                                            "^net\\.kovidgoyal\\.kitty$",
-                                            "^org\\.vim\\.",
-                                            "^com\\.qvacua\\.VimR$",
-                                            "^com\\.vmware\\.fusion$",
-                                            "^com\\.vmware\\.horizon$",
-                                            "^com\\.vmware\\.view$",
-                                            "^com\\.parallels\\.desktop$",
-                                            "^com\\.parallels\\.vm$",
-                                            "^com\\.parallels\\.desktop\\.console$",
-                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
-                                            "^com\\.citrix\\.XenAppViewer$",
-                                            "^com\\.vmware\\.proxyApp\\.",
-                                            "^com\\.parallels\\.winapp\\.",
-                                            "^org\\.x\\.X11$",
-                                            "^com\\.apple\\.x11$",
-                                            "^org\\.macosforge\\.xquartz\\.X11$",
-                                            "^org\\.macports\\.X11$",
-                                            "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -422,47 +374,10 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^org\\.gnu\\.Emacs$",
-                                            "^org\\.gnu\\.AquamacsEmacs$",
-                                            "^org\\.gnu\\.Aquamacs$",
-                                            "^org\\.pqrs\\.unknownapp.conkeror$",
-                                            "^com\\.microsoft\\.rdc$",
-                                            "^com\\.microsoft\\.rdc\\.mac$",
-                                            "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
-                                            "^net\\.sf\\.cord$",
-                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
-                                            "^com\\.itap-mobile\\.qmote$",
-                                            "^com\\.nulana\\.remotixmac$",
-                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
-                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
-                                            "^com\\.teamviewer\\.TeamViewer$",
-                                            "^com\\.vmware\\.horizon$",
-                                            "^com\\.2X\\.Client\\.Mac$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^co\\.zeit\\.hyperterm$",
-                                            "^co\\.zeit\\.hyper$",
-                                            "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^org\\.vim\\.",
-                                            "^com\\.qvacua\\.VimR$",
-                                            "^com\\.vmware\\.fusion$",
-                                            "^com\\.vmware\\.horizon$",
-                                            "^com\\.vmware\\.view$",
-                                            "^com\\.parallels\\.desktop$",
-                                            "^com\\.parallels\\.vm$",
-                                            "^com\\.parallels\\.desktop\\.console$",
-                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
-                                            "^com\\.citrix\\.XenAppViewer$",
-                                            "^com\\.vmware\\.proxyApp\\.",
-                                            "^com\\.parallels\\.winapp\\.",
-                                            "^org\\.x\\.X11$",
-                                            "^com\\.apple\\.x11$",
-                                            "^org\\.macosforge\\.xquartz\\.X11$",
-                                            "^org\\.macports\\.X11$",
-                                            "^com\\.sublimetext\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^com\\.todesktop\\.230313mzl4w4u92$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -574,6 +489,28 @@
                         "is_pointing_device": true,
                         "product_id": 0,
                         "vendor_id": 0
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_keyboard": false,
+                        "is_pointing_device": false,
+                        "product_id": 8201,
+                        "vendor_id": 1406
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
@@ -1647,6 +1584,28 @@
                         "is_pointing_device": true,
                         "product_id": 0,
                         "vendor_id": 0
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_keyboard": false,
+                        "is_pointing_device": false,
+                        "product_id": 8201,
+                        "vendor_id": 1406
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
