@@ -9,6 +9,9 @@
 # These will be located at `$ZSH` directory.
 # -------------------------------------------------------------------
 
+# Uncomment this and run `zprof` at the end of the file to check the performance.
+# zmodload zsh/zprof
+
 source ~/dotfiles/shell/functions.sh
 
 # Path to your oh-my-zsh installation.
@@ -39,9 +42,9 @@ zstyle ':omz:alpha:lib:git' async-prompt no
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder # just remind me to update when it's time
+# zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
