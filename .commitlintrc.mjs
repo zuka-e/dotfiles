@@ -1,14 +1,14 @@
 // cf. https://commitlint.js.org/#/reference-configuration
 
-const { rules } = require('@commitlint/config-conventional');
+import config from '@commitlint/config-conventional';
 
 /** @type {import('@commitlint/types').UserConfig} */
-module.exports = {
+export default {
   // cf. https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional
   extends: ['@commitlint/config-conventional'],
   // cf. https://commitlint.js.org/#/reference-rules
   rules: {
-    'type-enum': [2, 'always', [...rules['type-enum'][2], 'WIP']],
+    'type-enum': [2, 'always', [...config.rules['type-enum'][2], 'WIP']],
     'type-case': [2, 'always', ['lowercase', 'uppercase']],
     'subject-case': [2, 'always', 'sentence-case'],
     'body-case': [2, 'always', 'sentence-case'],
