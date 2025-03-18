@@ -2,6 +2,9 @@
 
 # See the current settings using `bind -p`.
 
+# `\C`: ctrl
+# `\e`: esc (meta)
+
 # Default
 "\C-g": abort
 "\C-m": accept-line
@@ -9,18 +12,6 @@
 "\eu": upcase-word
 "\C-x\C-u": undo
 "\C-_": undo
+"\e.": yank-last-arg
 
-# Unbind
-"\C-j":
-
-# Run 'stty lnext undef' in .bashrc
-"\C-v": insert-last-argument
-
-"\C-j\C-u": undo
-
-"\C-j\C-f": forward-word
-"\C-j\C-d": kill-word
-
-"\C-j\C-b": backward-word
-"\C-j\C-h": backward-kill-word
-"\C-w": backward-kill-word
+"\C-l": kill-word
