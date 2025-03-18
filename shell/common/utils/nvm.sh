@@ -23,14 +23,11 @@ nvm() {
   nvm "$@"
 }
 
+# Load the `.nvmrc` if it exists.
 load_nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use
   fi
 }
 
-# When the directory is changed, load the nvm version specified in `.nvmrc`.
-add-zsh-hook chpwd load_nvmrc
-
-# Load the nvm version specified in `.nvmrc`. (in case of directory is not changed)
 load_nvmrc
