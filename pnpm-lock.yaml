@@ -36,7 +36,7 @@ importers:
         version: 1.0.3
       prettier-plugin-sh:
         specifier: ^0.17.0
-        version: 0.17.0(prettier@3.5.3)
+        version: 0.17.1(prettier@3.5.3)
 
 packages:
 
@@ -117,8 +117,9 @@ packages:
     resolution: {integrity: sha512-LRjP623jPyf3Poyfb0ohMj8I3ORyBDOwXAgxxVPbSD0unJuW2mJWeiRfaQinjtccMqC5Wy1HOMfa4btKjbNxbg==}
     engines: {node: '>=v18'}
 
-  '@reteps/dockerfmt@0.2.4':
-    resolution: {integrity: sha512-h3LfN9vd6UkLjAQtCKjvkH5Aba2IBaI5+XqSx7u1d6kENP1L+gSeD/Ty3XxDHvKK1tkK8onk6kPOUcHhaCGY2w==}
+  '@reteps/dockerfmt@0.2.7':
+    resolution: {integrity: sha512-O5QOszVUHJEvn9XzttxawVfmAfNQ4/oBOa5w106LsWVUIooCw6SC8jX805+C4bq7/VMWlkspLoMAvYUmX/nP2A==}
+    engines: {node: ^v12.20.0 || ^14.13.0 || >=16.0.0}
 
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
@@ -520,8 +521,8 @@ packages:
   prettier-plugin-nginx@1.0.3:
     resolution: {integrity: sha512-vV5q85s8XnV6NEgvz1gVLfZhmxAxY03MyOYj2ApBpjFkbs00lRsRkTmqO9L39ADuD18z1RRCcfZ3eVxKhI/nqg==}
 
-  prettier-plugin-sh@0.17.0:
-    resolution: {integrity: sha512-YjCDCc7IaWd7mJPFX75lwehMGGQ0unOZCTeZ2L0SaUc9SDsyMt0LIjGK2fD5G2eYji83215qVcW5/k2wneY7Zw==}
+  prettier-plugin-sh@0.17.1:
+    resolution: {integrity: sha512-jbrB7MRlmgtSRx2+I3McQGdFb98VUtJTkQ5DiK6oSJSfCy6vSBxSsuyDZ1xIx13TqREUHTsMzlNrZBZScuJJXQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.0.3
@@ -794,9 +795,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@reteps/dockerfmt@0.2.4':
-    dependencies:
-      typescript: 5.8.3
+  '@reteps/dockerfmt@0.2.7': {}
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
@@ -1148,9 +1147,9 @@ snapshots:
 
   prettier-plugin-nginx@1.0.3: {}
 
-  prettier-plugin-sh@0.17.0(prettier@3.5.3):
+  prettier-plugin-sh@0.17.1(prettier@3.5.3):
     dependencies:
-      '@reteps/dockerfmt': 0.2.4
+      '@reteps/dockerfmt': 0.2.7
       prettier: 3.5.3
       sh-syntax: 0.5.6
 
