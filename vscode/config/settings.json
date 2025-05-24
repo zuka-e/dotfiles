@@ -8,6 +8,7 @@
   "window.zoomLevel": -2,
   "window.restoreWindows": "all",
   "window.commandCenter": false,
+  "gitlens.views.repositories.showStashes": true,
   "workbench.editorAssociations": {
     "*.csv": "gc-excelviewer-csv-editor"
   },
@@ -117,6 +118,7 @@
   "files.trimTrailingWhitespace": true,
   "files.associations": {
     "**/dotfiles/vscode/**/*.json": "jsonc",
+    "**/.husky/*": "shellscript",
     ".env": "dotenv",
     ".env.*": "dotenv",
     ".npmrc": "ini",
@@ -145,6 +147,7 @@
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
 
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": ["console"],
   "typescript.preferences.autoImportFileExcludePatterns": ["dist"],
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
