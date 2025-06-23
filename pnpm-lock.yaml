@@ -29,14 +29,14 @@ importers:
         specifier: ^16.0.0
         version: 16.1.2
       prettier:
-        specifier: 3.5.3
-        version: 3.5.3
+        specifier: 3.6.0
+        version: 3.6.0
       prettier-plugin-nginx:
         specifier: ^1.0.3
         version: 1.0.3
       prettier-plugin-sh:
         specifier: ^0.17.0
-        version: 0.17.4(prettier@3.5.3)
+        version: 0.17.4(prettier@3.6.0)
 
 packages:
 
@@ -485,8 +485,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.3
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.6.0:
+    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1048,13 +1048,13 @@ snapshots:
 
   prettier-plugin-nginx@1.0.3: {}
 
-  prettier-plugin-sh@0.17.4(prettier@3.5.3):
+  prettier-plugin-sh@0.17.4(prettier@3.6.0):
     dependencies:
       '@reteps/dockerfmt': 0.3.6
-      prettier: 3.5.3
+      prettier: 3.6.0
       sh-syntax: 0.5.7
 
-  prettier@3.5.3: {}
+  prettier@3.6.0: {}
 
   require-directory@2.1.1: {}
 
