@@ -15,3 +15,4 @@
 "\e.": yank-last-arg
 
 "\C-l": kill-word
+"\ez": undo
