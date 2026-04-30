@@ -5,7 +5,7 @@
   "redhat.telemetry.enabled": false,
   "window.openFoldersInNewWindow": "on",
   "window.title": "${dirty}${rootName} | ${activeEditorMedium}",
-  "window.zoomLevel": -2,
+  "window.zoomLevel": -1,
   "window.restoreWindows": "all",
   "window.commandCenter": false,
   "gitlens.views.repositories.showStashes": true,
@@ -82,7 +82,7 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.linkedEditing": true,
-  "editor.hover.enabled": true,
+  "editor.hover.enabled": "on",
   "errorLens.editorHoverPartsEnabled": {
     "messageEnabled": false,
     "buttonsEnabled": false
