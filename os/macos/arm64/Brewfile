@@ -11,9 +11,9 @@
 #------------------------------------------------
 # cf. https://docs.brew.sh/Taps
 
-tap "supabase/tap"
+# tap "supabase/tap"
 # https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
-tap "hashicorp/tap"
+# tap "hashicorp/tap"
 
 #------------------------------------------------
 # Formulae
@@ -21,10 +21,8 @@ tap "hashicorp/tap"
 
 brew "launchctl-completion"
 brew "open-completion"
-# brew "vagrant-completion"
-brew "docker-completion"
+# brew "docker-completion"
 
-brew "openssl@3"
 brew "bash" # Newer version
 brew "bash-completion@2"
 brew "zsh"
@@ -45,19 +43,19 @@ brew "git-delta" # (`delta`) `diff`
 brew "git"
 
 brew "nvm"
-brew "yarn"
-brew "yarn-completion"
+# brew "yarn"
+# brew "yarn-completion"
 brew "pnpm"
 brew "pyenv"
 brew "pip-completion"
 brew "pipx"
 
-brew "act" # Local Github Actions
-brew "awscli"
-brew "hashicorp/tap/terraform"
-brew "supabase/tap/supabase"
+# brew "act" # Local Github Actions
+# brew "awscli"
+# brew "hashicorp/tap/terraform"
+# brew "supabase/tap/supabase"
 
-brew "ollama"
+# brew "ollama"
 
 brew "ffmpeg"
 brew "qrencode"
@@ -68,7 +66,6 @@ brew "qrencode"
 # cf. brew uses --installed ca-certificates
 
 brew "ca-certificates"
-brew "glib"
 brew "xxhash"
 
 #------------------------------------------------
@@ -81,25 +78,25 @@ cask "android-file-transfer"
 cask "clipy"
 cask "karabiner-elements"
 cask "google-japanese-ime"
-cask "google-chrome"
+# cask "google-chrome"
 cask "brave-browser"
-cask "syncthing"
+# cask "syncthing-app" # https://github.com/syncthing/syncthing
 cask "lulu"
-cask "adguard-vpn"
+# cask "adguard-vpn"
 # cask "tunnelbear"
 cask "protonvpn"
-cask "libreoffice"
+# cask "libreoffice"
 # cask "kindle"
 cask "slack"
 cask "kitty"
-cask "docker"
-# cask "visual-studio-code"
-cask "cursor"
+# cask "docker"
+cask "visual-studio-code"
+# cask "cursor"
 cask "dbeaver-community"
 cask "android-platform-tools"
 cask "vnc-viewer"
 # cask "send-anywhere"
-cask "iina"
+# cask "iina" # https://github.com/iina/iina
 cask "losslesscut"
 cask "qlmarkdown"
 
@@ -142,8 +139,6 @@ vscode "eamodio.gitlens"
 # vscode "donjayamanne.githistory"
 
 # Intellisense
-vscode "visualstudioexptteam.vscodeintellicode"
-vscode "visualstudioexptteam.intellicode-api-usage-examples" # Code example
 
 # Docker
 vscode "ms-azuretools.vscode-docker"
