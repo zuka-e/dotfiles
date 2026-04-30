@@ -116,6 +116,10 @@ done
 # Start tmux initially
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 # ※ Icons won't be displayed properly if `LANG` has yet to be exported.
-if [[ -z "$TMUX" ]] && is_interactive_shell && is_login_shell && [[ -z "$VSCODE_INJECTION" ]]; then
+if [[ -z "$TMUX" ]] \
+  && is_interactive_shell \
+  && is_login_shell \
+  && [[ -z "$VSCODE_INJECTION" ]] \
+  && [[ "$TERM_PROGRAM" != "WarpTerminal" ]]; then
   _zsh_tmux_plugin_run
 fi
