@@ -139,8 +139,6 @@ vscode "eamodio.gitlens"
 # vscode "donjayamanne.githistory"
 
 # Intellisense
-vscode "visualstudioexptteam.vscodeintellicode"
-vscode "visualstudioexptteam.intellicode-api-usage-examples" # Code example
 
 # Docker
 vscode "ms-azuretools.vscode-docker"
