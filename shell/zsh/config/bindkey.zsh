@@ -9,3 +9,6 @@ bindkey "^[." insert-last-word
 
 bindkey "^L" kill-word
 bindkey "^U" backward-kill-line
+
+bindkey "\ey" redo
+bindkey "\ez" undo

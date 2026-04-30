@@ -43,6 +43,18 @@
     "command": "workbench.action.files.newUntitledFile"
   },
   {
+    "key": "cmd+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b\u007a" }, // `esc+z`
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+shift+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b\u0079" }, // `esc+y`
+    "when": "terminalFocus"
+  },
+  {
     "key": "cmd+[",
     "command": "workbench.action.navigateBack",
     "when": "!terminalFocus && canNavigateBack"
