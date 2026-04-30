@@ -8,17 +8,17 @@ nvm() {
   # remove this and use the real `nvm` from now on.
   unset -f nvm
 
-  export NVM_DIR=~/.nvm
+  if [[ -d "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+  elif [[ -d "${XDG_CONFIG_HOME}/nvm" ]]; then
+    export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+  elif [[ -d $(brew --prefix nvm) ]] > /dev/null 2>&1; then
+    export NVM_DIR="$(brew --prefix nvm)"
+  fi
 
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-  if type brew > /dev/null 2>&1; then
-    nvm_path=$(brew --prefix nvm)
-
-    [ -s "$nvm_path/etc/bash_completion.d/nvm" ] && \. "$nvm_path/etc/bash_completion.d/nvm"
-
-    unset nvm_path
-  fi
+  [ -s "$NVM_DIR/etc/bash_completion.d/nvm" ] && \. "$NVM_DIR/etc/bash_completion.d/nvm"
 
   nvm "$@"
 }
