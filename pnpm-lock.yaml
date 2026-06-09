@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  braces@<3.0.3: '>=3.0.3'
-  micromatch@<4.0.8: '>=4.0.8'
-  cross-spawn@>=7.0.0 <7.0.5: '>=7.0.5'
-
 importers:
 
   .:
@@ -29,14 +24,14 @@ importers:
         specifier: ^16.0.0
         version: 16.4.0
       prettier:
-        specifier: 3.8.3
-        version: 3.8.3
+        specifier: 3.8.4
+        version: 3.8.4
       prettier-plugin-nginx:
         specifier: ^1.0.3
         version: 1.0.3
       prettier-plugin-sh:
         specifier: ^0.18.0
-        version: 0.18.1(prettier@3.8.3)
+        version: 0.18.1(prettier@3.8.4)
 
 packages:
 
@@ -397,8 +392,8 @@ packages:
     peerDependencies:
       prettier: ^3.6.0
 
-  prettier@3.8.3:
-    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -872,13 +867,13 @@ snapshots:
 
   prettier-plugin-nginx@1.0.3: {}
 
-  prettier-plugin-sh@0.18.1(prettier@3.8.3):
+  prettier-plugin-sh@0.18.1(prettier@3.8.4):
     dependencies:
       '@reteps/dockerfmt': 0.5.2
-      prettier: 3.8.3
+      prettier: 3.8.4
       sh-syntax: 0.5.8
 
-  prettier@3.8.3: {}
+  prettier@3.8.4: {}
 
   require-directory@2.1.1: {}
 
