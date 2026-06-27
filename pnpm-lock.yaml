@@ -24,14 +24,14 @@ importers:
         specifier: ^16.0.0
         version: 16.4.0
       prettier:
-        specifier: 3.8.4
-        version: 3.8.4
+        specifier: 3.9.0
+        version: 3.9.0
       prettier-plugin-nginx:
         specifier: ^1.0.3
         version: 1.0.3
       prettier-plugin-sh:
         specifier: ^0.18.0
-        version: 0.18.1(prettier@3.8.4)
+        version: 0.18.1(prettier@3.9.0)
 
 packages:
 
@@ -279,6 +279,7 @@ packages:
   git-raw-commits@5.0.1:
     resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   global-directory@5.0.0:
@@ -392,8 +393,8 @@ packages:
     peerDependencies:
       prettier: ^3.6.0
 
-  prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  prettier@3.9.0:
+    resolution: {integrity: sha512-LjIqSIC5VYLzs9WedVmJ2ljNAGnU+DteIClbahu4L/DBeWjZ6iT/k1lAYyu9JUh+1xINxWadaPw/Pl63y/agAw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -867,13 +868,13 @@ snapshots:
 
   prettier-plugin-nginx@1.0.3: {}
 
-  prettier-plugin-sh@0.18.1(prettier@3.8.4):
+  prettier-plugin-sh@0.18.1(prettier@3.9.0):
     dependencies:
       '@reteps/dockerfmt': 0.5.2
-      prettier: 3.8.4
+      prettier: 3.9.0
       sh-syntax: 0.5.8
 
-  prettier@3.8.4: {}
+  prettier@3.9.0: {}
 
   require-directory@2.1.1: {}
 
