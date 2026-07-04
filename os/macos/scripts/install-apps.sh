@@ -28,7 +28,7 @@ print_bold 'Checking the installation status of Homebrew...'
 
 # A Brewfile based on desired packages.
 new_file=$(
-  find -E "$DOTFILES_PATH/os/macos" -type f -regex ".*$(uname -m)/Brewfile(.local|$)" \
+  find -E "$DOTFILES_PATH/.config/homebrew" -type f -regex ".*/Brewfile(.local|$)" \
     | sort --version-sort --reverse \
     | head -n 1
 )
