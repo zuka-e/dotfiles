@@ -93,13 +93,13 @@ while true; do
     y | yes)
       # Install packages based on `Brewfile`,
       # and remove those installed with `brew` and not listed in the file.
-      brew bundle -v --cleanup --file="$new_file"
+      brew bundle -v --file="$new_file"
       # Remove unnecessary dependencies
       # cf. https://docs.brew.sh/Manpage#autoremove---dry-run
-      brew autoremove
+      brew autoremove -v
       # Remove stale lock files, outdated downloads, and caches.
       # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
-      brew cleanup -vs --prune=all
+      brew cleanup -v --scrub
       break
       ;;
     N | no | No | '')
