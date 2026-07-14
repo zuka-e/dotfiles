@@ -23,17 +23,16 @@
   updateRefs = true
 
 [alias]
-  discard-changes=restore --worktree
-  unstage=restore --staged
-
-  aa = add -A
-  cp = cherry-pick
-  l = log --stat
-  poh = push origin HEAD
-  rs = reset --soft
-  rsh = reset --soft HEAD^
-  rh = reset --hard
-  rhh = reset --hard HEAD^
+  undo-edit = restore --worktree
+  undo-edit-all = restore --worktree .
+  stage = add
+  stage-all = add -A
+  unstage = restore --staged
+  unstage-all = restore --staged .
+  log-diff-summary = log --stat
+  log-diff = log -p --stat
+  uncommit = reset --soft HEAD^
+  cp-commit = cherry-pick
 
 [user]
   ; Disable auto setting of the author.
