@@ -1,5 +1,27 @@
 # cf. `man git-config`
 
+[core]
+  ; For performance (`git status` etc)
+  fsmonitor = true
+
+[fetch]
+  ; Prune the removed remote branches.
+  prune = true
+
+[pull]
+  ; Prevent a merge commit
+  ff = only
+
+[push]
+  ; `--set-upstream | -u` (e.g. `git push -u origin ...)
+  autoSetupRemote = true
+
+[rebase]
+  ; Prevent commits from removed when `--interactive`.
+  missingCommitsCheck = warn
+  ; Update ref branches.
+  updateRefs = true
+
 [alias]
   discard-changes=restore --worktree
   unstage=restore --staged
