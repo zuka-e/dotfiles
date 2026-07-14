@@ -1,21 +1,42 @@
 # cf. `man git-config`
 
-[alias]
-  discard-changes=restore --worktree
-  unstage=restore --staged
+[core]
+  ; For performance (`git status` etc)
+  fsmonitor = true
 
-  aa = add -A
-  cp = cherry-pick
-  l = log --stat
-  poh = push origin HEAD
-  rs = reset --soft
-  rsh = reset --soft HEAD^
-  rh = reset --hard
-  rhh = reset --hard HEAD^
+[fetch]
+  ; Prune the removed remote branches.
+  prune = true
+
+[pull]
+  ; Prevent a merge commit
+  ff = only
+
+[push]
+  ; `--set-upstream | -u` (e.g. `git push -u origin ...)
+  autoSetupRemote = true
+
+[rebase]
+  ; Prevent commits from removed when `--interactive`.
+  missingCommitsCheck = warn
+  ; Update ref branches.
+  updateRefs = true
+
+[alias]
+  undo-edit = restore --worktree
+  undo-edit-all = restore --worktree .
+  stage = add
+  stage-all = add -A
+  unstage = restore --staged
+  unstage-all = restore --staged .
+  log-diff-summary = log --stat
+  log-diff = log -p --stat
+  uncommit = reset --soft HEAD^
+  cp-commit = cherry-pick
 
 [user]
-  name = anonimous
-  email = 0+anonimous@users.noreply.github.com
+  ; Disable auto setting of the author.
+  useConfigOnly = true
   ; name = zuka-e
   ; email = 52391918+zuka-e@users.noreply.github.com
 
