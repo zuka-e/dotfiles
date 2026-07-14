@@ -124,6 +124,7 @@
     ".npmrc": "ini",
     "supervisord.conf": "ini",
     "supervisord.*.conf": "ini",
+    "{,.}renovaterc{,.json}": "jsonc",
     "*.module": "php",
     "*.hcl": "terraform"
   },
@@ -132,6 +133,10 @@
     {
       "fileMatch": ["package.json"],
       "url": "https://json.schemastore.org/package.json"
+    },
+    {
+      "fileMatch": ["{,.}renovaterc{,.json}{,c}"],
+      "url": "https://docs.renovatebot.com/renovate-schema.json"
     },
     {
       // see: https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment-1
