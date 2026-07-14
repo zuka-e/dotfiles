@@ -14,8 +14,8 @@
   rhh = reset --hard HEAD^
 
 [user]
-  name = anonimous
-  email = 0+anonimous@users.noreply.github.com
+  ; Disable auto setting of the author.
+  useConfigOnly = true
   ; name = zuka-e
   ; email = 52391918+zuka-e@users.noreply.github.com
 
