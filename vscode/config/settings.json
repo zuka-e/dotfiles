@@ -124,6 +124,7 @@
     ".npmrc": "ini",
     "supervisord.conf": "ini",
     "supervisord.*.conf": "ini",
+    "{,.}renovaterc{,.json}": "jsonc",
     "*.module": "php",
     "*.hcl": "terraform"
   },
