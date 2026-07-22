@@ -1,10 +1,21 @@
 {
   "files.associations": {
-    "**/.config/git/config": "ini",
-    "**/.config/git/ignore": "ignore",
     "**/.config/*/config": "shellscript",
-    "tmux.conf": "shellscript",
-    ".{inputrc,colorrc,tmux.conf}": "shellscript",
+    "**/.config/*/ignore": "ignore",
+    "**/.config/git/config": "ini",
+    "{,.}{colorrc,inputrc,kitty.conf,tmux.conf}": "shellscript",
     "Brewfile.*": "ruby"
+  },
+  "shellcheck.exclude": [
+    // cf. https://www.shellcheck.net/wiki
+    "2148" // Shebang: useless for files referenced by `source`
+  ],
+  "shellcheck.ignorePatterns": {
+    // Update default items
+    "**/*.zsh": false,
+    "**/*.zshrc": false,
+    "**/*.zprofile": false,
+    // Ignore
+    "**/.config/**": true
   }
 }
