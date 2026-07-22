@@ -6,7 +6,8 @@ pnpm-lock.yaml
 Brewfile
 Brewfile.lock.json
 
-.config
+.config/karabiner
+.config/tabtab
 
 shell/**/*.conf
 
