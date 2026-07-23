@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
+source "$DOTFILES_PATH/shell/functions.sh"
 
 # Define `LS_COLORS`
 if is_linux; then
-  eval "$(dircolors ~/dotfiles/shell/common/config/.colorrc)"
+  eval "$(dircolors $DOTFILES_PATH/shell/common/config/.colorrc)"
 elif is_mac; then
   export LSCOLORS="GxfxcxdxBxegedabagacad"
 fi

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
+. "$DOTFILES_PATH/shell/functions.sh"
 
-is_linux && ~/dotfiles/os/linux/install.sh
-is_mac && ~/dotfiles/os/macos/install.sh
+is_linux && "$DOTFILES_PATH/os/linux/install.sh"
+is_mac && "$DOTFILES_PATH/os/macos/install.sh"

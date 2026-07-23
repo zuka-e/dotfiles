@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-~/dotfiles/os/linux/scripts/install-apps.sh
+"$DOTFILES_PATH/os/linux/scripts/install-apps.sh"
 
-~/dotfiles/os/linux/scripts/add-sshd-configs.sh
+"$DOTFILES_PATH/os/linux/scripts/add-sshd-configs.sh"
 
-~/dotfiles/os/linux/scripts/setup-zsh.sh
+"$DOTFILES_PATH/os/linux/scripts/setup-zsh.sh"

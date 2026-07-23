@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/common/config/paths.sh
-source ~/dotfiles/shell/functions.sh
+# shellcheck source=../shell/functions.sh
+. "$DOTFILES_PATH/shell/functions.sh"
 
 #------------------------------------------------
 # Create symbolic links for settings
 #------------------------------------------------
-configs=$(find ~/dotfiles/vscode/config -depth 1 ! -name "*.*sh")
+configs="$(find "$DOTFILES_PATH/vscode/config" -depth 1 ! -name "*.*sh")"
 
 for editor in "Code" "Cursor"; do
   config_dir="$HOME/Library/Application Support/$editor/User"

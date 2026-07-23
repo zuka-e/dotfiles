@@ -12,7 +12,7 @@
 # Uncomment this and run `zprof` at the end of the file to check the performance.
 # zmodload zsh/zprof
 
-source ~/dotfiles/shell/functions.sh
+. "$DOTFILES_PATH/shell/functions.sh"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
