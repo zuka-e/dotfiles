@@ -28,9 +28,6 @@ if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
   return
 fi
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="git-info"
-
 # cf. https://github.com/ohmyzsh/ohmyzsh/issues/12353
 zstyle ':omz:alpha:lib:git' async-prompt no
 
@@ -66,8 +63,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
 HIST_STAMPS="yyyy-mm-dd"
 
+ZSH_CONFIG_HOME="${ZSH_CONFIG_HOME:-$DOTFILES_PATH/shell/zsh}"
+
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh/custom
+ZSH_CUSTOM="$ZSH_CONFIG_HOME/lib/oh-my-zsh"
 
 # Syntax highlighting
 if [[ ! -e "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
@@ -101,17 +100,10 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 ZSH_TMUX_AUTOCONNECT=false
 
+# shellcheck source=./shell/zsh/rc.zsh
+. "$ZSH_CONFIG_HOME/rc.zsh"
+
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-for file in $(find ~/dotfiles/shell/common -name "*.sh" ! -name "path.*" | sort); do
-  source "$file"
-done
-
-for file in $(find ~/dotfiles/shell/zsh -name "*.zsh" ! -name "path.*"); do
-  source "$file"
-done
 
 # Start tmux initially
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux

@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
+#------------------------------------------------
+# Install Homebrew
+#------------------------------------------------
+
+if ! type brew > /dev/null 2>&1; then
+  # cf. https://brew.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  if [[ -x /usr/local/bin/brew ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  elif [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    exit 2
+  fi
+fi
+
+#------------------------------------------------
+# Install Homebrew packages
+#------------------------------------------------
+
 echo "Checking the installation status of Homebrew..."
 
 brew doctor

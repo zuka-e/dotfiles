@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/common/config/paths.sh
 source ~/dotfiles/shell/functions.sh
+
+DOTFILES_PATH="$HOME/dotfiles"
+
+#------------------------------------------------
+# Preparation before installation
+#------------------------------------------------
+
+# shellcheck source=./shell/common/environment/index.sh
+. "$DOTFILES_PATH/shell/common/environment/index.sh"
 
 #------------------------------------------------
 # Create symbolic links
@@ -28,17 +36,19 @@ done
 unset extended_configs
 
 #------------------------------------------------
-# Install completions
-#------------------------------------------------
-~/dotfiles/install-bash-completion.sh
-
-#------------------------------------------------
-# Install packages etc
+# Install apps
 #------------------------------------------------
 
-is_linux && ~/dotfiles/os/linux/install.sh
-is_mac && ~/dotfiles/os/macos/install.sh
+"$DOTFILES_PATH/scripts/install-apps.sh"
 
-type code > /dev/null 2>&1 || type cursor > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
+#------------------------------------------------
+# Setup apps
+#------------------------------------------------
+
+"$DOTFILES_PATH/scripts/setup-apps.sh"
+
+# ------------------------------------------------
+# Reload shell to apply changes
+# ------------------------------------------------
 
 exec "${SHELL}" -l

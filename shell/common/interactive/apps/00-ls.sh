@@ -2,6 +2,13 @@
 
 source ~/dotfiles/shell/functions.sh
 
+# Define `LS_COLORS`
+if is_linux; then
+  eval "$(dircolors ~/dotfiles/shell/common/config/.colorrc)"
+elif is_mac; then
+  export LSCOLORS="GxfxcxdxBxegedabagacad"
+fi
+
 if type eza > /dev/null 2>&1; then
   alias ls="eza --all --header --icons --links --group --time-style=long-iso --git"
   alias ll="ls --long"

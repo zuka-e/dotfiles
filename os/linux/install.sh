@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
+set -euo pipefail
 
-export LANG=C.UTF-8
+~/dotfiles/os/linux/scripts/install-apps.sh
 
-is_fedora && ~/dotfiles/os/fedora/install.sh
-is_debian && ~/dotfiles/os/debian/install.sh
+~/dotfiles/os/linux/scripts/add-sshd-configs.sh
 
-if command -v sshd &> /dev/null; then
-  ~/dotfiles/os/linux/setup-sshd.sh
-fi
-
-if command -v zsh &> /dev/null; then
-  ~/dotfiles/os/linux/setup-zsh.sh
-fi
+~/dotfiles/os/linux/scripts/setup-zsh.sh

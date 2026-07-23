@@ -11,7 +11,6 @@ fi
 
 # Originally created by `pnpm setup`
 # cf. https://pnpm.io/cli/setup
-export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

@@ -11,7 +11,7 @@ set -o ignoreeof # Ignore 'logout', only `IGNOREEOF`-times
 IGNOREEOF=1
 
 #------------------------------------------------
-# Bash optinos
+# Bash options
 #------------------------------------------------
 # cf. `$BASHOPTS`
 

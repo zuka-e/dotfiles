@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+type code > /dev/null 2>&1 \
+  || type cursor > /dev/null 2>&1 \
+  && ~/dotfiles/vscode/install.sh
