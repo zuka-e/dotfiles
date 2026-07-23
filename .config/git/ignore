@@ -7,7 +7,7 @@
 .php-version
 
 # Python venv files
-env/
+venv/
 
 # Pyenv file
 .python-version
