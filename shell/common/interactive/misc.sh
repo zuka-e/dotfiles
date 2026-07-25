@@ -3,22 +3,21 @@
 function cdls() {
   \cd "$@" && ls
 }
-alias cd="cdls"
+alias cd='cdls'
 
 function mkdircd() {
   \mkdir -p "$@" && cd "$_"
 }
 
-alias mkdir="mkdir -p"
-
+alias mkdir='mkdir -p'
 # Use extended regular expressions
-alias esed="sed -E"
+alias esed='sed -E'
 
 # i:Interactive, p:Preserve-attributes, r:Recursive, v:Verbose
-alias cp="cp -aiv"
+alias cp='cp -aiv'
 alias scp="echo Deprecated! Use \'rsync\' etc instead.; #"
-alias mv="mv -iv"
-alias rm="rm -irv"
+alias mv='mv -iv'
+alias rm='rm -irv'
 
 #------------------------------------------------
 # Rsync
@@ -37,10 +36,10 @@ alias rm="rm -irv"
 #   -H, --hard-links       preserve hard links
 # -u, --update           skip files that are newer on the receiver
 # -v, --verbose          increase verbosity
-alias rsync="rsync --archive --update --human-readable --itemize-changes --stats --progress --verbose"
+alias rsync='rsync --archive --update --human-readable --itemize-changes --stats --progress --verbose'
 
 # Reload the current shell
-alias reload="exec "${SHELL}" -l"
+alias reload='exec "$SHELL" -l'
 
 # Show $PATH by line
 alias path='echo $PATH | tr ":" "\n"'
@@ -51,8 +50,8 @@ alias path='echo $PATH | tr ":" "\n"'
 alias readline='while read line; do echo \""$line"\"; done'
 
 # Enable alias
-alias sudo="sudo "
-alias xargs="xargs "
+alias sudo='sudo '
+alias xargs='xargs '
 
 # Laravel Sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

@@ -15,7 +15,7 @@
 . "$DOTFILES_PATH/shell/functions.sh"
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
 if [[ ! -e "$ZSH" ]]; then

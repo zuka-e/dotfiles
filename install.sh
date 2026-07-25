@@ -29,25 +29,21 @@ ensure_dotfiles
 # shellcheck source=./shell/functions.sh
 . "$DOTFILES_PATH/shell/functions.sh"
 
-basic_config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
+config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
 
-for filename in ${basic_config_filenames[@]}; do
+for filename in "${config_filenames[@]}"; do
   create_symbolic_link "$DOTFILES_PATH/$filename" "$HOME"
 done
-
-unset basic_config_filenames
 
 if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
   mkdir "$XDG_CONFIG_HOME"
 fi
 
-extended_configs=$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)
+xdg_config_dirs="$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)"
 
-for config in ${extended_configs[@]}; do
-  create_symbolic_link "$config" "$XDG_CONFIG_HOME"
+for xdg_config_dir in "${xdg_config_dirs[@]}"; do
+  create_symbolic_link "$xdg_config_dir" "$XDG_CONFIG_HOME"
 done
-
-unset extended_configs
 
 #------------------------------------------------
 # Install apps

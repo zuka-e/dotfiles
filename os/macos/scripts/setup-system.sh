@@ -2,7 +2,7 @@
 
 # Run `defaults help` to display the help
 
-echo "Updating Apple settings..."
+echo 'Updating Apple settings...'
 
 #------------------------------------------------
 # General
@@ -74,4 +74,4 @@ defaults write com.apple.dock mru-spaces -bool false
 # Reload
 killall Dock
 
-echo -e "\033[32mUpdated.\033[0m If not being reflected, try rebooting."
+echo -e '\033[32mUpdated.\033[0m If not being reflected, try rebooting.'

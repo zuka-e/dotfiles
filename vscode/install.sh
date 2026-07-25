@@ -13,7 +13,7 @@ for editor in "Code" "Cursor"; do
 
   if [[ -d "$config_dir" ]]; then
     echo "Linking configs to $editor..."
-    for config in ${configs[@]}; do
+    for config in "${configs[@]}"; do
       create_symbolic_link "$config" "$config_dir"
     done
   else
