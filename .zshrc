@@ -12,20 +12,17 @@
 # Uncomment this and run `zprof` at the end of the file to check the performance.
 # zmodload zsh/zprof
 
-. "$DOTFILES_PATH/shell/functions.sh"
+# shellcheck source=./shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/oh-my-zsh.sh
 if [[ ! -e "$ZSH" ]]; then
+  print_info "'$ZSH/oh-my-zsh' doesn't exist. Installing..."
   # cf. https://github.com/ohmyzsh/ohmyzsh#basic-installation
   RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-if [[ ! -f "$ZSH/oh-my-zsh.sh" ]]; then
-  echo -e "\033[31m\"oh-my-zsh.sh\" doesn't exist.\033[0m"
-  return
 fi
 
 # cf. https://github.com/ohmyzsh/ohmyzsh/issues/12353

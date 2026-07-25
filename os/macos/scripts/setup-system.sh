@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+# shellcheck source=../../../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+
 # Run `defaults help` to display the help
 
-echo 'Updating Apple settings...'
+print_bold_yellow 'Updating Apple system settings...'
 
 #------------------------------------------------
 # General
@@ -74,4 +77,5 @@ defaults write com.apple.dock mru-spaces -bool false
 # Reload
 killall Dock
 
-echo -e '\033[32mUpdated.\033[0m If not being reflected, try rebooting.'
+print_ok 'Updating Apple system settings is complete.'
+print_bold 'If not being reflected, try rebooting.'

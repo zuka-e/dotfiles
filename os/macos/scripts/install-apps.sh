@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# shellcheck source=../../../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=../../../shell/common/lib/system.sh
+. "$DOTFILES_PATH/shell/common/lib/system.sh"
+
 #------------------------------------------------
 # Install Homebrew
 #------------------------------------------------
@@ -21,28 +26,9 @@ fi
 # Install Homebrew packages
 #------------------------------------------------
 
-echo 'Checking the installation status of Homebrew...'
+brew doctor || exit
 
-brew doctor
-
-if [[ $? != 0 ]]; then
-  echo
-  while true; do
-    read -p 'Do you want to continue? (y/N) ' input
-    case $input in
-      y | yes)
-        break
-        ;;
-      N | no | No | '')
-        echo 'Canceled.'
-        exit 1
-        ;;
-      *)
-        echo 'Please answer with y or N.'
-        ;;
-    esac
-  done
-fi
+print_bold 'Checking the installation status of Homebrew...'
 
 # A Brewfile based on desired packages.
 new_file=$(
@@ -52,12 +38,12 @@ new_file=$(
 )
 
 if [[ ! -f "$new_file" ]]; then
-  echo "Brewfile doesn't exist."
+  print_error "Brewfile doesn't exist."
   exit 2
 fi
 
-echo "\"${new_file}\" has been loaded."
-echo 'Loading installed packages...'
+print_bold "'$new_file' has been loaded."
+print_default 'Loading installed packages...'
 
 # A Brewfile based on teinstalled packages.
 current_file="$TMPDIR/Brewfile"
@@ -84,25 +70,25 @@ added_packages=$(diff_brewfile | egrep '^\+\s*\w+')
 removed_packages=$(diff_brewfile | egrep '^\-\s*\w+')
 
 if [[ ! -z $removed_packages ]]; then
-  echo
-  echo -e '\033[31mThe following packages will be removed.\033[0m'
-  echo '==========================================='
-  echo "$removed_packages"
-  echo '==========================================='
+  print_default
+  print_bold_red 'The following packages will be removed.'
+  print_default '==========================================='
+  print_default "$removed_packages"
+  print_default '==========================================='
 fi
 
 if [[ ! -z $added_packages ]]; then
-  echo
-  echo -e '\033[32mThe following packages will be installed.\033[0m'
-  echo '==========================================='
-  echo "$added_packages"
-  echo '==========================================='
+  print_default
+  print_bold_green 'The following packages will be installed.'
+  print_default '==========================================='
+  print_default "$added_packages"
+  print_default '==========================================='
 fi
 
 if [[ -z $added_packages && -z $removed_packages ]]; then
-  echo -e 'All packages are already installed \033[33mbut may be upgraded.\033[0m'
+  print_info 'All packages are already installed but may be upgraded.'
 else
-  echo -e '\033[33mOther packages might also be upgraded.\033[0m'
+  print_info 'Other packages might also be upgraded.'
 fi
 
 while true; do
@@ -121,11 +107,11 @@ while true; do
       break
       ;;
     N | no | No | '')
-      echo 'Canceled.'
-      break
+      print_default 'Canceled.'
+      exit
       ;;
     *)
-      echo 'Please answer with y or N.'
+      print_default 'Please answer with y or N.'
       ;;
   esac
 done
@@ -141,28 +127,8 @@ done
 # Change Shell into local Zsh
 #------------------------------------------------
 
-usr_zsh="$HOMEBREW_PREFIX/bin/zsh"
-shells='/etc/shells'
+shell="$HOMEBREW_PREFIX/bin/zsh"
 
-if [[ $SHELL != $usr_zsh && "$(command -v zsh)" = $usr_zsh ]]; then
-  if ! grep $usr_zsh '/etc/shells' > /dev/null 2>&1; then
-    echo "Enter the password to add '${usr_zsh}' to '${shells}'"
-    echo $usr_zsh | sudo tee -a /etc/shells > /dev/null
-
-    if [[ $? == 0 ]]; then
-      echo "Added $usr_zsh to '/etc/shells'"
-    else
-      echo 'Canceled the operation'
-    fi
-  fi
-
-  chsh -s $usr_zsh
-
-  if [[ $? == 0 ]]; then
-    echo "Changed the login shell to ${usr_zsh}'."
-    export SHELL=$usr_zsh
-    exec $SHELL -l
-  fi
+if [[ "$(login_shell)" != "$shell" ]]; then
+  change_shell "$shell"
 fi
-
-unset usr_zsh shells

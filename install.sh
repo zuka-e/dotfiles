@@ -26,8 +26,8 @@ ensure_dotfiles
 # Create symbolic links
 #------------------------------------------------
 
-# shellcheck source=./shell/functions.sh
-. "$DOTFILES_PATH/shell/functions.sh"
+# shellcheck source=./shell/common/lib/filesystem.sh
+. "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
 
 config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
 

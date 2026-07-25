@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 
-source "$DOTFILES_PATH/shell/functions.sh"
+# shellcheck source=../../../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=../../../shell/common/lib/filesystem.sh
+. "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
 
-sshd_configs="$(find "$DOTFILES_PATH/shell/common/config/sshd_config.d" -mindepth 1 -maxdepth 1)"
+# cf. https://support.apple.com/guide/certifications/apc35eb3dc4fa/web
+SSHD_CONFIG_DIR=/etc/ssh/sshd_config.d
 
-for config in "${sshd_configs[@]}"; do
-  sudo bash -c "$(declare -f create_symbolic_link); create_symbolic_link $config /etc/ssh/sshd_config.d"
+configs="$(find "$DOTFILES_PATH/os/linux/config/sshd_config.d" -mindepth 1 -maxdepth 1)"
+
+for config in "${configs[@]}"; do
+  create_symbolic_link "$config" "$SSHD_CONFIG_DIR"
 done
 
-sudo systemctl reload sshd.service
-
-unset sshd_configs
+if command -v systemctl > /dev/null 2>&1; then
+  sudo systemctl reload sshd.service
+fi

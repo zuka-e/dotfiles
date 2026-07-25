@@ -7,8 +7,10 @@ BASH_CONFIG_HOME="$SHELL_CONFIG_HOME/bash"
 # shellcheck source=./shell/bash/environment/index.bash
 . "$BASH_CONFIG_HOME/environment/index.bash"
 
-if [[ -t 0 ]]; then
-  echo -e "\033[1;31m$(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')\033[0m"
+if [[ $- == *i* ]]; then
+  # shellcheck source=./shell/common/lib/log.sh
+  . "$SHELL_CONFIG_HOME/common/lib/log.sh"
+  print_bold_red "$(date '+Login Time : %Y/%m/%d (%a) | %H:%M (%S)')"
 fi
 
 # shellcheck source=.bashrc

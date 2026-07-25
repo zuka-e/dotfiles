@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source "$DOTFILES_PATH/shell/functions.sh"
+# shellcheck source=../../../../shell/common/lib/system.sh
+. "$DOTFILES_PATH/shell/common/lib/system.sh"
 
 # Define `LS_COLORS`
 if is_linux; then

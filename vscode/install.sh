@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# shellcheck source=../shell/functions.sh
-. "$DOTFILES_PATH/shell/functions.sh"
+# shellcheck source=../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=../shell/common/lib/filesystem.sh
+. "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
 
 #------------------------------------------------
 # Create symbolic links for settings
@@ -12,7 +14,7 @@ for editor in "Code" "Cursor"; do
   config_dir="$HOME/Library/Application Support/$editor/User"
 
   if [[ -d "$config_dir" ]]; then
-    echo "Linking configs to $editor..."
+    print_bold_yellow "Creating symbolic links for '$editor'..."
     for config in "${configs[@]}"; do
       create_symbolic_link "$config" "$config_dir"
     done

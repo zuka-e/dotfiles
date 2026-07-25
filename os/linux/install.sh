@@ -5,5 +5,3 @@ set -euo pipefail
 "$DOTFILES_PATH/os/linux/scripts/install-apps.sh"
 
 "$DOTFILES_PATH/os/linux/scripts/add-sshd-configs.sh"
-
-"$DOTFILES_PATH/os/linux/scripts/setup-zsh.sh"
