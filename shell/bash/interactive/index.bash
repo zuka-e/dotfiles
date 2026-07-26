@@ -1,23 +1,29 @@
-_own_dir="$BASH_CONFIG_HOME/interactive"
+__dotfiles_load_scripts() {
+  local _script_dir="$BASH_CONFIG_HOME/interactive"
 
-#------------------------------------------------
-# Applications
-#------------------------------------------------
+  #------------------------------------------------
+  # Applications
+  #------------------------------------------------
 
-# shellcheck source=./apps/index.bash
-. "$_own_dir/apps/index.bash"
+  # shellcheck source=./apps/index.bash
+  . "$_script_dir/apps/index.bash"
 
-#------------------------------------------------
-# Shell
-#------------------------------------------------
+  #------------------------------------------------
+  # Shell
+  #------------------------------------------------
 
-# shellcheck source=./completion.bash
-. "$_own_dir/completion.bash"
-# shellcheck source=./history.bash
-. "$_own_dir/history.bash"
-# shellcheck source=./keybindings.bash
-. "$_own_dir/keybindings.bash"
-# shellcheck source=./options.bash
-. "$_own_dir/options.bash"
-# shellcheck source=./prompt.bash
-. "$_own_dir/prompt.bash"
+  # shellcheck source=./completion.bash
+  . "$_script_dir/completion.bash"
+  # shellcheck source=./history.bash
+  . "$_script_dir/history.bash"
+  # shellcheck source=./keybindings.bash
+  . "$_script_dir/keybindings.bash"
+  # shellcheck source=./options.bash
+  . "$_script_dir/options.bash"
+  # shellcheck source=./prompt.bash
+  . "$_script_dir/prompt.bash"
+}
+
+__dotfiles_load_scripts
+
+unset -f __dotfiles_load_scripts > /dev/null 2>&1
