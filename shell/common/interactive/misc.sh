@@ -1,7 +1,24 @@
-cdls() {
-  \cd "$@" && ls
+# Change the directory.
+cd_main() {
+  builtin cd "$@" || return
 }
-alias cd='cdls'
+
+# Process before the directory is changed.
+cd_before() {
+  true
+}
+
+# Process after the directory is changed.
+cd_after() {
+  printf "→ %s\n" "$(pwd)" && ls
+}
+
+# Change the directory with some processing before/after.
+cd() {
+  cd_before
+  cd_main "$@" || return
+  cd_after
+}
 
 mkdircd() {
   \mkdir -p "$@" && cd "$_"
