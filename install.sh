@@ -2,6 +2,9 @@
 
 # Repository: https://github.com/zuka-e/dotfiles.git (Don't remove)
 
+# ※ `errexit nounset pipefail`
+set -euo pipefail
+
 #------------------------------------------------
 # Dotfiles script path resolution
 #------------------------------------------------

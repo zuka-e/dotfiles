@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Config: `$HOME/.config/fd/ignore`
 
 #-----------------------------------------

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # shellcheck source=../../../shell/common/lib/log.sh
 . "$DOTFILES_PATH/shell/common/lib/log.sh"
 

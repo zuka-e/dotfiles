@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # shellcheck source=../../../../shell/common/lib/system.sh
 . "$DOTFILES_PATH/shell/common/lib/system.sh"
 

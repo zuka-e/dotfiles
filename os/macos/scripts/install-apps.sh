@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # shellcheck source=../../../shell/common/lib/log.sh
 . "$DOTFILES_PATH/shell/common/lib/log.sh"
 # shellcheck source=../../../shell/common/lib/system.sh
@@ -11,15 +13,7 @@
 
 if ! type brew > /dev/null 2>&1; then
   # cf. https://brew.sh
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  if [[ -x /usr/local/bin/brew ]]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-  elif [[ -x /opt/homebrew/bin/brew ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  else
-    exit 2
-  fi
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit
 fi
 
 #------------------------------------------------

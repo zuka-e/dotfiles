@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # cf. https://github.com/nvm-sh/nvm
 # cf. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
 

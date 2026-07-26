@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 "$DOTFILES_PATH/os/macos/scripts/setup-system.sh"
 
 "$DOTFILES_PATH/os/macos/scripts/install-apps.sh"
