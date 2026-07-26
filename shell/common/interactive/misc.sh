@@ -42,12 +42,16 @@ alias rsync='rsync --archive --update --human-readable --itemize-changes --stats
 alias reload='exec "$SHELL" -l'
 
 # Show $PATH by line
-alias path='echo $PATH | tr ":" "\n"'
+alias path='printf "%s\n" "$PATH" | tr ":" "\n"'
 
 # Read stdin line by line instead of spaces.
 # It's useful when searching space-separated files.
 # ex. ls | readline | xargs grep "foo"
-alias readline='while read line; do echo \""$line"\"; done'
+readline() {
+  while IFS= read -r line; do
+    printf '"%s"\n' "$line"
+  done
+}
 
 # Enable alias
 alias sudo='sudo '

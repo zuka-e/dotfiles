@@ -18,8 +18,7 @@ for editor in "Code" "Cursor"; do
     for config in "${configs[@]}"; do
       create_symbolic_link "$config" "$config_dir"
     done
-  else
-    echo "$editor config directory not found. Skipping $editor config setup."
+    print_ok "Creating symbolic links for '$editor' is complete."
   fi
 done
 

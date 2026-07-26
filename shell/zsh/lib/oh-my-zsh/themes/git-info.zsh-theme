@@ -32,20 +32,24 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{%B$fg[red]%} D"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{%B$fg[blue]%} R"
 
 # Combines all Git prompt outputs.
-function make_git_prompt() {
-  echo "$(git_prompt_info)%{$reset_color%}$(git_commits_ahead)%{$reset_color%}$(git_commits_behind)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_remote_status)%{$reset_color%}"
+make_git_prompt() {
+  printf '%s\n' "$(git_prompt_info)%{$reset_color%}$(git_commits_ahead)%{$reset_color%}$(git_commits_behind)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_remote_status)%{$reset_color%}"
 }
 
 # For details of special characters, see `man zshmisc`(SIMPLE PROMPT ESCAPES).
-function make_prompt() {
+make_prompt() {
   prompt_time="%{%B$fg[$prompt_time_color]%}%D{%Y/%m/%d(%a) %H:%M:%S}%{$reset_color%}"
   prompt_username="%{%B$fg[$prompt_username_color]%}%n%{$reset_color%}"
   prompt_hostname="%{%B$fg[$prompt_hostname_color]%}%M%{$reset_color%}"
   prompt_path="%{%B$fg[$prompt_path_color]%}%~%{$reset_color%}"
 
-  echo "${prompt_time}"
-  echo "${prompt_username}@${prompt_hostname}:${prompt_path} $(make_git_prompt)"
-  echo "%# "
+  printf '%s\n' "$prompt_time"
+  printf '%s@%s:%s %s\n' \
+    "$prompt_username" \
+    "$prompt_hostname" \
+    "$prompt_path" \
+    "$(make_git_prompt)"
+  printf '%s \n' '%#'
 }
 
 PROMPT='$(make_prompt)'
