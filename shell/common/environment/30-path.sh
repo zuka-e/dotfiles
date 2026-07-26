@@ -8,7 +8,7 @@
 path_append "$HOME/.local/bin"
 
 # cf. https://docs.brew.sh/Installation#post-installation-steps
-if type brew > /dev/null 2>&1; then
+if command -v brew > /dev/null 2>&1; then
   eval "$(brew shellenv)"
 fi
 
@@ -18,7 +18,7 @@ if [[ -d "$PNPM_HOME/bin" ]]; then
 fi
 
 # cf. https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
-if type pyenv > /dev/null 2>&1; then
+if command -v pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 

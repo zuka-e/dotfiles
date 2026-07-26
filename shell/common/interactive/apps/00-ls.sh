@@ -1,14 +1,22 @@
-# shellcheck source=../../../../shell/common/lib/system.sh
-. "$DOTFILES_PATH/shell/common/lib/system.sh"
+#------------------------------------------------
+# Color
+#------------------------------------------------
 
-# Define `LS_COLORS`
-if is_linux; then
-  eval "$(dircolors $DOTFILES_PATH/shell/common/config/.colorrc)"
-elif is_mac; then
+# shellcheck disable=SC2034
+
+if command -v dircolors > /dev/null 2>&1; then
+  # `LS_COLORS`
+  eval "$(dircolors "$SHELL_CONFIG_HOME/common/interactive/apps/.colorrc")"
+else
   LSCOLORS='GxfxcxdxBxegedabagacad'
 fi
 
-if type eza > /dev/null 2>&1; then
+#------------------------------------------------
+# eza
+#------------------------------------------------
+# cf. https://github.com/eza-community/eza
+
+if command -v eza > /dev/null 2>&1; then
   alias ls='eza --all --header --icons --links --group --time-style=long-iso --git'
   alias ll='ls --long'
   alias lli='ll --inode --blocks' # Show index number, allocated size
@@ -19,14 +27,18 @@ if type eza > /dev/null 2>&1; then
   return
 fi
 
-if is_linux; then
+#------------------------------------------------
+# ls
+#------------------------------------------------
+
+if command ls --color > /dev/null >&2; then
   alias ls='ls --sort=version --almost-all --color=auto'
   alias ll='ls -all --human-readable --time-style="+%Y-%m-%d %H:%M:%S"'
   alias lli='ll --inode --size'
   alias llat='llt --sort=time --time=atime'
   alias llmt='llt --sort=time'
   alias llct='llt --sort=time --time=ctime'
-elif is_mac; then
+elif command ls -G > /dev/null >&2; then
   alias ls="ls -AG"
   alias ll='ls -lhT -D "+%Y-%m-%d %H:%M:%S"'
   alias lli="ll -is"
@@ -34,5 +46,3 @@ elif is_mac; then
   alias llmt="ll -t"
   alias llct="ll -tc"
 fi
-
-unset time_style

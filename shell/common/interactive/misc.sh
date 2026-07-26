@@ -20,8 +20,8 @@ cd() {
   cd_after
 }
 
-mkdircd() {
-  \mkdir -p "$@" && cd "$_"
+mkdir_cd() {
+  \mkdir -p "$@" && cd "$_" || return
 }
 
 alias mkdir='mkdir -p'

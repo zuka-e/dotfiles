@@ -1,3 +1,9 @@
+# shellcheck disable=all
+
+if ! command -v git > /dev/null 2>&1; then
+  return
+fi
+
 # bash/zsh git prompt support
 #
 # Copyright (C) 2006,2007 Shawn O. Pearce <spearce@spearce.org>

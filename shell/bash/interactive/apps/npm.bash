@@ -1,3 +1,12 @@
+# shellcheck source=../../../common/lib/nvm.sh
+. "$DOTFILES_PATH/shell/common/lib/nvm.sh"
+
+if ! command -v npm > /dev/null 2>&1; then
+  return
+fi
+
+# shellcheck disable=all
+
 # Output of `npm completion`
 if type complete &> /dev/null; then
   _npm_completion() {

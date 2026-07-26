@@ -11,7 +11,7 @@ set -euo pipefail
 # Install Homebrew
 #------------------------------------------------
 
-if ! type brew > /dev/null 2>&1; then
+if ! command -v brew > /dev/null 2>&1; then
   # cf. https://brew.sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit
 fi
