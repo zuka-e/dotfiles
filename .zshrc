@@ -60,7 +60,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # cf. https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
 HIST_STAMPS="yyyy-mm-dd"
 
-ZSH_CONFIG_HOME="${ZSH_CONFIG_HOME:-$DOTFILES_PATH/shell/zsh}"
+SHELL_CONFIG_HOME="$DOTFILES_PATH/shell"
+
+ZSH_CONFIG_HOME="${ZSH_CONFIG_HOME:-$SHELL_CONFIG_HOME/zsh}"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="$ZSH_CONFIG_HOME/lib/oh-my-zsh"
