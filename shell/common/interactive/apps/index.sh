@@ -11,6 +11,8 @@ __dotfiles_load_scripts() {
   . "$_script_dir/00-ls.sh"
   # shellcheck source=./00-viewer.sh
   . "$_script_dir/00-viewer.sh"
+  # shellcheck source=./10-pager.sh
+  . "$_script_dir/10-pager.sh"
 }
 
 __dotfiles_load_scripts
