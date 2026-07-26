@@ -1,22 +1,24 @@
 # See `man bash` for more options.
 
-export HISTFILE="$HOME/.bash_history" # Use "~/.bash_history" even on tmux
-export HISTSIZE=10000                 # Number of history of current shell
-export HISTFILESIZE=10000             # Number of history of HISTFILE, shell-var
-export HISTTIMEFORMAT='%F %T '        # Show timestamp running `history`. see `man strftime`
-# export HISTCONTROL=ignoreboth # Not record the same command as the previous
+# The number of commands to remember in the command history.
+HISTSIZE=10000
+# The maximum number of lines contained in the history file.
+HISTFILESIZE=10000
+# Show timestamp running `history`. see `man strftime`
+HISTTIMEFORMAT='%F %T '
 
-function sync_history {
+# Not write to `HISTFILE` when session is closed.
+shopt -s histappend
+
+# cf. https://linuxcommand.org/lc3_man_pages/historyh.html
+sync_history() {
   history -a # Add a history of the current bash session to HISTFILE
   history -c # Clear a history out of the current bash session
   history -r # Read from HISTFILE and set as the current history
 }
 
-# It'll be run when a command is run.
-if [[ -n "${PROMPT_COMMAND+x}" ]]; then
-  PROMPT_COMMAND="$PROMPT_COMMAND;sync_history"
-else
-  PROMPT_COMMAND='sync_history'
-fi
+# Lists all history without event numbers.
+alias history-view='fc -l -n 1'
 
-shopt -s histappend # Not write to `HISTFILE` when session is closed
+# It'll be run when a command is run.
+PROMPT_COMMAND+=(sync_history)

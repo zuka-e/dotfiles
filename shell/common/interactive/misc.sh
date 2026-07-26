@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-function cdls() {
+cdls() {
   \cd "$@" && ls
 }
 alias cd='cdls'
 
-function mkdircd() {
+mkdircd() {
   \mkdir -p "$@" && cd "$_"
 }
 
