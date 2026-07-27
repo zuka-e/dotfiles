@@ -1,17 +1,17 @@
-# Config: `$HOME/.config/fd/ignore`
+#------------------------------------------------
+# fd
+#------------------------------------------------
+# cf. https://github.com/sharkdp/fd
 
-#-----------------------------------------
 if command -v fdfind > /dev/null 2>&1; then
-  alias fd-find="\\fdfind"
+  alias fd='fdfind'
+fi
+
+if command -v fd-find > /dev/null 2>&1; then
+  alias fd='fd-find'
 fi
 
 if command -v fd > /dev/null 2>&1; then
-  alias fd-find="\\fd"
-fi
-#-----------------------------------------
-
-if command -v fd-find > /dev/null 2>&1; then
-  alias fd='fd-find --hidden'
-
-  alias pathls="fd --max-depth 1 '.'" # Equivalent to 'ls -1A' but it outputs path.
+  alias fd='fd --hidden --no-require-git --case-sensitive'
+  alias fd-all='fd --unrestricted'
 fi

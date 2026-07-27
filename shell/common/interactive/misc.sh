@@ -25,12 +25,9 @@ mkdir_cd() {
 }
 
 alias mkdir='mkdir -p'
-# Use extended regular expressions
-alias esed='sed -E'
 
 # i:Interactive, p:Preserve-attributes, r:Recursive, v:Verbose
 alias cp='cp -aiv'
-alias scp="echo Deprecated! Use \'rsync\' etc instead.; #"
 alias mv='mv -iv'
 alias rm='rm -irv'
 
@@ -71,6 +68,3 @@ readline() {
 # Enable alias
 alias sudo='sudo '
 alias xargs='xargs '
-
-# Laravel Sail
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
