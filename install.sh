@@ -29,8 +29,12 @@ ensure_dotfiles
 # Create symbolic links
 #------------------------------------------------
 
+# shellcheck source=./shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
 # shellcheck source=./shell/common/lib/filesystem.sh
 . "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
+
+print_bold_yellow 'Creating symbolic links for shell configs...'
 
 config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
 
@@ -48,6 +52,8 @@ for xdg_config_dir in "${xdg_config_dirs[@]}"; do
   create_symbolic_link "$xdg_config_dir" "$XDG_CONFIG_HOME"
 done
 
+print_ok 'Creating symbolic links for shell configs is complete.'
+
 #------------------------------------------------
 # Install apps
 #------------------------------------------------
@@ -64,4 +70,5 @@ done
 # Reload shell to apply changes
 # ------------------------------------------------
 
-exec "${SHELL}" -l
+print_ok 'All installation is complete.'
+print_info "Reload shell to apply changes by 'exec \$SHELL -l'."

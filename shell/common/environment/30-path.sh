@@ -27,4 +27,9 @@ if [[ -f "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi
 
+if command -v agy-ide > /dev/null 2>&1; then
+  # The original will be added by Antigravity IDE
+  path_append "$HOME/.antigravity-ide/antigravity-ide/bin"
+fi
+
 export PATH

@@ -108,6 +108,11 @@ add_shell() {
 change_shell() {
   local shell="$1"
 
+  if [[ "$(login_shell)" == "$shell" ]]; then
+    print_default "The login shell is already '$shell'."
+    return
+  fi
+
   if ! grep -q "$shell" '/etc/shells'; then
     add_shell "$shell"
   fi

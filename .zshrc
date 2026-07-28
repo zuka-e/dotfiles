@@ -69,6 +69,7 @@ ZSH_CUSTOM="$ZSH_CONFIG_HOME/lib/oh-my-zsh"
 
 # Syntax highlighting
 if [[ ! -e "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
+  print_info "'$ZSH_CUSTOM/plugins/zsh-syntax-highlighting' doesn't exist. Installing..."
   # cf. https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
