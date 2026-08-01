@@ -3,7 +3,9 @@
   "extends": [
     "config:recommended",
     "schedule:automergeDaily",
-    ":automergeMinor"
+    // cf. https://docs.renovatebot.com/presets-default
+    ":automergeMinor",
+    ":enableVulnerabilityAlerts"
   ],
   "labels": ["dependencies"],
   "timezone": "Asia/Tokyo",
