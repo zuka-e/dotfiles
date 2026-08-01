@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/common/config/paths.sh
-source ~/dotfiles/shell/functions.sh
+# shellcheck source=../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=../shell/common/lib/filesystem.sh
+. "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
 
 #------------------------------------------------
 # Create symbolic links for settings
 #------------------------------------------------
-configs=$(find ~/dotfiles/vscode/config -depth 1 ! -name "*.*sh")
+configs="$(find "$DOTFILES_PATH/vscode/config" -depth 1 ! -name "*.*sh")"
 
 for editor in "Code" "Cursor"; do
   config_dir="$HOME/Library/Application Support/$editor/User"
 
   if [[ -d "$config_dir" ]]; then
-    echo "Linking configs to $editor..."
-    for config in ${configs[@]}; do
+    print_bold_yellow "Creating symbolic links for '$editor'..."
+    for config in "${configs[@]}"; do
       create_symbolic_link "$config" "$config_dir"
     done
-  else
-    echo "$editor config directory not found. Skipping $editor config setup."
+    print_ok "Creating symbolic links for '$editor' is complete."
   fi
 done
 

@@ -1,44 +1,74 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/common/config/paths.sh
-source ~/dotfiles/shell/functions.sh
+# Repository: https://github.com/zuka-e/dotfiles.git (Don't remove)
+
+# ※ `errexit nounset pipefail`
+set -euo pipefail
+
+#------------------------------------------------
+# Dotfiles script path resolution
+#------------------------------------------------
+
+if [[ -z "${DOTFILES_PATH-}" ]]; then
+  DOTFILES_PATH="$(cd -- "$(dirname -- "$0")" && pwd)"
+fi
+
+# shellcheck source=./lib/dotfiles.sh
+. "$DOTFILES_PATH/lib/dotfiles.sh"
+
+ensure_dotfiles
+
+#------------------------------------------------
+# Preparation before installation
+#------------------------------------------------
+
+# shellcheck source=./shell/common/environment/index.sh
+. "$DOTFILES_PATH/shell/common/environment/index.sh"
 
 #------------------------------------------------
 # Create symbolic links
 #------------------------------------------------
 
-basic_config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
+# shellcheck source=./shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=./shell/common/lib/filesystem.sh
+. "$DOTFILES_PATH/shell/common/lib/filesystem.sh"
 
-for filename in ${basic_config_filenames[@]}; do
-  create_symbolic_link "$HOME/dotfiles/$filename" "$HOME"
+print_bold_yellow 'Creating symbolic links for shell configs...'
+
+config_filenames=(.{bash_profile,bashrc,zprofile,zshrc,inputrc,vimrc})
+
+for filename in "${config_filenames[@]}"; do
+  create_symbolic_link "$DOTFILES_PATH/$filename" "$HOME"
 done
-
-unset basic_config_filenames
 
 if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
   mkdir "$XDG_CONFIG_HOME"
 fi
 
-extended_configs=$(find ~/dotfiles/.config -mindepth 1 -maxdepth 1)
+xdg_config_dirs="$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)"
 
-for config in ${extended_configs[@]}; do
-  create_symbolic_link "$config" "$XDG_CONFIG_HOME"
+for xdg_config_dir in "${xdg_config_dirs[@]}"; do
+  create_symbolic_link "$xdg_config_dir" "$XDG_CONFIG_HOME"
 done
 
-unset extended_configs
+print_ok 'Creating symbolic links for shell configs is complete.'
 
 #------------------------------------------------
-# Install completions
-#------------------------------------------------
-~/dotfiles/install-bash-completion.sh
-
-#------------------------------------------------
-# Install packages etc
+# Install apps
 #------------------------------------------------
 
-is_linux && ~/dotfiles/os/linux/install.sh
-is_mac && ~/dotfiles/os/macos/install.sh
+"$DOTFILES_PATH/scripts/install-apps.sh"
 
-type code > /dev/null 2>&1 || type cursor > /dev/null 2>&1 && ~/dotfiles/vscode/install.sh
+#------------------------------------------------
+# Setup apps
+#------------------------------------------------
 
-exec "${SHELL}" -l
+"$DOTFILES_PATH/scripts/setup-apps.sh"
+
+# ------------------------------------------------
+# Reload shell to apply changes
+# ------------------------------------------------
+
+print_ok 'All installation is complete.'
+print_info "Reload shell to apply changes by 'exec \$SHELL -l'."

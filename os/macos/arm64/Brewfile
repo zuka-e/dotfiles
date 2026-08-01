@@ -143,6 +143,9 @@ vscode "eamodio.gitlens"
 # Docker
 vscode "ms-azuretools.vscode-docker"
 
+# Shell
+vscode "timonwong.shellcheck"
+
 # Bash
 vscode "mads-hartmann.bash-ide-vscode"
 

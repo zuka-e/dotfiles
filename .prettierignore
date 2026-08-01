@@ -6,11 +6,13 @@ pnpm-lock.yaml
 Brewfile
 Brewfile.lock.json
 
-.config
+.config/karabiner
+.config/tabtab
 
 shell/**/*.conf
 
-.git-completion.bash
-.git-prompt.bash
+.colorrc
+git-completion.bash
+git-prompt.bash
 
 .vimrc

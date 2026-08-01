@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-source ~/dotfiles/shell/functions.sh
+set -euo pipefail
 
-export LANG=C.UTF-8
+print_bold_yellow 'Setting up for Linux...'
 
-is_fedora && ~/dotfiles/os/fedora/install.sh
-is_debian && ~/dotfiles/os/debian/install.sh
+"$DOTFILES_PATH/os/linux/scripts/install-apps.sh"
 
-if command -v sshd &> /dev/null; then
-  ~/dotfiles/os/linux/setup-sshd.sh
-fi
+"$DOTFILES_PATH/os/linux/scripts/add-sshd-configs.sh"
 
-if command -v zsh &> /dev/null; then
-  ~/dotfiles/os/linux/setup-zsh.sh
-fi
+print_ok 'Setting up for Linux is complete.'
