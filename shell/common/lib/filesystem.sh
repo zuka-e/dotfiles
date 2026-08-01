@@ -1,9 +1,9 @@
 # shellcheck source=./log.sh
-. "$DOTFILES_PATH/shell/common/lib/log.sh"
+. "$SHELL_CONFIG_HOME/common/lib/log.sh"
 
 # Get user-defined temporary directory path.
 tmp_dir() {
-  printf '%s/.tmp\n' "$DOTFILES_PATH"
+  printf '%s/.tmp\n' "${DOTFILES_PATH:-$HOME/dotfiles}"
 }
 
 # Usage: create_symbolic_link $src $target

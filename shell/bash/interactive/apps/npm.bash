@@ -1,5 +1,5 @@
 # shellcheck source=../../../common/lib/nvm.sh
-. "$DOTFILES_PATH/shell/common/lib/nvm.sh"
+. "$SHELL_CONFIG_HOME/common/lib/nvm.sh"
 
 if ! command -v npm > /dev/null 2>&1; then
   return

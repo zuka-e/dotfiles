@@ -1,11 +1,11 @@
 # shellcheck source=./color.sh
-. "$DOTFILES_PATH/shell/common/lib/color.sh"
+. "$SHELL_CONFIG_HOME/common/lib/color.sh"
 
 LOG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 
 # Get the log directory.
 log_dir() {
-  printf '%s/logs\n' "$DOTFILES_PATH"
+  printf '%s/logs\n' "${DOTFILES_PATH:-$HOME/dotfiles}"
 }
 
 # Output log to file.

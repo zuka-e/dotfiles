@@ -1,5 +1,5 @@
 # shellcheck source=./log.sh
-. "$DOTFILES_PATH/shell/common/lib/log.sh"
+. "$SHELL_CONFIG_HOME/common/lib/log.sh"
 
 # Determine if it's Mac.
 is_mac() {

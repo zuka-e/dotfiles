@@ -88,3 +88,5 @@ plugins=(
   tmux.override
   zsh-syntax-highlighting
 )
+
+. "$ZSH/oh-my-zsh.sh"

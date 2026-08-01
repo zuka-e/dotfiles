@@ -2,7 +2,7 @@
 # cf. `/usr/libexec/path_helper -s` executed within `/etc/profile`
 
 # shellcheck source=../lib/path.sh
-. "$DOTFILES_PATH/shell/common/lib/path.sh"
+. "$SHELL_CONFIG_HOME/common/lib/path.sh"
 
 # cf. `pipx ensurepath` - https://pipx.pypa.io/latest/how-to/install-pipx.html
 path_append "$HOME/.local/bin"

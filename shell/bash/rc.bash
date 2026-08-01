@@ -1,3 +1,7 @@
+: "${SHELL_CONFIG_HOME=$DOTFILES_PATH/shell}"
+
+: "${BASH_CONFIG_HOME=$SHELL_CONFIG_HOME/bash}"
+
 #------------------------------------------------
 # Shell common config
 #------------------------------------------------
