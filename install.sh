@@ -42,9 +42,7 @@ for filename in "${config_filenames[@]}"; do
   create_symbolic_link "$DOTFILES_PATH/$filename" "$HOME"
 done
 
-if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
-  mkdir "$XDG_CONFIG_HOME"
-fi
+mkdir -p "$XDG_CONFIG_HOME"
 
 xdg_config_dirs="$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)"
 
