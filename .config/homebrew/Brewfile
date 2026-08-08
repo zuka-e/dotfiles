@@ -57,6 +57,7 @@ brew "pipx"
 
 # brew "ollama"
 
+brew "exiftool"
 brew "ffmpeg"
 brew "qrencode"
 
