@@ -4,7 +4,8 @@
     "**/.config/*/ignore": "ignore",
     "**/.config/git/config": "ini",
     "{,.}{colorrc,inputrc,kitty.conf,tmux.conf}": "shellscript",
-    "Brewfile.*": "ruby"
+    "Brewfile.*": "ruby",
+    "extensions.txt": "dotenv"
   },
   "shellcheck.exclude": [
     // cf. https://www.shellcheck.net/wiki

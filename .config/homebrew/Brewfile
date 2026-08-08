@@ -1,10 +1,10 @@
-# This is a "Brewfile" that its packages are sorted arbitrarily
-# to clarify the installed packages.
-# A normal file that lists the installed packages can be created
-# by `brew bundle dump` (overwrited with `-f`).
+# This is a "Brewfile" with comments and its packages arbitrarily sorted
+# to make it clear which packages are installed.
+# A regular file listing installed packages can be created
+# by `brew bundle dump` (overwritten with `-f`).
 # Run `brew bundle --file macos/arm64/Brewfile` to install the listed packages
-# and uninstall packages not being listed.
-# To update packages, it seems `brew upgrade` may be needed and then run `brew bundle`.
+# and uninstall the unlisted packages.
+# You may need to do a "brew upgrade" to update a package, then run a "brew bundle".
 
 #------------------------------------------------
 # Taps
@@ -99,103 +99,3 @@ cask "vnc-viewer"
 # cask "iina" # https://github.com/iina/iina
 cask "losslesscut"
 cask "qlmarkdown"
-
-#------------------------------------------------
-# VSCode
-#------------------------------------------------
-# It seems there is no mention about this in the doc.
-# cf. https://github.com/Homebrew/homebrew-bundle/blob/master/lib/bundle/dsl.rb
-
-# Theme
-vscode "pkief.material-icon-theme" # Icons of file and directory
-
-# Remote environment
-vscode "ms-vscode-remote.remote-ssh" # SSH
-vscode "ms-vscode-remote.remote-ssh-edit" # (`remote-ssh` complement)
-vscode "ms-vscode-remote.remote-containers" # Docker containers
-vscode "ms-vscode.remote-explorer" # (`remote-` complement)
-
-# Highlighting
-vscode "shardulm94.trailing-spaces" # Spaces
-vscode "oderwat.indent-rainbow" # Each tab step
-vscode "usernamehw.errorlens" # Inline error messages
-vscode "naumovs.color-highlight" # Web colors
-vscode "mikestead.dotenv" # Env
-vscode "ibm.output-colorizer" # Log
-vscode "mechatroner.rainbow-csv" # CSV
-# vscode "jeff-hykin.better-shellscript-syntax" # Shellscript
-# vscode "jeff-hykin.better-dockerfile-syntax" # Dockerfile
-# vscode "xadillax.viml" # Vimrc
-# vscode "mariusschulz.yarn-lock-syntax" # Yarn
-
-# Utilities
-vscode "streetsidesoftware.code-spell-checker"
-vscode "artdiniz.quitcontrol-vscode" # Show confirmation before closing window
-vscode "aaron-bond.better-comments" # create many kinds of colorized comments
-vscode "ms-playwright.playwright" # Playwight testing tool
-
-# Git
-vscode "eamodio.gitlens"
-# vscode "donjayamanne.githistory"
-
-# Intellisense
-
-# Docker
-vscode "ms-azuretools.vscode-docker"
-
-# Shell
-vscode "timonwong.shellcheck"
-
-# Bash
-vscode "mads-hartmann.bash-ide-vscode"
-
-# CSV
-# vscode "grapecity.gc-excelviewer"
-
-# YAML
-vscode "redhat.vscode-yaml"
-
-# TOML
-# vscode "tamasfe.even-better-toml"
-
-# Nginx
-# vscode "ahmadalli.vscode-nginx-conf"
-
-# HTML CSS
-vscode "vincaslt.highlight-matching-tag"
-vscode "bradlc.vscode-tailwindcss"
-
-# JS/TS
-vscode "dbaeumer.vscode-eslint"
-vscode "esbenp.prettier-vscode"
-# React
-# vscode "dsznajder.es7-react-js-snippets"
-# Vue
-# vscode "vue.volar"
-
-# PHP Laravel
-# vscode "xdebug.php-debug"
-# vscode "bmewburn.vscode-intelephense-client"
-# vscode "laravel.vscode-laravel"
-# vscode "amiralizadeh9480.laravel-extra-intellisense"
-
-# Python
-# vscode "ms-python.python"
-# vscode "ms-python.vscode-pylance"
-# vscode "ms-python.debugpy"
-# vscode "charliermarsh.ruff"
-# vscode "matangover.mypy"
-
-# Terraform
-# vscode "hashicorp.terraform"
-
-# Serverless
-# vscode "threadheap.serverless-ide-vscode"
-
-# Github Actions
-vscode "github.vscode-github-actions"
-
-# Markdown
-vscode "yzhang.markdown-all-in-one"
-vscode "davidanson.vscode-markdownlint"
-vscode "shd101wyy.markdown-preview-enhanced"

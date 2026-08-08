@@ -22,4 +22,8 @@ for editor in "Code" "Cursor"; do
   fi
 done
 
-unset configs
+#------------------------------------------------
+# Install extensions
+#------------------------------------------------
+
+"$DOTFILES_PATH/vscode/scripts/install-extensions.sh"
