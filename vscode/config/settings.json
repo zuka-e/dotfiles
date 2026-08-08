@@ -104,6 +104,7 @@
   "[terraform]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[terraform-vars]": { "editor.defaultFormatter": "hashicorp.terraform" },
   "[nginx]": { "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf" },
+  "[jsonc]": { "prettier.trailingComma": "none" },
   "[markdown]": {
     "editor.quickSuggestions": {
       "comments": "on",
