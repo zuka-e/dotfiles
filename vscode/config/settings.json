@@ -8,6 +8,7 @@
   "window.zoomLevel": -1,
   "window.restoreWindows": "all",
   "window.commandCenter": false,
+  "extensions.autoUpdate": "off",
   "gitlens.views.repositories.showStashes": true,
   "workbench.editorAssociations": {
     "*.csv": "gc-excelviewer-csv-editor"
@@ -153,12 +154,12 @@
   "css.lint.duplicateProperties": "warning",
   "emmet.triggerExpansionOnTab": true,
 
-  "typescript.preferences.autoImportSpecifierExcludeRegexes": ["console"],
-  "typescript.preferences.autoImportFileExcludePatterns": ["dist"],
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.tsdk": "./node_modules/typescript/lib",
+  "js/ts.preferences.autoImportSpecifierExcludeRegexes": ["console"],
+  "js/ts.preferences.autoImportFileExcludePatterns": ["dist"],
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.tsdk.path": "./node_modules/typescript/lib",
 
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.terminal.activateEnvironment": false,
@@ -187,6 +188,5 @@
     "eamodio.gitlens"
   ],
   "continue.telemetryEnabled": false,
-  "extensions.autoUpdate": false,
   "playwright.reuseBrowser": true
 }
