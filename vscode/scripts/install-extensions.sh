@@ -16,6 +16,10 @@ if command -v code > /dev/null 2>&1; then
   editors+=("VS Code")
   cmds+=("code")
 fi
+if command -v agy-ide > /dev/null 2>&1; then
+  editors+=("Antigravity IDE")
+  cmds+=("agy-ide")
+fi
 
 if [[ "${#editors[@]}" -eq 0 ]]; then
   print_info 'No compatible editors (code, cursor, agy-ide) found.'

@@ -8,7 +8,7 @@ set -euo pipefail
 print_bold_yellow 'Setting up apps...'
 
 if command -v code > /dev/null 2>&1 \
-  || command -v cursor > /dev/null 2>&1; then
+  || command -v agy-ide > /dev/null 2>&1; then
   print_bold_yellow 'Setting up Visual Studio Code related apps...'
   "$DOTFILES_PATH/vscode/install.sh"
   print_ok 'Setting up Visual Studio Code related apps is complete.'
