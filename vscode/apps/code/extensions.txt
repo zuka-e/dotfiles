@@ -1,0 +1,92 @@
+# Theme
+pkief.material-icon-theme # Icons of file and directory
+
+# Remote environment
+ms-vscode-remote.remote-ssh        # SSH
+ms-vscode-remote.remote-ssh-edit   # (`remote-ssh` complement)
+ms-vscode-remote.remote-containers # Docker containers
+ms-vscode.remote-explorer          # (`remote-` complement)
+
+# Highlighting
+shardulm94.trailing-spaces # Spaces
+oderwat.indent-rainbow     # Each tab step
+usernamehw.errorlens       # Inline error messages
+naumovs.color-highlight    # Web colors
+mikestead.dotenv           # Env
+ibm.output-colorizer       # Log
+mechatroner.rainbow-csv    # CSV
+# jeff-hykin.better-shellscript-syntax # Shellscript
+# jeff-hykin.better-dockerfile-syntax # Dockerfile
+# xadillax.viml # Vimrc
+# mariusschulz.yarn-lock-syntax # Yarn
+
+# Utilities
+streetsidesoftware.code-spell-checker
+artdiniz.quitcontrol-vscode # Show confirmation before closing window
+aaron-bond.better-comments  # create many kinds of colorized comments
+ms-playwright.playwright    # Playwight testing tool
+
+# Git
+eamodio.gitlens
+# donjayamanne.githistory
+
+# Intellisense
+
+# Docker
+ms-azuretools.vscode-docker
+ms-azuretools.vscode-containers
+
+# Shell
+timonwong.shellcheck
+mads-hartmann.bash-ide-vscode
+
+# CSV
+# grapecity.gc-excelviewer
+
+# YAML
+redhat.vscode-yaml
+
+# TOML
+# tamasfe.even-better-toml
+
+# Nginx
+# ahmadalli.vscode-nginx-conf
+
+# HTML CSS
+vincaslt.highlight-matching-tag
+bradlc.vscode-tailwindcss
+
+# JS/TS
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+# React
+# dsznajder.es7-react-js-snippets
+# Vue
+# vue.volar
+
+# PHP Laravel
+# xdebug.php-debug
+# bmewburn.vscode-intelephense-client
+# laravel.vscode-laravel
+# amiralizadeh9480.laravel-extra-intellisense
+
+# Python
+# ms-python.python
+# ms-python.vscode-pylance
+# ms-python.debugpy
+# charliermarsh.ruff
+# matangover.mypy
+
+# Terraform
+# hashicorp.terraform
+
+# Serverless
+# threadheap.serverless-ide-vscode
+
+# Github Actions
+github.vscode-github-actions
+
+# Markdown
+yzhang.markdown-all-in-one
+davidanson.vscode-markdownlint
+shd101wyy.markdown-preview-enhanced

@@ -1,0 +1,103 @@
+# This is a "Brewfile" with comments and its packages arbitrarily sorted
+# to make it clear which packages are installed.
+# A regular file listing installed packages can be created
+# by `brew bundle dump` (overwritten with `-f`).
+# Run `brew bundle --file macos/arm64/Brewfile` to install the listed packages
+# and uninstall the unlisted packages.
+# You may need to do a "brew upgrade" to update a package, then run a "brew bundle".
+
+#------------------------------------------------
+# Taps
+#------------------------------------------------
+# cf. https://docs.brew.sh/Taps
+
+# tap "supabase/tap"
+# https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+# tap "hashicorp/tap"
+
+#------------------------------------------------
+# Formulae
+#------------------------------------------------
+
+brew "launchctl-completion"
+brew "open-completion"
+# brew "docker-completion"
+
+brew "bash" # Newer version
+brew "bash-completion@2"
+brew "zsh"
+brew "rename"
+brew "tree"
+brew "pstree"
+brew "htop"
+brew "nmap"
+brew "wget"
+brew "tmux"
+brew "rsync" # Newer version
+brew "bat" # `cat`
+brew "eza" # `ls`
+brew "fd" # `find`
+brew "ripgrep" # (`rg`) `grep`
+brew "dust" # `du`
+brew "git-delta" # (`delta`) `diff`
+brew "git"
+
+brew "nvm"
+# brew "yarn"
+# brew "yarn-completion"
+brew "pnpm"
+brew "pyenv"
+brew "pip-completion"
+brew "pipx"
+
+# brew "act" # Local Github Actions
+# brew "awscli"
+# brew "hashicorp/tap/terraform"
+# brew "supabase/tap/supabase"
+
+# brew "ollama"
+
+brew "exiftool"
+brew "ffmpeg"
+brew "qrencode"
+
+#------------------------------------------------
+# Dependencies
+#------------------------------------------------
+# cf. brew uses --installed ca-certificates
+
+brew "ca-certificates"
+brew "xxhash"
+
+#------------------------------------------------
+# Casks
+#------------------------------------------------
+# cf. https://github.com/Homebrew/homebrew-cask
+
+cask "font-noto-nerd-font"
+cask "android-file-transfer"
+cask "clipy"
+cask "karabiner-elements"
+cask "google-japanese-ime"
+# cask "google-chrome"
+cask "brave-browser"
+# cask "syncthing-app" # https://github.com/syncthing/syncthing
+cask "lulu"
+# cask "adguard-vpn"
+# cask "tunnelbear"
+cask "protonvpn"
+# cask "libreoffice"
+# cask "kindle"
+cask "slack"
+cask "kitty"
+# cask "docker"
+cask "visual-studio-code"
+cask "antigravity-cli"
+cask "antigravity-ide"
+cask "dbeaver-community"
+cask "android-platform-tools"
+cask "vnc-viewer"
+# cask "send-anywhere"
+# cask "iina" # https://github.com/iina/iina
+cask "losslesscut"
+cask "qlmarkdown"

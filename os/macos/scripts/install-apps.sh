@@ -4,8 +4,27 @@ set -euo pipefail
 
 # shellcheck source=../../../shell/common/lib/log.sh
 . "$DOTFILES_PATH/shell/common/lib/log.sh"
+# shellcheck source=../../../shell/common/lib/prompt.sh
+. "$DOTFILES_PATH/shell/common/lib/prompt.sh"
+# shellcheck source=../../../shell/common/lib/string.sh
+. "$DOTFILES_PATH/shell/common/lib/string.sh"
 # shellcheck source=../../../shell/common/lib/system.sh
 . "$DOTFILES_PATH/shell/common/lib/system.sh"
+
+search_brewfile() {
+  local dir="$XDG_CONFIG_HOME/homebrew"
+  local brewfile
+  brewfile="$(find -E "$dir/" -type f -regex ".*/Brewfile(.local|$)" \
+    | sort --version-sort --reverse \
+    | head -n 1)"
+
+  if [[ -z "$brewfile" || ! -f "$brewfile" ]]; then
+    print_error "Brewfile doesn't exist in '$XDG_CONFIG_HOME/homebrew'."
+    exit 2
+  fi
+
+  printf '%s\n' "$brewfile"
+}
 
 #------------------------------------------------
 # Install Homebrew
@@ -26,91 +45,54 @@ brew doctor || exit
 
 print_bold 'Checking the installation status of Homebrew...'
 
-# A Brewfile based on desired packages.
-new_file=$(
-  find -E "$DOTFILES_PATH/os/macos" -type f -regex ".*$(uname -m)/Brewfile(.local|$)" \
-    | sort --version-sort --reverse \
-    | head -n 1
-)
+requirement_file="$(search_brewfile)"
 
-if [[ ! -f "$new_file" ]]; then
-  print_error "Brewfile doesn't exist."
-  exit 2
-fi
-
-print_bold "'$new_file' has been loaded."
+print_bold "'$requirement_file' has been loaded."
 print_default 'Loading installed packages...'
 
-# A Brewfile based on teinstalled packages.
 current_file="$TMPDIR/Brewfile"
 
 brew bundle dump -f --file="$current_file"
 
-# Remove comments, dup, and blank lines, and sort a file.
-function format_file {
-  sed -E -e 's/#.*//' -e '/^\s*$/d' "${1}" | sort | uniq
-}
+installed="$(cat "$current_file" | normalize_list)"
+required="$(cat "$requirement_file" | normalize_list)"
 
-function diff_brewfile {
-  # `<()`: Process Substitution
-  diff -u \
-    --ignore-blank-lines \
-    --ignore-space-change \
-    <(format_file "$current_file") \
-    <(format_file "$new_file")
-}
+adding="$(comm -13 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
+removing="$(comm -23 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 
-# Packages to be added.
-added_packages=$(diff_brewfile | egrep '^\+\s*\w+')
-# Packages to be removed.
-removed_packages=$(diff_brewfile | egrep '^\-\s*\w+')
-
-if [[ ! -z $removed_packages ]]; then
-  print_default
-  print_bold_red 'The following packages will be removed.'
+if [[ -n $adding ]]; then
+  print_bold_green 'The following will be added.'
   print_default '==========================================='
-  print_default "$removed_packages"
+  print_bold_green "$adding"
   print_default '==========================================='
 fi
 
-if [[ ! -z $added_packages ]]; then
-  print_default
-  print_bold_green 'The following packages will be installed.'
+if [[ -n "$removing" ]]; then
+  print_bold_red 'The following will be removed.'
   print_default '==========================================='
-  print_default "$added_packages"
+  print_bold_red "$removing"
   print_default '==========================================='
 fi
 
-if [[ -z $added_packages && -z $removed_packages ]]; then
-  print_info 'All packages are already installed but may be upgraded.'
+if [[ ! -n "$adding" && ! -n "$removing" ]]; then
+  print_info 'All packages are already installed. Upgrade process will be started.'
 else
-  print_info 'Other packages might also be upgraded.'
+  print_info 'Upgrade process will also be started.'
 fi
 
-while true; do
-  read -p 'Are you sure to continue? (y/N) ' input
-  case $input in
-    y | yes)
-      # Install packages based on `Brewfile`,
-      # and remove those installed with `brew` and not listed in the file.
-      brew bundle -v --cleanup --file="$new_file"
-      # Remove unnecessary dependencies
-      # cf. https://docs.brew.sh/Manpage#autoremove---dry-run
-      brew autoremove
-      # Remove stale lock files, outdated downloads, and caches.
-      # cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
-      brew cleanup -vs --prune=all
-      break
-      ;;
-    N | no | No | '')
-      print_default 'Canceled.'
-      exit
-      ;;
-    *)
-      print_default 'Please answer with y or N.'
-      ;;
-  esac
-done
+if ! confirm 'Do you want to continue?'; then
+  exit
+fi
+
+# Install packages based on `Brewfile`,
+# and remove those installed with `brew` and not listed in the file.
+brew bundle -v --file="$requirement_file"
+# Remove unnecessary dependencies
+# cf. https://docs.brew.sh/Manpage#autoremove---dry-run
+brew autoremove -v
+# Remove stale lock files, outdated downloads, and caches.
+# cf. https://docs.brew.sh/Manpage#cleanup-options-formulacask-
+brew cleanup -v --scrub
 
 #------------------------------------------------
 # `phpenv`

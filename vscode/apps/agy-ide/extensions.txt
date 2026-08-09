@@ -1,0 +1,8 @@
+golang.go
+llvm-vs-code-extensions.vscode-clangd
+meta.pyrefly
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-python-envs
+shopify.ruby-lsp
+streetsidesoftware.code-spell-checker
