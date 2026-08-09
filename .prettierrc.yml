@@ -11,6 +11,10 @@ plugins:
   - 'prettier-plugin-sh'
 overrides:
   - files:
+      - '**/*.jsonc'
+    options:
+      trailingComma: 'none'
+  - files:
       - 'nginx.conf'
       - 'nginx/**/*.conf'
     options:

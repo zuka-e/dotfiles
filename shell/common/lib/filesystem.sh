@@ -1,5 +1,5 @@
 # shellcheck source=./log.sh
-. "$SHELL_CONFIG_HOME/common/lib/log.sh"
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
 
 # Get user-defined temporary directory path.
 tmp_dir() {

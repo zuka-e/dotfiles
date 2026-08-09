@@ -1,5 +1,5 @@
 # shellcheck source=./color.sh
-. "$SHELL_CONFIG_HOME/common/lib/color.sh"
+. "$DOTFILES_PATH/shell/common/lib/color.sh"
 
 LOG_DATE_FORMAT='%Y-%m-%d %H:%M:%S'
 
