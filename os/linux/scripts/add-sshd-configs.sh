@@ -14,7 +14,7 @@ SSHD_CONFIG_DIR=/etc/ssh/sshd_config.d
 
 configs="$(find "$DOTFILES_PATH/os/linux/config/sshd_config.d" -mindepth 1 -maxdepth 1)"
 
-for config in "${configs[@]}"; do
+for config in $configs; do
   create_symbolic_link "$config" "$SSHD_CONFIG_DIR"
 done
 

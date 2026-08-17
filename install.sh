@@ -46,7 +46,7 @@ mkdir -p "$XDG_CONFIG_HOME"
 
 xdg_config_dirs="$(find "$DOTFILES_PATH/.config" -mindepth 1 -maxdepth 1)"
 
-for xdg_config_dir in "${xdg_config_dirs[@]}"; do
+for xdg_config_dir in $xdg_config_dirs; do
   create_symbolic_link "$xdg_config_dir" "$XDG_CONFIG_HOME"
 done
 

@@ -30,7 +30,7 @@ for editor in "${editors[@]}"; do
 
   if [[ -d "$config_dir" ]]; then
     print_bold_yellow "Creating symbolic links for '$editor'..."
-    for config in "${configs[@]}"; do
+    for config in $configs; do
       create_symbolic_link "$config" "$config_dir"
     done
     print_ok "Creating symbolic links for '$editor' is complete."
