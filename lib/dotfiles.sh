@@ -18,4 +18,6 @@ ensure_dotfiles() {
   if [[ "$(grep "$DOTFILES_PATH" "$target")" == '' ]]; then
     printf "export DOTFILES_PATH='%s'\n" "$DOTFILES_PATH" >> "$target"
   fi
+
+  : "${SHELL_CONFIG_HOME=$DOTFILES_PATH/shell}"
 }
