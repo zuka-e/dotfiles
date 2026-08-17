@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# shellcheck source=../../shell/common/lib/log.sh
+. "$DOTFILES_PATH/shell/common/lib/log.sh"
+
 print_bold_yellow 'Setting up for macOS...'
 
 "$DOTFILES_PATH/os/macos/scripts/setup-system.sh"
