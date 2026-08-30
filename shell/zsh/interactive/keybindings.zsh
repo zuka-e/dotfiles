@@ -4,6 +4,8 @@
 # `^`: ctrl
 # `^[`: esc (meta)
 
+bindkey -e
+
 # Default
 bindkey "^[." insert-last-word
 
