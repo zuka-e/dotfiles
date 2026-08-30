@@ -13,7 +13,7 @@ if command -v brew > /dev/null 2>&1; then
 fi
 
 # cf. `pnpm setup` - https://pnpm.io/cli/setup
-if [[ -d "$PNPM_HOME/bin" ]]; then
+if [[ -n "${PNPM_HOME:-}" ]] && [[ -d "$PNPM_HOME/bin" ]]; then
   path_prepend "$PNPM_HOME/bin"
 fi
 
