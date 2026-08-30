@@ -15,7 +15,7 @@ ensure_dotfiles() {
 
   local target="$DOTFILES_PATH/shell/common/environment/90-local.sh"
 
-  if [[ "$(grep "$DOTFILES_PATH" "$target")" == '' ]]; then
+  if [[ -f "$target" ]] && [[ "$(grep "$DOTFILES_PATH" "$target")" == '' ]]; then
     printf "export DOTFILES_PATH='%s'\n" "$DOTFILES_PATH" >> "$target"
   fi
 
