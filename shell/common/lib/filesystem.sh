@@ -33,7 +33,7 @@ create_symbolic_link() {
 
   local dest="$target/$filename"
   local current_src
-  current_src="$(readlink "$dest")"
+  current_src="$(readlink "$dest")" || true
 
   # No action if already created
   if [[ "$current_src" == "$src" ]]; then
