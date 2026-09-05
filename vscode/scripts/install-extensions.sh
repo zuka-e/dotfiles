@@ -52,14 +52,14 @@ for i in "${!editors[@]}"; do
   removing="$(comm -23 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 
   if [[ -n "$adding" ]]; then
-    print_bold_green 'The following will be added.'
+    print_info 'The following will be added.'
     print_default '==========================================='
     print_bold_green "$adding"
     print_default '==========================================='
   fi
 
   if [[ -n "$removing" ]]; then
-    print_bold_red 'The following will be removed.'
+    print_info 'The following will be removed.'
     print_default '==========================================='
     print_bold_red "$removing"
     print_default '==========================================='
