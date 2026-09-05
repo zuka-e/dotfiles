@@ -51,15 +51,15 @@ for i in "${!editors[@]}"; do
   adding="$(comm -13 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
   removing="$(comm -23 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 
-  if [[ -n $adding ]]; then
-    print_bold_green 'The following will be added.'
+  if [[ -n "$adding" ]]; then
+    print_info 'The following will be added.'
     print_default '==========================================='
     print_bold_green "$adding"
     print_default '==========================================='
   fi
 
   if [[ -n "$removing" ]]; then
-    print_bold_red 'The following will be removed.'
+    print_info 'The following will be removed.'
     print_default '==========================================='
     print_bold_red "$removing"
     print_default '==========================================='
@@ -74,11 +74,11 @@ for i in "${!editors[@]}"; do
     continue
   fi
 
-  for ext in ${removing:-}; do
+  for ext in $removing; do
     "$cmd" --uninstall-extension "$ext"
   done
 
-  for ext in ${adding:-}; do
+  for ext in $adding; do
     "$cmd" --install-extension "$ext"
   done
 done

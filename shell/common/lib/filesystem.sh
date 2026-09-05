@@ -41,6 +41,13 @@ create_symbolic_link() {
     return
   fi
 
+  # Use sudo if the target directory is not writable.
+  local SUDO=()
+
+  if [[ ! -w "$target" ]] && command -v sudo > /dev/null 2>&1; then
+    SUDO=(sudo)
+  fi
+
   # Move the current file (including a broken link) before overwritten.
   if [[ -e "$dest" || -L "$dest" ]]; then
     print_info "'$dest' already exists."
@@ -50,13 +57,13 @@ create_symbolic_link() {
     timestamp="$(date +%s%N)"
 
     mkdir -p "$(tmp_dir)/$timestamp" \
-      && sudo mv -v "$dest" "$(tmp_dir)/$timestamp/" || return
+      && "${SUDO[@]}" mv -v "$dest" "$(tmp_dir)/$timestamp/" || return
   fi
 
   print_bold "Creating symbolic link for '$src' to '$dest'."
 
   # cf. https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path
-  sudo ln -sv "$src" "$dest"
+  "${SUDO[@]}" ln -sv "$src" "$dest"
 }
 
 # Get the absolute directory of the given path.

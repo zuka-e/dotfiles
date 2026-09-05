@@ -1,4 +1,4 @@
-case "$(locale -a)" in
+case "$(locale -a 2> /dev/null)" in
   *'en_US.UTF-8'*)
     LANG='en_US.UTF-8'
     ;;
@@ -6,5 +6,7 @@ case "$(locale -a)" in
     LANG='C.UTF-8'
     ;;
 esac
+
+: "${LANG:=C}"
 
 export LANG

@@ -60,15 +60,15 @@ required="$(cat "$requirement_file" | normalize_list)"
 adding="$(comm -13 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 removing="$(comm -23 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 
-if [[ -n $adding ]]; then
-  print_bold_green 'The following will be added.'
+if [[ -n "$adding" ]]; then
+  print_info 'The following will be added.'
   print_default '==========================================='
   print_bold_green "$adding"
   print_default '==========================================='
 fi
 
 if [[ -n "$removing" ]]; then
-  print_bold_red 'The following will be removed.'
+  print_info 'The following will be removed.'
   print_default '==========================================='
   print_bold_red "$removing"
   print_default '==========================================='
