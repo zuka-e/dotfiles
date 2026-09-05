@@ -74,11 +74,11 @@ for i in "${!editors[@]}"; do
     continue
   fi
 
-  for ext in ${removing:-}; do
+  for ext in $removing; do
     "$cmd" --uninstall-extension "$ext"
   done
 
-  for ext in ${adding:-}; do
+  for ext in $adding; do
     "$cmd" --install-extension "$ext"
   done
 done
