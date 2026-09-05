@@ -51,7 +51,7 @@ for i in "${!editors[@]}"; do
   adding="$(comm -13 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
   removing="$(comm -23 <(printf '%s\n' "$installed") <(printf '%s\n' "$required"))"
 
-  if [[ -n $adding ]]; then
+  if [[ -n "$adding" ]]; then
     print_bold_green 'The following will be added.'
     print_default '==========================================='
     print_bold_green "$adding"
