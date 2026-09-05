@@ -223,7 +223,8 @@
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.todesktop\\.230313mzl4w4u92$"
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^com\\.google\\.antigravity-ide$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -251,7 +252,8 @@
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.todesktop\\.230313mzl4w4u92$"
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^com\\.google\\.antigravity-ide$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -548,7 +550,8 @@
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.todesktop\\.230313mzl4w4u92$"
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^com\\.google\\.antigravity-ide$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -576,7 +579,8 @@
                                             "^net\\.kovidgoyal\\.kitty$",
                                             "^dev\\.warp\\.Warp-Stable$",
                                             "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.todesktop\\.230313mzl4w4u92$"
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^com\\.google\\.antigravity-ide$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
