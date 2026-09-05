@@ -27,8 +27,8 @@ importers:
         specifier: 3.9.6
         version: 3.9.6
       prettier-plugin-nginx:
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^2.0.0
+        version: 2.0.0(prettier@3.9.6)
       prettier-plugin-sh:
         specifier: ^0.19.0
         version: 0.19.0(prettier@3.9.6)
@@ -320,8 +320,11 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
-  prettier-plugin-nginx@1.0.3:
-    resolution: {integrity: sha512-vV5q85s8XnV6NEgvz1gVLfZhmxAxY03MyOYj2ApBpjFkbs00lRsRkTmqO9L39ADuD18z1RRCcfZ3eVxKhI/nqg==}
+  prettier-plugin-nginx@2.0.0:
+    resolution: {integrity: sha512-fdSsnlYu1CyVrKNgOjEihIJ/32vdwCR3OOUfYCJ+S/phdzmML97Z6VC5KKHlUWRtzGU2Z2juQOdRMyG0QeO0Ng==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      prettier: ^3.6.0
 
   prettier-plugin-sh@0.19.0:
     resolution: {integrity: sha512-39VXFZH/cOGtcuu8aeSvqp/hhwomOR4QroZUj+jBz2cNb3os9s0sqFZSNlYts6jdtLLDU7D2YT3Z1+abtb7adQ==}
@@ -693,7 +696,9 @@ snapshots:
 
   picomatch@4.0.7: {}
 
-  prettier-plugin-nginx@1.0.3: {}
+  prettier-plugin-nginx@2.0.0(prettier@3.9.6):
+    dependencies:
+      prettier: 3.9.6
 
   prettier-plugin-sh@0.19.0(prettier@3.9.6):
     dependencies:
