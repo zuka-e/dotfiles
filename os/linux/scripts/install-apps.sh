@@ -13,8 +13,13 @@ if has_dnf > /dev/null 2>&1; then
   print_bold "Package manager 'dnf' is detected."
   "$DOTFILES_PATH/os/fedora/install.sh"
 elif has_apt > /dev/null 2>&1; then
-  print_bold "Package manager 'apt' is detected."
-  "$DOTFILES_PATH/os/debian/install.sh"
+  if [[ -n "$TERMUX_VERSION" ]]; then
+    print_bold "Termux is detected."
+    "$DOTFILES_PATH/os/termux/install.sh"
+  else
+    print_bold "Package manager 'apt' is detected."
+    "$DOTFILES_PATH/os/debian/install.sh"
+  fi
 fi
 
 if command -v zsh > /dev/null 2>&1; then
