@@ -109,6 +109,10 @@
     "command": "-aichat.insertselectionintochat"
   },
   {
+    "key": "shift+cmd+l",
+    "command": "-antigravity.startNewConversation"
+  },
+  {
     "key": "cmd+h",
     "command": "aipopup.action.modal.generate",
     "when": "editorFocus && !composerBarIsVisible"
