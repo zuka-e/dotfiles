@@ -17,7 +17,7 @@
     "@commitlint/types": "^21.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "prettier-plugin-nginx": "^2.0.0",
     "prettier-plugin-sh": "^0.19.0"
   }
