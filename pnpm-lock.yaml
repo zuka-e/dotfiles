@@ -24,14 +24,14 @@ importers:
         specifier: ^17.3.0
         version: 17.6.0
       prettier:
-        specifier: 3.9.9
-        version: 3.9.9
+        specifier: 3.9.10
+        version: 3.9.10
       prettier-plugin-nginx:
         specifier: ^2.0.0
-        version: 2.0.0(prettier@3.9.9)
+        version: 2.0.0(prettier@3.9.10)
       prettier-plugin-sh:
         specifier: ^0.20.0
-        version: 0.20.2(prettier@3.9.9)
+        version: 0.20.2(prettier@3.9.10)
 
 packages:
 
@@ -447,8 +447,8 @@ packages:
     peerDependencies:
       prettier: ^3.6.0
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -866,17 +866,17 @@ snapshots:
 
   picomatch@4.0.7: {}
 
-  prettier-plugin-nginx@2.0.0(prettier@3.9.9):
+  prettier-plugin-nginx@2.0.0(prettier@3.9.10):
     dependencies:
-      prettier: 3.9.9
+      prettier: 3.9.10
 
-  prettier-plugin-sh@0.20.2(prettier@3.9.9):
+  prettier-plugin-sh@0.20.2(prettier@3.9.10):
     dependencies:
       '@reteps/dockerfmt': 0.5.4
-      prettier: 3.9.9
+      prettier: 3.9.10
       sh-syntax: 0.7.0
 
-  prettier@3.9.9: {}
+  prettier@3.9.10: {}
 
   require-from-string@2.0.2: {}
 
